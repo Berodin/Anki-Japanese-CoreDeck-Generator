@@ -1,13 +1,13 @@
 import csv
 import os
 
-def merge_data(mother_tongue):
+def merge_data(lc):
     # Load translations based on the mother tongue
-    translations_file = f"data/translations_{mother_tongue}.csv"
+    translations_file = f"data/translations_{lc}.csv"
     vocab_file = "data/vocab_jp.csv"
 
     if not os.path.exists(translations_file):
-        print(f"Skip deck creation: No translation file found for '{mother_tongue}'.")
+        print(f"Skip deck creation: No translation file found for '{lc}'.")
         return None
     if not os.path.exists(vocab_file):
         raise FileNotFoundError(f"Vocabulary file not found: {vocab_file}")
@@ -38,7 +38,7 @@ def merge_data(mother_tongue):
                 print(f"Warning: Expression '{expression}' in translations not found in vocab file.")
 
     # Save merged data
-    output_file = f"data/merged_{mother_tongue}.csv"
+    output_file = f"data/merged_{lc}.csv"
     if merged_data:  # Only save if there is data
         with open(output_file, "w", encoding='utf-8', newline='') as f:
             fieldnames = list(merged_data[0].keys())
