@@ -1,0 +1,17 @@
+<div style="text-align: center; font-size: 24px; font-family: Arial;">
+
+  <div onclick="playAudio('audio_expression')" class="tappable" style="font-size: 24px; margin-bottom: 10px;">
+    <b>{{Expression}}</b>
+  </div>
+  <div id="audio_expression" hidden>{{ExpressionAudio}}</div>
+
+</div>
+
+<script>
+function playAudio(id) {
+  const audioElement = document.getElementById(id);
+  if (audioElement) {
+    audioElement.querySelector(".replay-button, .replaybutton").click();
+  }
+}
+</script>
