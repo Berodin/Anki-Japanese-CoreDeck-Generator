@@ -5,7 +5,7 @@ def load_template(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         return f.read()
 
-def get_model(model_id, mother_tongue):
+def get_model(model_id, lc):
     """Erstellt ein Anki-Modell mit Templates und Styling."""
     front_reading = load_template('templates/front_reading.html')
     back_reading = load_template('templates/back_reading.html')
@@ -15,7 +15,7 @@ def get_model(model_id, mother_tongue):
 
     return genanki.Model(
         model_id,
-        f'Japanese Vocab ({mother_tongue})',
+        f'Japanese Vocab ({lc})',
         fields=[
             {'name': 'Expression'},
             {'name': 'Meaning'},
