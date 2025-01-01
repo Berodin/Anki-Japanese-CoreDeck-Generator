@@ -4,16 +4,16 @@ import os
 from merge_data import merge_data
 from anki_model import get_model
 
-def create_deck(mother_tongue):
-    merged_file = merge_data(mother_tongue)
+def create_deck(lc):
+    merged_file = merge_data(lc)
     if not merged_file:
-        print(f"Skip deck creation: No merged file found for '{mother_tongue}'.")
+        print(f"Skip deck creation: No merged file found for '{lc}'.")
         return 
 
     model_id = 1607392319
-    model = get_model(model_id, mother_tongue)
+    model = get_model(model_id, lc)
 
-    deck = genanki.Deck(model_id, f'Japanese Vocab Deck ({mother_tongue})')
+    deck = genanki.Deck(model_id, f'Japanese Vocab Deck ({lc})')
     package = genanki.Package(deck)
 
     # Add data
@@ -81,11 +81,9 @@ def create_deck(mother_tongue):
 
     # Save deck
     os.makedirs("output", exist_ok=True)
-    output_file = f'output/japanese_vocab_{mother_tongue}.apkg'
+    output_file = f'output/japanese_vocab_{lc}.apkg'
     package.write_to_file(output_file)
     print(f"Deck created: {output_file}")
 
 if __name__ == "__main__":
     create_deck("de")
-    create_deck("en")
-    create_deck("es")
