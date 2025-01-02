@@ -38,6 +38,7 @@ jobs:
           - Includes both Reading and Listening decks.
         draft: false
         prerelease: false
+        overwrite: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
