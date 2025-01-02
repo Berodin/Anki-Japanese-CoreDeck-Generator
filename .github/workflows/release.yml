@@ -32,28 +32,16 @@ jobs:
     - name: Generate Anki Decks
       run: python scripts/generate_deck.py
 
-    # Step 6: Create GitHub Release
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v2
       with:
-        tag_name: ${{ github.ref_name }}
-        release_name: "Release ${{ github.ref_name }}"
+        files: output/*.apkg
         body: |
           This release contains the latest generated Anki decks for Japanese vocabulary learning.
           - Includes both Reading and Listening decks.
+        tag_name: ${{ github.ref_name }}
+        name: "Release ${{ github.ref_name }}"
         draft: false
         prerelease: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    # Step 7: Upload `.apkg` files as release assets
-    - name: Upload .apkg Files
-      uses: actions/upload-release-asset@v1
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: output/*.apkg
-        asset_name: "{{ basename }}"
-        asset_content_type: application/octet-stream
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
