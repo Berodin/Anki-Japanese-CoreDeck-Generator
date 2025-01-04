@@ -1,17 +1,23 @@
 <div style="text-align: center; font-size: 24px; font-family: Arial;">
-
-  <div onclick="playAudio('audio_expression')" class="tappable" style="font-size: 24px; margin-bottom: 10px;">
-    <!-- Kein Text mehr sichtbar -->
-  </div>
+  <button onclick="playAudio('audio_expression')" 
+          class="tappable" 
+          style="font-size: 24px; margin-bottom: 10px; cursor: pointer;">
+    ▶ Play
+  </button>
   <div id="audio_expression" hidden>{{ExpressionAudio}}</div>
-
 </div>
 
 <script>
 function playAudio(id) {
   const audioElement = document.getElementById(id);
   if (audioElement) {
-    audioElement.querySelector(".replay-button, .replaybutton").click();
+    const audioSource = audioElement.textContent.trim(); // Get the audio file
+    if (audioSource) {
+      const audio = new Audio(audioSource);
+      audio.play();
+    } else {
+      console.error('No audio source found in', id);
+    }
   }
 }
 </script>
