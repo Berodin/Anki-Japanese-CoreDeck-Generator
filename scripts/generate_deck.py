@@ -2,7 +2,7 @@ import genanki
 import csv
 import os
 from merge_data import merge_data
-from anki_model import get_model
+from anki_model import get_reading_listening_model, get_translation_model
 
 def create_deck(lc):
     merged_file = merge_data(lc)
@@ -76,7 +76,7 @@ def create_deck(lc):
                     fields=translation_fields
                 )
                 deck.add_note(translation_note)
-                
+
             # Add media files
             if row["sentence_audio"]:
                 sentence_audio_path = f"data/audio/{row['sentence_audio']}"
