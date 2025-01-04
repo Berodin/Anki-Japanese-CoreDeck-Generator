@@ -59,15 +59,15 @@ def create_deck(lc):
             # Translation Card
             if row.get("meaning") and row.get("sentence_translation"):
                 translation_fields = [
+                    row['meaning'],                  # Meaning
+                    row.get('sentence_translation', ''),  # Sentence Translation
                     row['expression'],              # Expression
-                    row['meaning'],                 # Meaning
                     row['reading'],                 # Reading
                     row['sentence'],                # Sentence
-                    row['sentence_kana'],           # Sentence Kana
-                    row.get('sentence_translation', ''),  # Sentence Translation
-                    f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # Sentence Audio
-                    f'[sound:{row["expression_audio"]}]' if row['expression_audio'] else '',  # Expression Audio
-                    row["image_uri"] if row["image_uri"] else ''  # ImageURI
+                    row['sentence_kana'],            # Sentence Kana
+                    f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # SentenceAudio (optional)
+                    f'[sound:{row["expression_audio"]}]',  # ExpressionAudio
+                    row['ImageURI'] if row['ImageURI'] else ''  # ImageURI
                 ]
                 translation_note = genanki.Note(
                     model=model,
