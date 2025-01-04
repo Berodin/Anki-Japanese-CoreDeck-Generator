@@ -1,27 +1,25 @@
 <div style="text-align: center; font-size: 24px; font-family: Arial;">
-  <button onclick="playAudio('audio_expression')" 
+  <button onclick="playAudio()" 
           class="tappable" 
           style="font-size: 24px; margin-bottom: 10px; cursor: pointer;">
     ▶ Play
   </button>
-  <div id="audio_expression" hidden>{{ExpressionAudio}}</div>
+  <div id="audio_expression" hidden>[sound:{{ExpressionAudio}}]</div>
 </div>
 
 <script>
-function playAudio(id) {
-  const audioElement = document.getElementById(id);
-  if (audioElement) {
-    const audioText = audioElement.textContent.trim();
-    const match = audioText.match(/\[sound:(.+?)\]/); 
-    if (match && match[1]) {
-      const audioSource = match[1];
-      const audio = new Audio(audioSource);
-      audio.play();
+function playAudio() {
+  // Direkt Anki-internes Audio-Handling nutzen
+  const audioDiv = document.getElementById('audio_expression');
+  if (audioDiv) {
+    const audioContent = audioDiv.textContent.trim(); // Textinhalt des Divs
+    if (audioContent) {
+      // Dies lässt Anki die Sounddatei abspielen
+      const audioHTML = `<span>${audioContent}</span>`;
+      document.body.insertAdjacentHTML('beforeend', audioHTML);
     } else {
-      console.error("Kein gültiger Audio-Pfad gefunden:", audioText);
+      console.error('No audio source found');
     }
-  } else {
-    console.error("Audio-Element mit ID", id, "nicht gefunden.");
   }
 }
 </script>
