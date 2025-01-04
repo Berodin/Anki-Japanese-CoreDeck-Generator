@@ -2,7 +2,7 @@ import genanki
 import csv
 import os
 from merge_data import merge_data
-from anki_model import get_reading_listening_model, get_translation_model
+from anki_model import get_reading_model, get_translation_model, get_listening_model
 
 def create_deck(lc):
     merged_file = merge_data(lc)
@@ -12,8 +12,11 @@ def create_deck(lc):
 
     reading_listening_model_id = 1607392319
     translation_model_id = 1607392320 
-    reading_listening_model = get_reading_listening_model(reading_listening_model_id, lc)
+    listening_model_id = 1607392321
+
+    reading_model  = get_reading_model(reading_listening_model_id, lc)
     translation_model = get_translation_model(translation_model_id, lc)
+    listening_model = get_listening_model(listening_model_id, lc)
 
     deck = genanki.Deck(reading_listening_model_id, f'Japanese Vocab Deck ({lc})')
     package = genanki.Package(deck)
@@ -35,7 +38,7 @@ def create_deck(lc):
                 row["image_uri"] if row["image_uri"] else ''  # ImageURI (optional)
             ]
             reading_note = genanki.Note(
-                model=reading_listening_model,
+                model=reading_model,
                 fields=reading_fields
             )
             deck.add_note(reading_note)
@@ -54,7 +57,7 @@ def create_deck(lc):
                     row["image_uri"] if row["image_uri"] else ''  # ImageURI (optional)
                 ]
                 listening_note = genanki.Note(
-                    model=reading_listening_model,
+                    model=listening_model,
                     fields=listening_fields
                 )
                 deck.add_note(listening_note)

@@ -5,17 +5,15 @@ def load_template(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         return f.read()
 
-def get_reading_listening_model(model_id, lc):
+def get_reading_model(model_id, lc):
     """Erstellt ein Anki-Modell für Reading- und Listening-Karten."""
     front_reading = load_template('templates/front_reading.html')
     back_reading = load_template('templates/back_reading.html')
-    front_listening = load_template('templates/front_listening.html')
-    back_listening = load_template('templates/back_listening.html')
     css = load_template('templates/style.css')
 
     return genanki.Model(
         model_id,
-        f'Japanese Vocab ({lc}) - Reading & Listening',
+        f'Japanese Vocab ({lc}) - Reading',
         fields=[
             {'name': 'Expression'},
             {'name': 'Meaning'},
@@ -32,11 +30,6 @@ def get_reading_listening_model(model_id, lc):
                 'name': 'Reading Card',
                 'qfmt': front_reading,
                 'afmt': back_reading,
-            },
-            {
-                'name': 'Listening Card',
-                'qfmt': front_listening,
-                'afmt': back_listening,
             },
         ],
         css=css
@@ -67,6 +60,35 @@ def get_translation_model(model_id, lc):
                 'name': 'Translation Card',
                 'qfmt': front_translation,
                 'afmt': back_translation,
+            },
+        ],
+        css=css
+    )
+
+def get_listening_model(model_id, lc):
+    front_listening = load_template('templates/front_listening.html')
+    back_listening = load_template('templates/back_listening.html')
+    css = load_template('templates/style.css')
+
+    return genanki.Model(
+        model_id,
+        f'Japanese Vocab ({lc}) - Listening',
+        fields=[
+            {'name': 'Expression'},
+            {'name': 'Meaning'},
+            {'name': 'Reading'},
+            {'name': 'Sentence'},
+            {'name': 'SentenceKana'},
+            {'name': 'SentenceTranslation'},
+            {'name': 'SentenceAudio'},
+            {'name': 'ExpressionAudio'},
+            {'name': 'ImageURI'},
+        ],
+        templates=[
+            {
+                'name': 'Listening Card',
+                'qfmt': front_listening,
+                'afmt': back_listening,
             },
         ],
         css=css
