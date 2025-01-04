@@ -11,13 +11,17 @@
 function playAudio(id) {
   const audioElement = document.getElementById(id);
   if (audioElement) {
-    const audioSource = audioElement.textContent.trim(); // Get the audio file
-    if (audioSource) {
+    const audioText = audioElement.textContent.trim();
+    const match = audioText.match(/\[sound:(.+?)\]/); 
+    if (match && match[1]) {
+      const audioSource = match[1];
       const audio = new Audio(audioSource);
       audio.play();
     } else {
-      console.error('No audio source found in', id);
+      console.error("Kein gültiger Audio-Pfad gefunden:", audioText);
     }
+  } else {
+    console.error("Audio-Element mit ID", id, "nicht gefunden.");
   }
 }
 </script>
