@@ -67,7 +67,7 @@ def create_deck(lc):
                     row['sentence_kana'],            # Sentence Kana
                     f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # SentenceAudio (optional)
                     f'[sound:{row["expression_audio"]}]',  # ExpressionAudio
-                    row['ImageURI'] if row['ImageURI'] else ''  # ImageURI
+                    row['image_uri'] if row['image_uri'] else ''  # ImageURI
                 ]
                 translation_note = genanki.Note(
                     model=model,
