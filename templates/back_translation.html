@@ -1,0 +1,33 @@
+<div style="text-align: center; font-size: 20px; font-family: Arial;">
+    <p><b>Expression:</b> {{Expression}}</p>
+    <p><b>Reading:</b> {{Reading}}</p>
+  
+    {{#Sentence}}
+      <p><b>Sentence:</b> {{Sentence}}</p>
+    {{/Sentence}}
+  
+    {{#SentenceKana}}
+      <p><b>Sentence (Kana):</b> {{SentenceKana}}</p>
+    {{/SentenceKana}}
+  
+    {{#SentenceAudio}}
+      <div onclick="playAudio('audio_sentence')" class="tappable" style="font-size: 20px; margin-top: 10px;">
+        <b>Play Sentence Audio</b>
+      </div>
+      <div id="audio_sentence" hidden>{{SentenceAudio}}</div>
+    {{/SentenceAudio}}
+  
+    {{#ImageURI}}
+      <img src="{{ImageURI}}" alt="Image for {{Expression}}" style="max-width: 100%; margin-top: 10px;">
+    {{/ImageURI}}
+  </div>
+  
+  <script>
+  function playAudio(id) {
+    const audioElement = document.getElementById(id);
+    if (audioElement) {
+      audioElement.querySelector(".replay-button, .replaybutton").click();
+    }
+  }
+  </script>
+  

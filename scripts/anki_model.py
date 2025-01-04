@@ -11,6 +11,8 @@ def get_model(model_id, lc):
     back_reading = load_template('templates/back_reading.html')
     front_listening = load_template('templates/front_listening.html')
     back_listening = load_template('templates/back_listening.html')
+    front_translation = load_template('templates/front_translation.html')
+    back_translation = load_template('templates/back_translation.html')
     css = load_template('templates/style.css')
 
     return genanki.Model(
@@ -37,6 +39,11 @@ def get_model(model_id, lc):
                 'name': 'Listening Card',
                 'qfmt': front_listening,
                 'afmt': back_listening,
+            },
+            {
+                'name': 'Translation Card',
+                'qfmt': front_translation,
+                'afmt': back_translation,
             },
         ],
         css=css

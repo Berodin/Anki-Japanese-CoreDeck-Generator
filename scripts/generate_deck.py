@@ -56,6 +56,24 @@ def create_deck(lc):
                     fields=listening_fields
                 )
                 deck.add_note(listening_note)
+            # Translation Card
+            if row.get("meaning") and row.get("sentence_translation"):
+                translation_fields = [
+                    row['expression'],              # Expression
+                    row['meaning'],                 # Meaning
+                    row['reading'],                 # Reading
+                    row['sentence'],                # Sentence
+                    row['sentence_kana'],           # Sentence Kana
+                    row.get('sentence_translation', ''),  # Sentence Translation
+                    f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # Sentence Audio
+                    f'[sound:{row["expression_audio"]}]' if row['expression_audio'] else '',  # Expression Audio
+                    row["image_uri"] if row["image_uri"] else ''  # ImageURI
+                ]
+                translation_note = genanki.Note(
+                    model=model,
+                    fields=translation_fields
+                )
+                deck.add_note(translation_note)
 
             # Add media files
             if row["sentence_audio"]:
