@@ -6,6 +6,7 @@ This project provides a Python-based system for generating custom Anki decks tai
 
 - **Reading Cards**: Focus on recognizing vocabulary, their meanings, and example sentences.
 - **Listening Cards**: Test your listening comprehension with audio playback for both expressions and example sentences.
+- **Translation Cards** Test your translation skills by showing words in your native language for you to translate to japanese.
 - **Dynamic Templates**: Easily customizable card layouts using HTML and CSS templates.
 - **Robust Data Handling**: Allows incomplete entries (e.g., missing audio or images) while still generating functional cards.
 - **Multi-language Support**: Translation files allow creating decks in multiple target languages.
@@ -66,6 +67,8 @@ This project provides a Python-based system for generating custom Anki decks tai
 │   ├── back_reading.html    # Back template for reading cards
 │   ├── front_listening.html # Front template for listening cards
 │   ├── front_reading.html   # Front template for reading cards
+│   ├── front_translation.html # Front template for translation cards
+│   ├── back_translation.html # back template for translation cards
 │   └── style.css            # Styling for Anki cards
 ├── .github/
 │   └── workflows/

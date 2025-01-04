@@ -38,7 +38,7 @@ jobs:
         files: output/*.apkg
         body: |
           This release contains the latest generated Anki decks for Japanese vocabulary learning.
-          - Includes both Reading and Listening decks.
+          - Includes Reading, Listening and Translation Cards.
         tag_name: ${{ github.ref_name }}
         name: "Release ${{ github.ref_name }}"
         draft: false
