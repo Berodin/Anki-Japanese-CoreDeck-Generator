@@ -10,10 +10,12 @@ def create_deck(lc):
         print(f"Skip deck creation: No merged file found for '{lc}'.")
         return 
 
-    model_id = 1607392319
-    model = get_model(model_id, lc)
+    reading_listening_model_id = 1607392319
+    translation_model_id = 1607392320 
+    reading_listening_model = get_reading_listening_model(reading_listening_model_id, lc)
+    translation_model = get_translation_model(translation_model_id, lc)
 
-    deck = genanki.Deck(model_id, f'Japanese Vocab Deck ({lc})')
+    deck = genanki.Deck(reading_listening_model_id, f'Japanese Vocab Deck ({lc})')
     package = genanki.Package(deck)
 
     # Add data
@@ -33,7 +35,7 @@ def create_deck(lc):
                 row["image_uri"] if row["image_uri"] else ''  # ImageURI (optional)
             ]
             reading_note = genanki.Note(
-                model=model,
+                model=reading_listening_model,
                 fields=reading_fields
             )
             deck.add_note(reading_note)
@@ -52,7 +54,7 @@ def create_deck(lc):
                     row["image_uri"] if row["image_uri"] else ''  # ImageURI (optional)
                 ]
                 listening_note = genanki.Note(
-                    model=model,
+                    model=reading_listening_model,
                     fields=listening_fields
                 )
                 deck.add_note(listening_note)
@@ -64,17 +66,17 @@ def create_deck(lc):
                     row['expression'],              # Expression
                     row['reading'],                 # Reading
                     row['sentence'],                # Sentence
-                    row['sentence_kana'],            # Sentence Kana
+                    row['sentence_kana'],           # Sentence Kana
                     f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # SentenceAudio (optional)
-                    f'[sound:{row["expression_audio"]}]',  # ExpressionAudio
-                    row['image_uri'] if row['image_uri'] else ''  # ImageURI
+                    f'[sound:{row["expression_audio"]}]' if row['expression_audio'] else '',  # ExpressionAudio
+                    row['image_uri'] if row['image_uri'] else ''  # ImageURI (optional)
                 ]
                 translation_note = genanki.Note(
-                    model=model,
+                    model=translation_model,
                     fields=translation_fields
                 )
                 deck.add_note(translation_note)
-
+                
             # Add media files
             if row["sentence_audio"]:
                 sentence_audio_path = f"data/audio/{row['sentence_audio']}"
