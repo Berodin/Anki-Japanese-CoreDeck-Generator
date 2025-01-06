@@ -110,3 +110,4 @@ def create_deck(lc):
 
 if __name__ == "__main__":
     create_deck("de")
+    create_deck("en")
