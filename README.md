@@ -1,4 +1,8 @@
-# Japanese Vocabulary Anki Deck Generator
+# Anki-Japanese-CoreDeck-Generator
+
+Credits: 
+
+The Core deck is entirely build around https://djtguide.neocities.org/anki in terms of expressions. Example Sentences can vary.
 
 This project provides a Python-based system for generating custom Anki decks tailored for Japanese vocabulary learning. The system supports creating cards with various formats such as reading and listening, including features like clickable audio playback and image support.
 
