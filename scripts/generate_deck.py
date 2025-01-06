@@ -104,7 +104,7 @@ def create_deck(lc):
 
     # Save deck
     os.makedirs("output", exist_ok=True)
-    output_file = f'output/japanese_vocab_{lc}.apkg'
+    output_file = f'output/japanese_coredeck_{lc}.apkg'
     package.write_to_file(output_file)
     print(f"Deck created: {output_file}")
 
