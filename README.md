@@ -1,10 +1,16 @@
 # Anki-Japanese-CoreDeck-Generator
 
-Credits: 
+## Credits: 
 
-The Core deck is entirely build around https://djtguide.neocities.org/anki in terms of expressions. Example Sentences can vary.
+The Core deck is entirely build around https://djtguide.neocities.org/anki in terms of expressions (not sentences).
+
+## About
 
 This project provides a Python-based system for generating custom Anki decks tailored for Japanese vocabulary learning. The system supports creating cards with various formats such as reading and listening, including features like clickable audio playback and image support.
+
+While the expression audio files are all there, I still need to implement example sentence audio for all the example sentence. My source for sentence audio is https://sentencesearch.neocities.org/ 
+
+Unfortunately not every sentence I have as an example now is represented there. So I take the expression, search on the site for good sentences and change the example sentence, kana reading and translations accordingly.
 
 ## Features
 
