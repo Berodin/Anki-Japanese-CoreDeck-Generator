@@ -21,11 +21,13 @@ def merge_data(lc):
 
     # Merge vocab data with translations
     merged_data = []
+    used_vocab = set()
     with open(translations_file, encoding='utf-8') as trans_f:
         trans_reader = csv.DictReader(trans_f)
         for row in trans_reader:
             expression = row["expression"]
             if expression in vocab_data:
+                used_vocab.add(expression)
                 vocab_entry = vocab_data[expression]
                 # Combine vocab and translation data
                 merged_entry = {
@@ -36,6 +38,11 @@ def merge_data(lc):
                 merged_data.append(merged_entry)
             else:
                 print(f"Warning: Expression '{expression}' in translations not found in vocab file.")
+
+   # Find vocab expressions not in translations
+    unused_vocab = set(vocab_data.keys()) - used_vocab
+    if unused_vocab:
+        print(f"Warning: The following expressions are in vocab but not in translations: {', '.join(unused_vocab)}")
 
     # Save merged data
     output_file = f"data/merged_{lc}.csv"
