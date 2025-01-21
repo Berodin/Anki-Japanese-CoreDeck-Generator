@@ -4,6 +4,10 @@ import os
 from merge_data import merge_data
 from anki_model import get_reading_model, get_translation_model, get_listening_model
 
+def sanitize_tags(tags):
+    """Ersetzt Leerzeichen in Tags durch Unterstriche und bereinigt sie."""
+    return [tag.replace(" ", "_").strip() for tag in tags]
+
 def create_deck(lc):
     merged_file = merge_data(lc)
     if not merged_file:
@@ -27,7 +31,7 @@ def create_deck(lc):
         for row in reader:
 
             tags = row.get("tags", "").split(";") if "tags" in row else []
-            tags = [tag.strip() for tag in tags]
+            tags = sanitize_tags(tags)
 
             # Reading Card
             reading_fields = [
