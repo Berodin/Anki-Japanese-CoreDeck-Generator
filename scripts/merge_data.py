@@ -34,6 +34,7 @@ def merge_data(lc):
                     **vocab_entry,  # Add all vocab fields
                     "meaning": row["meaning"],  # Add meaning
                     "sentence_translation": row.get("sentence_translation", ""),  # Add sentence translation
+                    "tags": vocab_entry.get("tags", "")
                 }
                 merged_data.append(merged_entry)
             else:

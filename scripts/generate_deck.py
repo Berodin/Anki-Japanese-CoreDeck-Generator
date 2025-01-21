@@ -25,6 +25,10 @@ def create_deck(lc):
     with open(merged_file, encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
+
+            tags = row.get("tags", "").split(";") if "tags" in row else []
+            tags = [tag.strip() for tag in tags]
+
             # Reading Card
             reading_fields = [
                 row['expression'],              # Expression
@@ -39,7 +43,8 @@ def create_deck(lc):
             ]
             reading_note = genanki.Note(
                 model=reading_model,
-                fields=reading_fields
+                fields=reading_fields,
+                tags=tags
             )
             deck.add_note(reading_note)
 
@@ -58,7 +63,8 @@ def create_deck(lc):
                 ]
                 listening_note = genanki.Note(
                     model=listening_model,
-                    fields=listening_fields
+                    fields=listening_fields,
+                    tags=tags
                 )
                 deck.add_note(listening_note)
             # Translation Card
@@ -76,7 +82,8 @@ def create_deck(lc):
                 ]
                 translation_note = genanki.Note(
                     model=translation_model,
-                    fields=translation_fields
+                    fields=translation_fields,
+                    tags=tags
                 )
                 deck.add_note(translation_note)
 
