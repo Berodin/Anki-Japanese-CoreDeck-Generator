@@ -8,6 +8,8 @@ The Core deck is entirely build around https://djtguide.neocities.org/anki.
 
 This project provides a Python-based system for generating custom Anki decks tailored for Japanese vocabulary learning. The system supports creating cards with various formats such as reading and listening, including features like clickable audio playback and image support.
 
+As of now there are some wrong example sentence audios.
+
 ## Features
 
 - **Reading Cards**: Focus on recognizing vocabulary, their meanings, and example sentences.
@@ -110,6 +112,7 @@ Contains the Japanese vocabulary data and details.
 | `sentence_audio`  | (Optional) Audio file for the example sentence.|
 | `expression_audio`| (Optional) Audio file for the expression.      |
 | `image_uri`       | (Optional) Image file path for the vocabulary. |
+| `tags`            | (Optional) Tags for anki filtered decks.       |
 
 ### `translations_{language code}.csv`
 Contains the translations for the respective language.
