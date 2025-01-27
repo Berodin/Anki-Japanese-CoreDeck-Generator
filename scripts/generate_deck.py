@@ -32,6 +32,7 @@ def create_deck(lc):
 
             tags = row.get("tags", "").split(";") if "tags" in row else []
             tags = sanitize_tags(tags)
+            guid = genanki.guid_for(row['expression'] + row['reading'])
 
             # Reading Card
             reading_fields = [
@@ -48,7 +49,8 @@ def create_deck(lc):
             reading_note = genanki.Note(
                 model=reading_model,
                 fields=reading_fields,
-                tags=tags
+                tags=tags,
+                guid=guid
             )
             deck.add_note(reading_note)
 
@@ -68,7 +70,8 @@ def create_deck(lc):
                 listening_note = genanki.Note(
                     model=listening_model,
                     fields=listening_fields,
-                    tags=tags
+                    tags=tags,
+                    guid=guid
                 )
                 deck.add_note(listening_note)
             # Translation Card
@@ -87,7 +90,8 @@ def create_deck(lc):
                 translation_note = genanki.Note(
                     model=translation_model,
                     fields=translation_fields,
-                    tags=tags
+                    tags=tags,
+                    guid=guid
                 )
                 deck.add_note(translation_note)
 
