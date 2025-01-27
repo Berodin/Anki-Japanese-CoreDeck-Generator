@@ -36,15 +36,15 @@ def create_deck(lc):
 
             # Reading Card
             reading_fields = [
-                row['expression'],              # Expression
-                row['meaning'],                 # Meaning
-                row['reading'],                 # Reading
-                row['sentence'],                # Sentence
-                row['sentence_kana'],           # SentenceKana
-                row.get('sentence_translation', ''),  # SentenceTranslation (optional)
-                f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # SentenceAudio (optional)
-                f'[sound:{row["expression_audio"]}]' if row['expression_audio'] else '',  # ExpressionAudio
-                row["image_uri"] if row["image_uri"] else ''  # ImageURI (optional)
+                row['expression'],
+                row['meaning'],
+                row['reading'],
+                row['sentence'],
+                row['sentence_kana'],
+                row.get('sentence_translation', ''),  # optional
+                f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # optional
+                f'[sound:{row["expression_audio"]}]' if row['expression_audio'] else '',  # optional
+                row["image_uri"] if row["image_uri"] else ''  # optional
             ]
             reading_note = genanki.Note(
                 model=reading_model,
@@ -57,15 +57,15 @@ def create_deck(lc):
             # Listening Card (only if ExpressionAudio is provided)
             if row["expression_audio"]:
                 listening_fields = [
-                    row['expression'],              # Expression
-                    row['meaning'],                 # Meaning
-                    row['reading'],                 # Reading
-                    row['sentence'],                # Sentence
-                    row['sentence_kana'],           # SentenceKana
-                    row.get('sentence_translation', ''),  # SentenceTranslation (optional)
-                    f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # SentenceAudio (optional)
-                    f'[sound:{row["expression_audio"]}]',  # ExpressionAudio
-                    row["image_uri"] if row["image_uri"] else ''  # ImageURI (optional)
+                    row['expression'],
+                    row['meaning'],
+                    row['reading'],
+                    row['sentence'],
+                    row['sentence_kana'],
+                    row.get('sentence_translation', ''),  # optional
+                    f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # optional
+                    f'[sound:{row["expression_audio"]}]',  
+                    row["image_uri"] if row["image_uri"] else ''  # optional
                 ]
                 listening_note = genanki.Note(
                     model=listening_model,
@@ -77,15 +77,15 @@ def create_deck(lc):
             # Translation Card
             if row.get("meaning") and row.get("sentence_translation"):
                 translation_fields = [
-                    row['meaning'],                  # Meaning
-                    row.get('sentence_translation', ''),  # Sentence Translation
-                    row['expression'],              # Expression
-                    row['reading'],                 # Reading
-                    row['sentence'],                # Sentence
-                    row['sentence_kana'],           # Sentence Kana
-                    f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # SentenceAudio (optional)
-                    f'[sound:{row["expression_audio"]}]' if row['expression_audio'] else '',  # ExpressionAudio
-                    row['image_uri'] if row['image_uri'] else ''  # ImageURI (optional)
+                    row['meaning'],
+                    row.get('sentence_translation', ''),
+                    row['expression'],
+                    row['reading'],
+                    row['sentence'],
+                    row['sentence_kana'],
+                    f'[sound:{row["sentence_audio"]}]' if row['sentence_audio'] else '',  # optional
+                    f'[sound:{row["expression_audio"]}]' if row['expression_audio'] else '',  # optional
+                    row['image_uri'] if row['image_uri'] else ''  # optional
                 ]
                 translation_note = genanki.Note(
                     model=translation_model,
