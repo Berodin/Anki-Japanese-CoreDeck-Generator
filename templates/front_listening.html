@@ -1,10 +1,9 @@
-<div style="text-align: center; font-size: 24px; font-family: Arial;">
-
-  <div onclick="playAudio('audio_expression')" class="tappable" style="font-size: 28px; margin-bottom: 10px;">
-    <b>Listen again</b>
-  </div>
+<div class="card">
+  <h2>Listen</h2>
+  <button class="play-button" onclick="playAudio('audio_expression')">
+    ▶ Play Audio
+  </button>
   <div id="audio_expression" hidden>{{ExpressionAudio}}</div>
-
 </div>
 
 <script>

@@ -1,7 +1,9 @@
-<div style="text-align: center; font-size: 24px; font-family: Arial;">
-    <p><b>Meaning:</b> {{Meaning}}</p>
-    {{#SentenceTranslation}}
-      <p><b>Sentence Translation:</b> {{SentenceTranslation}}</p>
-    {{/SentenceTranslation}}
-  </div>
-  
+<div class="card">
+  <h2>Meaning</h2>
+  <p><strong>{{Meaning}}</strong></p>
+
+  {{#SentenceTranslation}}
+    <h3>Sentence Translation</h3>
+    <p>{{SentenceTranslation}}</p>
+  {{/SentenceTranslation}}
+</div>

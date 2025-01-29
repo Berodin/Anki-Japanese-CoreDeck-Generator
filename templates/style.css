@@ -2,22 +2,37 @@
   font-family: Arial, sans-serif;
   font-size: 20px;
   text-align: center;
-  background-color: white;
-  color: black;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0 auto;
+  max-width: 400px; /* optional: limit width for better readability */
+  padding: 10px;
 }
 
+.expression {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.sentence {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.play-button,
 button {
   display: inline-block;
   margin: 10px;
   padding: 10px 20px;
   background-color: #007BFF;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
 }
 
+.play-button:hover,
 button:hover {
   background-color: #0056b3;
 }
@@ -32,11 +47,10 @@ button:hover {
   color: #0056b3;
 }
 
-audio {
-  margin-top: 10px;
-}
-
 img {
   margin-top: 10px;
   max-width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 2px;
 }
