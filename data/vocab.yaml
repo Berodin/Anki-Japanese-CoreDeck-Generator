@@ -38001,18 +38001,30 @@
   tags:
   - Tonari_no_Totoro
   readings:
-  - reading: いえ
+  - reading: うち
     expression_audio: 家.mp3
     meaning:
-      en: house / home
-      de: Haus / Zuhause
+      en: house / home (more personal than いえ, personal home)
+      de: Haus / Zuhause (more persönlich als いえ, trautes Heim)
     sentences:
-    - sentence: ここが私の家です。
-      sentence_kana: ここ が わたし の いえ です
+    - sentence: 家に遊びにきてください。
+      sentence_kana: うち に あそび に きて ください
       sentence_audio: 家_sentence.mp3
       translations:
-        en: This is my house.
-        de: Das ist mein Haus.
+        en: "Please come over to my house to hang out."
+        de: "Bitte komm zu mir nach Hause, um Zeit zu verbringen."
+  - reading: いえ
+    expression_audio: 家_いえ.mp3
+    meaning:
+      en: house / home (less personal than うち, house more as a structure)
+      de: Haus  (weniger persönlich als うち, Haus eher als Struktur)
+    sentences:
+    - sentence: その家に住んでいる。
+      sentence_kana: その いえ に すんで いる。
+      sentence_audio: 家_いえ_sentence.mp3
+      translations:
+        en: "I live in that house."
+        de: "Ich wohne in diesem Haus."
 - word: 家主
   tags: []
   readings:
