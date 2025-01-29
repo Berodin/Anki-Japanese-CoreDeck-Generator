@@ -1,135 +1,160 @@
-# Anki-Japanese-CoreDeck-Generator
-
-## Credits: 
-
-The Core deck is entirely build around https://djtguide.neocities.org/anki.
 
 ## About
 
-This project provides a Python-based system for generating custom Anki decks tailored for Japanese vocabulary learning. The system supports creating cards with various formats such as reading and listening, including features like clickable audio playback and image support.
+This project provides a Python-based system for generating custom Anki decks tailored for Japanese vocabulary learning. The system supports creating cards with various formats such as reading, listening, and translation, including features like clickable audio playback and image support.
 
-As of now there are some wrong example sentence audios.
+**Disclaimer**: Some example sentence audios in the dataset may be incorrect or incomplete.
 
 ## Features
 
-- **Reading Cards**: Focus on recognizing vocabulary, their meanings, and example sentences.
-- **Listening Cards**: Test your listening comprehension with audio playback for both expressions and example sentences.
-- **Translation Cards** Test your translation skills by showing words in your native language for you to translate to japanese.
-- **Dynamic Templates**: Easily customizable card layouts using HTML and CSS templates.
-- **Robust Data Handling**: Allows incomplete entries (e.g., missing audio or images) while still generating functional cards.
-- **Multi-language Support**: Translation files allow creating decks in multiple target languages.
-- **Automated Deck Building**: Generate `.apkg` files ready for import into Anki.
-- **CI/CD Integration**: GitHub Actions workflow for automated deck generation on new releases.
-
----
+- **Reading Cards**: Focus on recognizing vocabulary, their meanings, and example sentences.  
+- **Listening Cards**: Test your listening comprehension with audio playback for both expressions and example sentences.  
+- **Translation Cards**: Practice translating words from your native language to Japanese.  
+- **Dynamic Templates**: Easily customizable card layouts using HTML/CSS templates.  
+- **Robust Data Handling**: Allows incomplete entries (missing audio/images) and still generates functional cards.  
+- **Multi-language Support**: Create decks for multiple target languages by loading different translation files.  
+- **Automated Deck Building**: Generate `.apkg` files ready for import into Anki.  
+- **CI/CD Integration**: GitHub Actions workflow automatically generates new decks on each tagged release.
 
 ## Table of Contents
 
-1. [Installation](#installation)
-2. [Project Structure](#project-structure)
-3. [How to Use](#how-to-use)
-4. [Data Format](#data-format)
-5. [Customization](#customization)
-6. [Contributing](#contributing)
+1. [Installation](#installation)  
+2. [Project Structure](#project-structure)  
+3. [How to Use](#how-to-use)  
+4. [Data Format](#data-format)  
+5. [Customization](#customization)  
+6. [Contributing](#contributing)  
 7. [License](#license)
-
----
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/japanese-vocab-deck-generator.git
-   cd japanese-vocab-deck-generator
-   ```
+1. **Clone** the repository:
+    ```bash
+    git clone https://github.com/<your-username>/japanese-vocab-deck-generator.git
+    cd japanese-vocab-deck-generator
+    ```
 
-2. Install dependencies:
-   ```bash
-   pip install genanki
-   ```
+2. **Install** dependencies:
+    ```bash
+    pip install genanki pyyaml
+    ```
 
-3. (Optional) Set up a virtual environment for Python:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
----
+3. (Optional) **Set up a virtual environment**:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
 
 ## Project Structure
 
-```
+```plaintext
 .
 ├── data/
-│   ├── vocab_jp.csv         # Japanese vocabulary data
-│   ├── translations_{language codes}.csv  # Translations (e.g., de for German)
-│   ├── audio/               # Audio files for expressions and sentences
-│   └── images/              # Image files for vocabulary
+│   ├── vocab.yaml           # Japanese vocabulary data (nested YAML format)
+│   ├── audio/               # Audio files for expressions & sentences
+│   ├── images/              # Image files for vocabulary (optional)
 ├── output/                  # Generated Anki decks (.apkg)
-├── scripts/
-│   ├── generate_deck.py     # Script to generate Anki decks
-│   ├── anki_model.py        # Defines Anki card model
-│   └── merge_data.py        # Merges vocab and translation data
 ├── templates/
-│   ├── back_listening.html  # Back template for listening cards
-│   ├── back_reading.html    # Back template for reading cards
-│   ├── front_listening.html # Front template for listening cards
-│   ├── front_reading.html   # Front template for reading cards
-│   ├── front_translation.html # Front template for translation cards
-│   ├── back_translation.html # back template for translation cards
-│   └── style.css            # Styling for Anki cards
-├── .github/
-│   └── workflows/
-│       └── release.yml      # CI/CD workflow for automated deck generation
-└── README.md
+│   ├── front_reading.html
+│   ├── back_reading.html
+│   ├── front_listening.html
+│   ├── back_listening.html
+│   ├── front_translation.html
+│   ├── back_translation.html
+│   └── style.css
+├── generate_decks.py        # Script to generate Anki decks (multiple notes per reading)
+├── anki_model.py            # Defines Anki card models and loads templates
+└── .github/
+    └── workflows/
+        └── release.yml      # CI/CD workflow for automated deck generation
 ```
 
 ---
 
 ## How to Use
 
-1. Prepare the `vocab_jp.csv` and corresponding translation files (e.g., `translations_de.csv`) in the `data/` folder.
-2. Run the `generate_deck.py` script to create the decks:
+1. Prepare your vocab.yaml in data/ (nested format specifying word, readings, sentences, etc.).
+2. Run the `generate_decks.py` script to create the decks:
    ```bash
-   python scripts/generate_deck.py
+   python generate_decks.py
    ```
 3. The generated `.apkg` files will be saved in the `output/` folder.
 4. Import the `.apkg` files into Anki to start using the decks.
 
 ---
 
-## Data Format
+## Data Format 
 
-### `vocab_jp.csv`
-Contains the Japanese vocabulary data and details.
+Instead of multiple CSV files (e.g., `vocab_jp.csv`, `translations_{language}.csv`), we now use a **single YAML file** that captures multiple readings and sentences for each word. Below is an overview:
 
-| Field             | Description                                    |
-|-------------------|------------------------------------------------|
-| `expression`      | The Japanese vocabulary word.                 |
-| `reading`         | The reading of the vocabulary word in kana.   |
-| `sentence`        | An example sentence using the vocabulary.     |
-| `sentence_kana`   | The kana reading of the example sentence.     |
-| `sentence_audio`  | (Optional) Audio file for the example sentence.|
-| `expression_audio`| (Optional) Audio file for the expression.      |
-| `image_uri`       | (Optional) Image file path for the vocabulary. |
-| `tags`            | (Optional) Tags for anki filtered decks.       |
+### `vocab.yaml` (Nested Format)
 
-### `translations_{language code}.csv`
-Contains the translations for the respective language.
+Each entry in `vocab.yaml` is an object with the following structure:
 
-| Field             | Description                                    |
-|-------------------|------------------------------------------------|
-| `expression`      | The Japanese vocabulary word.                 |
-| `meaning`         | The meaning of the word in the target language.|
-| `sentence_translation` | The translation of the example sentence.    |
+```yaml
+- word: <string>
+  tags:
+    - <string>
+    - <string>
+  readings:
+    - reading: <string>
+      expression_audio: <string> (optional)
+      meaning:
+        en: <string>
+        de: <string> 
+        # More language codes as needed
+      sentences:
+        - sentence: <string> (example sentence)
+          sentence_kana: <string> (kana version of the sentence)
+          sentence_audio: <string> (optional audio for the sentence)
+          translations:
+            en: <string> (translation of the sentence in English)
+            de: <string> (translation of the sentence in German)
+            # More language codes as needed
+    - ... # More readings
+- ... # More word objects
+```
+### Top-Level Fields
 
-**Note**: All files must use consistent formatting.
+| Field | Type               | Description                                                                  |
+|------ |--------------------|------------------------------------------------------------------------------|
+| `word` | String            | The headword or dictionary form, e.g. 「ああ」 or 「開く」.                   |
+| `tags` | List of Strings   | (Optional) Tags for categorizing or filtering in Anki (e.g., `JLPT_N5`).      |
+| `readings` | List of Objects | One or more readings for this word (see below).                            |
+
+---
+
+## `readings` List
+
+Each item in the `readings` array provides:
+
+| Field              | Type               | Description                                                                                          |
+|--------------------|--------------------|------------------------------------------------------------------------------------------------------|
+| `reading`          | String             | Specific reading for the word, e.g. 「ああ」 or 「ひらく」.                                           |
+| `expression_audio` | String (optional)  | Filename of the audio for this reading (e.g., `ああ.mp3`).                                           |
+| `meaning`          | Dict               | Key-value pairs for each language code (e.g., `en`, `de`) to store the reading’s meaning.           |
+| `sentences`        | List of Objects    | Zero or more example sentences (see below) illustrating this reading.                               |
+
+---
+
+## `sentences` List
+
+Each sentence object may include:
+
+| Field            | Type               | Description                                                                                          |
+|------------------|--------------------|------------------------------------------------------------------------------------------------------|
+| `sentence`       | String             | Example sentence in Japanese.                                                                        |
+| `sentence_kana`  | String             | Kana version of the above sentence.                                                                  |
+| `sentence_audio` | String (optional)  | Filename of the audio for this sentence (e.g., `ああ_sentence.mp3`).                                 |
+| `translations`   | Dict               | Key-value pairs for each language code (e.g., `en`, `de`), storing the sentence’s translation.       |
+
 
 ---
 
 ## Customization
 
-You can modify card templates in the `templates/` folder and the Python scripts in the `scripts/` folder to customize the output decks.
+Templates can be edited in templates/ if you want to change the HTML/CSS of the Anki cards.
+Models (Reading, Listening, Translation) are defined in anki_model.py.
 
 ---
 
