@@ -3,7 +3,20 @@
 
 This project provides a Python-based system for generating custom Anki decks tailored for Japanese vocabulary learning. The system supports creating cards with various formats such as reading, listening, and translation, including features like clickable audio playback and image support.
 
-**Disclaimer**: Some example sentence audios in the dataset may be incorrect or incomplete.
+**Disclaimer**: Some example sentence audios in the dataset may be incorrect or incomplete. I am fixing those over the time. 
+
+Unfortunately Anki doesn't seem to overwrite media files but instead adds another media files with a GUID but it doesn't get used as mentioned in:
+https://forums.ankiweb.net/t/anki-import-images-card-references-are-renamed-with-appendix/37078
+https://forums.ankiweb.net/t/import-media-in-importer-without-updating-notes/42650/5
+
+This means: When you import newer deck versions, the new media files aren't updated in your existing anki notes.
+
+My solution was to delete the audio files from collection.media content. 
+Windows: %appdata%\Anki2\"user"\collection.media
+
+This folder contains all used media files. When the audio files are deleted, they are getting reimported when you import the new deck. 
+
+I don't have a way for ankidroid only so this involves using anki on a desktop pc.
 
 ## Features
 
