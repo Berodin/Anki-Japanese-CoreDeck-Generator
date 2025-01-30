@@ -3322,14 +3322,14 @@
     expression_audio: すっかり.mp3
     meaning:
       en: completely
-      de: '"völlig"'
+      de: völlig
     sentences:
     - sentence: 買い物をすっかり忘れていた。
       sentence_kana: かいもの を すっかり わすれて いた
       sentence_audio: すっかり_sentence.mp3
       translations:
         en: I completely forgot to shop.
-        de: '"Ich habe völlig vergessen'
+        de: Ich habe das Einkaufen völlig vergessen.
 - word: すっきり
   tags: []
   readings:
