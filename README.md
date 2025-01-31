@@ -15,9 +15,10 @@ This means: When you import newer deck versions, the new media files aren't upda
 
 My solution was to delete the audio files from collection.media content. 
 
-Windows: %appdata%\Anki2\"user"\collection.media
+Windows: `%appdata%\Anki2\<ankiuser>\collection.media`
 
-This folder contains all used media files. When the audio files are deleted, they are getting reimported when you import the new deck. 
+This folder contains all used media files. When the audio files are deleted, they are getting reimported when you import the new deck.
+Important: First delete the media files, then import the new deck.
 
 I don't have a way for ankidroid only so this involves using anki on a desktop pc.
 
