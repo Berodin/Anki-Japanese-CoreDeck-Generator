@@ -80,6 +80,8 @@ class NoteFactory:
         expression_audio = reading_data.get("expression_audio", "")
         meaning_dict = reading_data.get("meaning", {})
         meaning_for_lang = meaning_dict.get(lang_code, "")
+        explanation_dict = reading_data.get("explanation", {}) 
+        explanation_for_lang = explanation_dict.get(lang_code, "")
 
         # Collect all sentences for this reading
         sentences = reading_data.get("sentences", [])
@@ -127,7 +129,8 @@ class NoteFactory:
             joined_sentence_translation,        # 5: SentenceTranslation
             f'[sound:{final_sentence_audio}]' if final_sentence_audio else '',  # 6: SentenceAudio
             f'[sound:{expression_audio}]' if expression_audio else '',          # 7: ExpressionAudio
-            ''  # 8: ImageURI (not in nested structure unless you add one)
+            '',  # 8: ImageURI 
+            explanation_for_lang
         ]
         reading_note = genanki.Note(
             model=self.reading_model,
@@ -148,7 +151,8 @@ class NoteFactory:
                 joined_sentence_translation,
                 f'[sound:{final_sentence_audio}]' if final_sentence_audio else '',
                 f'[sound:{expression_audio}]',
-                ''
+                '',
+                explanation_for_lang
             ]
             listening_note = genanki.Note(
                 model=self.listening_model,
@@ -169,7 +173,8 @@ class NoteFactory:
                 joined_sentence_kana,              # 5: SentenceKana
                 f'[sound:{final_sentence_audio}]' if final_sentence_audio else '',
                 f'[sound:{expression_audio}]' if expression_audio else '',
-                ''
+                '',
+                explanation_for_lang
             ]
             translation_note = genanki.Note(
                 model=self.translation_model,

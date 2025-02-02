@@ -15491,8 +15491,11 @@
   - reading: くださる
     expression_audio: 下さる.mp3
     meaning:
-      en: give (respectfully)
-      de: geben (höflich)
+      en: give
+      de: geben
+    explanation:
+      en: "下さる (kudasaru) is the honorific form of くれる (kureru) and is used when a higher-status person gives something to the speaker."
+      de: "下さる (kudasaru) ist die höfliche Form von くれる (kureru) und wird verwendet, wenn eine höhergestellte Person etwas gibt."
     sentences:
     - sentence: 先生が手紙を下さいました。
       sentence_kana: せんせい が てがみ を くださいました
