@@ -340,6 +340,9 @@
     meaning:
       en: so much / such
       de: so sehr / solch
+    explanation:
+      en: "あんなに refers to something distant from both the speaker and listener, often emphasizing surprise or admiration."
+      de: "あんなに bezieht sich auf etwas, das weder beim Sprecher noch beim Zuhörer ist, oft mit einer Note von Überraschung oder Bewunderung."
     sentences:
     - sentence: あんなにいい人はいません。
       sentence_kana: あんなに いい ひと は いません
@@ -734,6 +737,9 @@
     meaning:
       en: to come / to be (honorific)
       de: kommen / sein (ehrerbietig)
+    explanation:
+      en: "いらっしゃる is an honorific verb used instead of 来る, 行く, or いる when referring to someone of higher status."
+      de: "いらっしゃる ist ein ehrerbietiges Verb, das anstelle von 来る, 行く oder いる für eine höhergestellte Person verwendet wird."
     sentences:
     - sentence: お客様がいらっしゃいました。
       sentence_kana: おきゃくさま が いらっしゃいました
@@ -1263,6 +1269,9 @@
     meaning:
       en: you (informal)
       de: du (informell)
+    explanation:
+      en: "お前 is an informal and sometimes rude way to say 'you'. It is often used among close friends, in anime, or by men in casual speech."
+      de: "お前 ist eine informelle und teils unhöfliche Anrede für 'du'. Es wird häufig unter engen Freunden, in Anime oder von Männern in lockerer Sprache verwendet."
     sentences:
     - sentence: お前の言うことは信じられない。
       sentence_kana: おまえ の いう こと は しんじられ ない
@@ -2549,6 +2558,9 @@
     meaning:
       en: this way
       de: so / auf diese Weise
+    explanation:
+      en: "そう describes something in the listener's way or something that was just mentioned."
+      de: "そう beschreibt etwas, das sich auf den Gesprächspartner oder eine vorherige Aussage bezieht."
     sentences:
     - sentence: こう小さい字は読めない。
       sentence_kana: こう ちいさい じ は よめない
@@ -2810,6 +2822,9 @@
     meaning:
       en: so much
       de: so sehr
+    explanation:
+      en: "こんなに refers to something close to the speaker in amount, degree, or intensity."
+      de: "こんなに bezieht sich auf etwas, das sich in Menge oder Intensität nahe beim Sprecher befindet."
     sentences:
     - sentence: こんなに面白い本は初めて読んだ。
       sentence_kana: こんなに おもしろい ほん は はじめて よんだ
@@ -3429,6 +3444,10 @@
     meaning:
       en: to do
       de: machen / tun
+    explanation:
+      en: "する is the general verb for 'to do' and is commonly used with nouns to form compound verbs (e.g., 勉強する, 運動する)."
+      de: "する ist das allgemeine Verb für 'machen' und wird oft mit Nomen kombiniert, um zusammengesetzte Verben zu bilden (z. B. 勉強する, 運動する)."
+      sentences:
     sentences:
     - sentence: 友達と一緒に宿題をした。
       sentence_kana: ともだち と いっしょ に しゅくだい を した
@@ -3643,6 +3662,9 @@
     meaning:
       en: so / that's right
       de: so / das stimmt
+    explanation:
+      en: "こう refers to something in the speaker's way or manner, describing actions or states close to them."
+      de: "こう beschreibt etwas, das in der Nähe des Sprechers passiert oder in seiner Art und Weise geschieht."
     sentences:
     - sentence: 私もそう思います。
       sentence_kana: わたし も そう おもいます
@@ -3877,6 +3899,9 @@
     meaning:
       en: so much
       de: so sehr
+    explanation:
+      en: "そんなに refers to something in relation to the listener or something previously mentioned."
+      de: "そんなに beschreibt etwas, das sich auf den Gesprächspartner oder eine zuvor genannte Situation bezieht."
     sentences:
     - sentence: 一度にそんなにたくさんはできない。
       sentence_kana: いちど に そんなに たくさん は できない
@@ -7532,6 +7557,9 @@
     meaning:
       en: to do / to perform
       de: machen / tun
+    explanation:
+      en: "やる is more casual than する and often used for physical actions, informal speech, or when talking about hobbies and casual tasks."
+      de: "やる ist informeller als する und wird häufig für physische Handlungen, lockere Sprache oder Hobbys verwendet."
     sentences:
     - sentence: 一緒に宿題をやろう。
       sentence_kana: いっしょ に しゅくだい を やろう
