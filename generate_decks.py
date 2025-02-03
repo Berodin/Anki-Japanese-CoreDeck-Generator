@@ -112,10 +112,7 @@ class NoteFactory:
 
         # For 'SentenceAudio', we might just pick the FIRST one, if any
         final_sentence_audio = sentence_audio_list[0] if sentence_audio_list else ""
-
-        # Build unique GUID for each reading
-        guid = genanki.guid_for(word_str + reading_str + lang_code)
-
+        
         # Prepare a list of notes to return
         notes = []
 
@@ -132,11 +129,12 @@ class NoteFactory:
             '',  # 8: ImageURI 
             explanation_for_lang # 9: Explanation
         ]
+        reading_guid = genanki.guid_for(word_str + reading_str + lang_code + "reading")
         reading_note = genanki.Note(
             model=self.reading_model,
             fields=reading_fields,
             tags=tags,
-            guid=guid
+            guid=reading_guid
         )
         notes.append(reading_note)
 
@@ -154,11 +152,12 @@ class NoteFactory:
                 '',
                 explanation_for_lang
             ]
+            listening_guid = genanki.guid_for(word_str + reading_str + lang_code + "listening")
             listening_note = genanki.Note(
                 model=self.listening_model,
                 fields=listening_fields,
                 tags=tags,
-                guid=guid
+                guid=listening_guid
             )
             notes.append(listening_note)
 
@@ -176,11 +175,12 @@ class NoteFactory:
                 '', # 8: ImageURI 
                 explanation_for_lang # 9: Explanation
             ]
+            translation_guid = genanki.guid_for(word_str + reading_str + lang_code + "translation")
             translation_note = genanki.Note(
                 model=self.translation_model,
                 fields=translation_fields,
                 tags=tags,
-                guid=guid
+                guid=translation_guid
             )
             notes.append(translation_note)
 

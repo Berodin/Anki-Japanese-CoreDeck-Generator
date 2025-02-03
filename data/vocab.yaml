@@ -7098,6 +7098,9 @@
     meaning:
       en: if
       de: wenn
+    explanation:
+      en: "もし introduces a hypothetical situation and is often used with conditional expressions like たら or なら."
+      de: "もし leitet eine hypothetische Situation ein und wird oft mit Konditionalformen wie たら oder なら verwendet."
     sentences:
     - sentence: もし雨が降ったら、行きません。
       sentence_kana: もし あめ が ふったら いきません
@@ -7114,6 +7117,9 @@
     meaning:
       en: maybe
       de: vielleicht
+    explanation:
+      en: "もしかしたら indicates possibility or uncertainty and is often used with かもしれない to express speculation."
+      de: "もしかしたら drückt Möglichkeit oder Unsicherheit aus und wird oft mit かもしれない für Vermutungen verwendet."
     sentences:
     - sentence: もしかしたら来年転勤になるかも知れない。
       sentence_kana: もしかしたら らいねん てんきん に なる かも しれない
@@ -7462,6 +7468,9 @@
     meaning:
       en: slightly / somewhat
       de: etwas / ein wenig
+    explanation:
+      en: "やや is used to indicate a slight degree of something, often in formal or written contexts."
+      de: "やや drückt eine geringe Intensität aus und wird häufig in formellen oder schriftlichen Kontexten verwendet."
     sentences:
     - sentence: この服、私にはやや小さいみたい。
       sentence_kana: この ふく わたし に は やや ちいさい みたい
