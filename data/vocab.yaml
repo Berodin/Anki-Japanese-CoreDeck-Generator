@@ -3858,6 +3858,9 @@
     meaning:
       en: soon / it's about time
       de: bald / es ist an der Zeit
+    explanation:
+      en: "そろそろ is used when something is expected to happen soon and implies a feeling of 'it's about time'. It often suggests taking action."
+      de: "そろそろ wird verwendet, wenn etwas bald geschehen wird und vermittelt das Gefühl von 'es ist an der Zeit'. Oft wird es benutzt, um eine Handlung einzuleiten."
     sentences:
     - sentence: そろそろ始めましょうか。
       sentence_kana: そろそろ はじめましょう か
@@ -7077,6 +7080,8 @@
     meaning:
       en: soon
       de: bald
+      en: "もうじき means 'very soon' and is often used when something is just around the corner. It is slightly more informal than 間も無く."
+      de: "もうじき bedeutet 'sehr bald' und wird oft verwendet, wenn etwas unmittelbar bevorsteht. Es ist etwas informeller als 間も無く."
     sentences:
     - sentence: 彼はもうじき父親になります。
       sentence_kana: かれ は もうじき ちちおや に なります
@@ -18929,6 +18934,9 @@
     meaning:
       en: soon
       de: bald
+    explanation:
+      en: "今に is used when something is expected to happen soon, but with a sense of inevitability. It often implies a natural consequence."
+      de: "今に wird verwendet, wenn etwas bald passieren wird, oft mit einem Gefühl der Unvermeidlichkeit. Es deutet eine natürliche Folge an."
     sentences:
     - sentence: あなたも今に分かるでしょう。
       sentence_kana: あなた も いまに わかる でしょう
@@ -84566,6 +84574,10 @@
     meaning:
       en: soon
       de: bald / in Kürze
+    explanation:
+      en: "間も無く means 'very soon' and is often used for scheduled events or something that is about to happen in a short time."
+      de: "間も無く bedeutet 'in Kürze' und wird oft für geplante Ereignisse oder etwas verwendet, das in naher Zukunft geschehen wird."
+    sentences:
     sentences:
     - sentence: あの飛行機は間も無く着陸しますね。
       sentence_kana: あの ひこうき は まもなく ちゃくりく します ね
