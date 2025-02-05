@@ -25944,15 +25944,18 @@
   - reading: きく
     expression_audio: 利く.mp3
     meaning:
-      en: to work effectively
-      de: wirken
+      en: to be effective / to function
+      de: wirken / funktionieren
+    explanation:
+      en: "利く means 'to be effective' and is often used with medicine, abilities, or senses."
+      de: "利く bedeutet 'wirken, effektiv sein' und wird oft für Medikamente, Sinne oder Fähigkeiten verwendet."
     sentences:
     - sentence: 彼女は気が利いている。
       sentence_kana: かのじょ は き が きいて いる
       sentence_audio: 利く_sentence.mp3
       translations:
-        en: She has good intuition.
-        de: Sie hat einen guten Instinkt.
+        en: She is attentive.
+        de: Sie ist aufmerksam.
 - word: 利口
   tags: []
   readings:
