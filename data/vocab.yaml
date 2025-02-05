@@ -24204,6 +24204,9 @@
     meaning:
       en: condition
       de: Zustand
+    explanation:
+      en: "具合 refers to the condition or state of a person, object, or situation. It can describe health, functionality, or suitability."
+      de: "具合 beschreibt den Zustand oder die Verfassung einer Person, eines Objekts oder einer Situation. Es kann sich auf Gesundheit, Funktionalität oder Passform beziehen."
     sentences:
     - sentence: 今日は体の具合が悪いです。
       sentence_kana: きょう は からだ の ぐあい が わるい です
@@ -24701,6 +24704,9 @@
     meaning:
       en: cold
       de: kalt
+    explanation:
+      en: "冷たい describes something physically cold to the touch, such as objects, drinks, or a person's demeanor."
+      de: "冷たい beschreibt etwas, das sich physisch kalt anfühlt, z. B. Gegenstände, Getränke oder das Verhalten einer Person."
     sentences:
     - sentence: 冷たい飲み物をください。
       sentence_kana: つめたい のみもの を ください
@@ -38414,8 +38420,11 @@
   - reading: さむい
     expression_audio: 寒い.mp3
     meaning:
-      en: cold (weather)
-      de: kalt (Wetter)
+      en: cold 
+      de: kalt
+    explanation:
+      en: "寒い is used to describe cold weather or air temperature. It is not used for objects."
+      de: "寒い wird verwendet, um kaltes Wetter oder die Umgebungstemperatur zu beschreiben. Es wird nicht für Gegenstände benutzt."
     sentences:
     - sentence: この部屋は寒いです。
       sentence_kana: この へや は さむい です
