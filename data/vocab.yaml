@@ -22279,18 +22279,36 @@
   tags:
   - Tonari_no_Totoro
   readings:
-  - reading: ね
-    expression_audio: 値.mp3
+  - reading: あたい
+    expression_audio: 値_あたい.mp3
     meaning:
-      en: value
-      de: Wert
+      en: numerical value
+      de: Zahlenwert
+    explanation:
+      en: "あたい refers to numerical values, often in mathematical or programming contexts."
+      de: "(あたい bezeichnet numerische Werte und wird häufig in mathematischen oder programmierbezogenen Kontexten verwendet."
     sentences:
     - sentence: xの値を求めなさい。
       sentence_kana: えっくす の あたい を もとめなさい
-      sentence_audio: 値_sentence.mp3
+      sentence_audio: 値_あたい_sentence.mp3
       translations:
         en: Calculate the value of x.
         de: Berechne den Wert von x.
+  - reading: ね
+    expression_audio: 値_ね.mp3
+    meaning:
+      en: value
+      de: Wert
+    explanation:
+      en: "ね is used in economic and market-related contexts, often appearing in words like 値段 (nedan, 'price')."
+      de: "ね wird in wirtschaftlichen und preisbezogenen Kontexten verwendet und kommt häufig in Wörtern wie 値段 (nedan, 'Preis') vor."
+    sentences:
+    - sentence: この値段は税込ですか？
+      sentence_kana: この ねだん は ぜいこみ です か
+      sentence_audio: 値_ね_sentence.mp3
+      translations:
+        en: Is this price tax included?
+        de: Ist dieser Preis inklusive Steuern?
 - word: 値する
   tags: []
   readings:
