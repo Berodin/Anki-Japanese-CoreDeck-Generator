@@ -28904,6 +28904,9 @@
     meaning:
       en: friend
       de: Freund
+    explanation:
+      en: "友 means 'friend' but is mostly used in literary or formal expressions. In daily conversation, 友達 (ともだち) is more common."
+      de: "友 bedeutet 'Freund', wird aber eher in literarischen oder formellen Ausdrücken verwendet. Im Alltag benutzt man häufiger 友達 (ともだち)."
     sentences:
     - sentence: 持つべきものは友よね。
       sentence_kana: もつべき もの は とも よ ね
@@ -29414,8 +29417,11 @@
   - reading: とる
     expression_audio: 取る.mp3
     meaning:
-      en: to take
-      de: nehmen
+      en: to take / to get / to obtain
+      de: nehmen / bekommen / erzielen
+    explanation:
+      en: "取る generally means 'to take', but it can also mean 'to obtain' or 'to achieve' depending on the context, such as earning a score, taking a break, or getting a certificate."
+      de: "取る bedeutet grundsätzlich 'nehmen', kann aber je nach Kontext auch 'bekommen' oder 'erzielen' bedeuten, z. B. eine Note erzielen, eine Pause nehmen oder ein Zertifikat erhalten."
     sentences:
     - sentence: テストでいい点を取った。
       sentence_kana: てすと で いい てん を とった
