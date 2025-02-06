@@ -25945,7 +25945,7 @@
     expression_audio: 利く.mp3
     meaning:
       en: to be effective / to function
-      de: wirken / funktionieren
+      de: funktionieren / nützlich sein
     explanation:
       en: "利く means 'to be effective' and is often used with medicine, abilities, or senses."
       de: "利く bedeutet 'wirken, effektiv sein' und wird oft für Medikamente, Sinne oder Fähigkeiten verwendet."
@@ -27002,6 +27002,9 @@
     meaning:
       en: to be effective
       de: wirken
+    explanation:
+      en: "効く refers to something having an actual effect, often used for medicine, treatments, or actions that cause a noticeable change."
+      de: "効く bezieht sich darauf, dass etwas eine tatsächliche Wirkung hat. Es wird oft für Medikamente, Behandlungen oder Handlungen verwendet, die eine spürbare Veränderung bewirken."
     sentences:
     - sentence: この薬はあまりよく効かないよ。
       sentence_kana: この くすり は あまり よく きかない よ
