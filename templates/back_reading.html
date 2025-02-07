@@ -1,40 +1,68 @@
 <div class="card">
-  <h2 class="expression tappable" onclick="playAudio('audio_expression')">
-    {{Expression}}
-  </h2>
+  {{#Furigana}}
+    <div class="expression-wrapper">
+      <h2 class="expression plain-expression tappable" onclick="playAudio('audio_expression')">
+        {{Expression}}
+      </h2>
+      <h2 class="expression furigana-expression tappable" style="display: none;" onclick="playAudio('audio_expression')">
+        {{Furigana}}
+      </h2>
+    </div>
+  {{/Furigana}}
+  {{^Furigana}}
+    <h2 class="expression expression-no-furigana tappable" onclick="playAudio('audio_expression')">
+      {{Expression}}
+    </h2>
+    <p><strong>Reading:</strong> {{Reading}}</p>
+  {{/Furigana}}
+
   <div id="audio_expression" hidden>{{ExpressionAudio}}</div>
 
   <hr>
 
   <p><strong>Meaning:</strong> {{Meaning}}</p>
-  <p><strong>Reading:</strong> {{Reading}}</p>
 
   {{#Sentence}}
-    <hr>
-    <div class="sentence tappable" onclick="playAudio('audio_sentence')">
+  <hr>
+  <div class="sentence-wrapper">
+    <p class="sentence plain-sentence tappable" onclick="playAudio('audio_sentence')">
       {{Sentence}}
-    </div>
-    <div id="audio_sentence" hidden>{{SentenceAudio}}</div>
-  {{/Sentence}}
-
-  {{#SentenceKana}}
-    <p><strong>Sentence (Kana):</strong> {{SentenceKana}}</p>
-  {{/SentenceKana}}
+    </p>
+    {{#SentenceFurigana}}
+      <p class="sentence furigana-sentence tappable" style="display: none;" onclick="playAudio('audio_sentence')">
+        {{SentenceFurigana}}
+      </p>
+    {{/SentenceFurigana}}
+    {{^SentenceFurigana}}
+      {{#SentenceKana}}
+        <p class="sentence kana-sentence tappable" style="display: none;" onclick="playAudio('audio_sentence')">
+          {{SentenceKana}}
+        </p>
+      {{/SentenceKana}}
+    {{/SentenceFurigana}}
+  </div>
+  <div id="audio_sentence" hidden>{{SentenceAudio}}</div>
+{{/Sentence}}
 
   {{#SentenceTranslation}}
     <p><strong>Sentence Translation:</strong> {{SentenceTranslation}}</p>
   {{/SentenceTranslation}}
-
 
   {{#Explanation}}
     <div style="border-top: 2px solid; margin-top: 15px; padding-top: 10px; text-align: left;">
       <b>Explanation:</b> {{Explanation}}
     </div>
   {{/Explanation}}
-  
+
   {{#ImageURI}}
     <img src="{{ImageURI}}" alt="Image for {{Expression}}">
   {{/ImageURI}}
+
+  {{#Furigana}}
+    <div style="text-align: center; margin-top: 15px;">
+      <button type="button" onclick="toggleFurigana()">Toggle Furigana</button>
+    </div>
+  {{/Furigana}}
 </div>
 
 <script>
@@ -44,4 +72,46 @@ function playAudio(id) {
     audioElement.querySelector(".replay-button, .replaybutton").click();
   }
 }
+
+function toggleFurigana() {
+    const plainExpression = document.querySelector('.plain-expression');
+    const furiganaExpression = document.querySelector('.furigana-expression');
+    const plainSentence = document.querySelector('.plain-sentence');
+    const furiganaSentence = document.querySelector('.furigana-sentence');
+    const kanaSentence = document.querySelector('.kana-sentence');
+
+    // Expression-Furigana Toggle
+    if (plainExpression && furiganaExpression) {
+      if (furiganaExpression.style.display === 'none') {
+        furiganaExpression.style.display = 'block';
+        plainExpression.style.display = 'none';
+      } else {
+        furiganaExpression.style.display = 'none';
+        plainExpression.style.display = 'block';
+      }
+    }
+
+    // Sentence Toggle (Furigana oder Kana)
+    if (plainSentence) {
+      if (furiganaSentence && furiganaSentence.style.display === 'none') {
+        furiganaSentence.style.display = 'block';
+        plainSentence.style.display = 'none';
+        if (kanaSentence) kanaSentence.style.display = 'none'; // Kana verstecken
+      } else if (furiganaSentence && furiganaSentence.style.display === 'block') {
+        furiganaSentence.style.display = 'none';
+        plainSentence.style.display = 'block';
+        if (kanaSentence) kanaSentence.style.display = 'block'; // Kana wieder anzeigen
+      } else if (!furiganaSentence && kanaSentence) {
+        // Falls es KEIN Furigana gibt, nur Kana toggeln
+        if (kanaSentence.style.display === 'none') {
+          kanaSentence.style.display = 'block';
+          plainSentence.style.display = 'none';
+        } else {
+          kanaSentence.style.display = 'none';
+          plainSentence.style.display = 'block';
+        }
+      }
+    }
+}
+
 </script>

@@ -54,3 +54,13 @@ img {
   border-radius: 4px;
   padding: 2px;
 }
+ruby {
+  display: ruby;
+}
+
+rt {
+  font-size: 0.6em;
+  line-height: 1.5;
+  padding-bottom: 0px; 
+  padding-top: 8px;
+}

@@ -1,8 +1,129 @@
 import os
 import yaml
 import genanki
-
 from anki_model import AnkiModelFactory
+from sudachipy import tokenizer
+from sudachipy import dictionary
+import xml.etree.ElementTree as ET
+import jaconv
+import re
+
+class FuriganaGenerator:
+    """
+    This class generates Furigana (phonetic readings) for Japanese words and sentences.
+    It uses:
+    - SudachiPy for morphological analysis (breaking down words into components)
+    - JMdict for dictionary-based readings
+
+    Responsibilities:
+    - Check if a word contains Kanji
+    - Load JMdict to map Kanji words to readings
+    - Generate Furigana for individual words
+    - Annotate full sentences with Furigana while ensuring accurate readings
+    """
+    
+    def __init__(self, jmdict_path="JMdict_e.xml"):
+        """
+        Initializes the Furigana generator.
+
+        - jmdict_path: Path to the JMdict XML file, which contains Japanese words and readings.
+        """
+        self.tokenizer_obj = dictionary.Dictionary().create() # Initialize SudachiPy tokenizer
+        self.mode = tokenizer.Tokenizer.SplitMode.C  # Context-based tokenization
+        self.cache = {} # Initialize cache for storing results
+        self.word_dict = self.load_jmdict(jmdict_path) # Load dictionary data from JMdict
+
+    def contains_kanji(self, text):
+        """
+        Checks if the given text contains any Kanji characters.
+
+        - Returns True if at least one Kanji character is found, otherwise False.
+        """
+        return any("\u4e00" <= char <= "\u9faf" for char in text)
+
+    def load_jmdict(self, file_path):
+        """
+        Loads the JMdict XML file and stores Kanji words with their possible readings.
+
+        - Returns a dictionary where keys are Kanji words, and values are lists of readings.
+        """
+        if not os.path.exists(file_path):
+            print(f"⚠️ JMdict file not found: {file_path}")
+            return {}
+        
+        tree = ET.parse(file_path) 
+        root = tree.getroot()
+        word_dict = {} # Initialize dictionary to store words and readings
+
+        for entry in root.findall("entry"): # Iterate over each dictionary entry
+            for kanji in entry.findall("k_ele"): # Find kanji elements
+                kanji_word = kanji.find("keb").text # Extract kanji word
+                readings = [re.find("reb").text for re in entry.findall("r_ele")] # Extract possible readings
+                word_dict[kanji_word] = readings  # Store readings in dictionary
+
+        return word_dict # Return dictionary containing word-readings mapping
+
+    def generate_furigana_word(self, word, target_reading=None):
+        """
+        Returns Furigana annotation for a given word.
+        - If target_reading is provided, it will be used explicitly.
+        - Otherwise, the reading is retrieved from JMdict.
+        """
+        if target_reading:
+            return f"<ruby>{word}<rt>{target_reading}</rt></ruby>" # Return Ruby HTML tag
+        readings = self.word_dict.get(word, []) # Retrieve readings from JMdict
+        if readings:
+            return f"<ruby>{word}<rt>{'/'.join(readings)}</rt></ruby>" # Format readings as Ruby annotation
+        return word  # If no readings found, return word unchanged
+
+    def generate_furigana_sentence_morph(self, sentence, sentence_kana_clean):
+        """
+        Tokenizes a Japanese sentence and applies Furigana annotations.
+        - Uses SudachiPy for tokenization and phonetic readings.
+        - Matches readings to sentence_kana_clean for accuracy.
+        """
+        tokens = self.tokenizer_obj.tokenize(sentence, self.mode) # Tokenize sentence using SudachiPy
+        annotated_tokens = [] # List to store annotated tokens
+
+        kana_index = 0 # Index in the sentence_kana_clean string
+        for token in tokens: # Iterate over each token from SudachiPy
+            surface = token.surface() # Extract tokenized word (surface form)
+            if self.contains_kanji(surface): # Check if token contains Kanji
+                computed = jaconv.kata2hira(token.reading_form()) if token.reading_form() else "" # Convert reading to Hiragana
+                if kana_index < len(sentence_kana_clean): # Ensure we are within sentence bounds
+                    expected = sentence_kana_clean[kana_index:kana_index+len(computed)] # Extract expected reading
+                else: 
+                    expected = computed   # Fallback to computed reading if index out of range
+                
+                reading_to_use = expected if expected and expected != computed else computed  # Choose correct reading
+
+                # Erzeuge Ruby-Markup für das Token.
+                annotated_token = f"<ruby>{surface}<rt>{reading_to_use}</rt></ruby>"  # Format with Ruby markup
+                annotated_tokens.append(annotated_token) # Append to list
+                kana_index += len(expected) if expected else len(computed) # Update kana index
+            else:
+                annotated_tokens.append(surface) # Append non-Kanji token unchanged
+                kana_index += len(surface) # Update kana index
+        return "".join(annotated_tokens) # Return fully annotated sentence
+
+    def generate_furigana_sentence(self, sentence, sentence_kana, target_word, target_reading):
+        """
+        Annotates an entire sentence with Furigana and ensures that a target word uses a specific reading.
+        """
+        if not sentence or not sentence_kana or not target_word or not target_reading:
+            return sentence # Return original sentence if any argument is missing
+
+        sentence_kana_clean = sentence_kana.replace(" ", "")  # Remove spaces from kana version
+        annotated_sentence = self.generate_furigana_sentence_morph(sentence, sentence_kana_clean) # Annotate sentence
+        ruby_target = f"<ruby>{target_word}<rt>{target_reading}</rt></ruby>" # Format target word with Ruby markup
+
+        pattern = re.compile(r'<ruby>' + re.escape(target_word) + r'<rt>.*?</rt></ruby>') # Regex to check if word is already annotated
+        if pattern.search(annotated_sentence):
+            annotated_sentence = pattern.sub(ruby_target, annotated_sentence, count=1) # Replace first occurrence with correct Ruby markup
+        else:
+            annotated_sentence = annotated_sentence.replace(target_word, ruby_target, 1) # Otherwise, replace first occurrence normally
+        return annotated_sentence # Return fully annotated sentence
+
 
 class VocabYamlLoader:
     """
@@ -54,27 +175,33 @@ class VocabYamlLoader:
 
 class NoteFactory:
     """
-    Creates (Reading, Listening, Translation) notes for a SINGLE reading 
-    in the nested structure.
+    Creates different types of Anki notes (Reading, Listening, Translation).
+    
+    Responsibilities:
+    - Generates a Reading Note (Kanji, Furigana, Meaning, Sentences)
+    - Generates a Listening Note (Includes audio fields)
+    - Generates a Translation Note (Focuses on meaning and translations)
+
+    Each note follows a specific model (reading, listening, or translation).
     """
-    def __init__(self, reading_model, listening_model, translation_model):
+    def __init__(self, reading_model, listening_model, translation_model, furigana_generator):
+        """Initializes NoteFactory with Anki models and a Furigana generator."""
         self.reading_model = reading_model
         self.listening_model = listening_model
         self.translation_model = translation_model
+        self.furigana_generator = furigana_generator  
 
     def create_notes_for_reading(self, word_str, reading_data, tags, lang_code):
         """
-        :param word_str: e.g. "ああ"
-        :param reading_data: e.g. {
-           "reading": "ああ",
-           "expression_audio": "ああ.mp3",
-           "meaning": {"en": "oh", "de": "oh"},
-           "sentences": [...]
-        }
-        :param tags: list of tags
-        :param lang_code: "en" or "de"
+        Creates Anki notes (Reading, Listening, Translation) for a vocabulary entry.
 
-        Returns up to three genanki.Note objects (reading, listening, translation).
+        - word_str: The base Kanji word
+        - reading_data: Dictionary containing information about the word's reading
+        - tags: Tags associated with the word
+        - lang_code: Language code (e.g., 'en' for English, 'de' for German)
+        
+        Returns:
+        - A list of genanki.Note objects, each representing an Anki card.
         """
         reading_str = reading_data.get("reading", "")
         expression_audio = reading_data.get("expression_audio", "")
@@ -83,18 +210,26 @@ class NoteFactory:
         explanation_dict = reading_data.get("explanation", {}) 
         explanation_for_lang = explanation_dict.get(lang_code, "")
 
-        # Collect all sentences for this reading
+        # Ofurigana für das Wort generieren
+        furigana_expression = self.furigana_generator.generate_furigana_word(word_str, target_reading=reading_str)
+
         sentences = reading_data.get("sentences", [])
-        # We'll combine them into multiline strings:
-        sentence_lines, sentence_kana_lines, sentence_translation_lines, sentence_audio_list = [], [], [], []
+        sentence_lines, sentence_kana_lines, sentence_translation_lines, sentence_audio_list, furigana_sentences = [], [], [], [], []
 
         for s in sentences:
-            # s is like: { "sentence": "..", "sentence_kana": "..", "sentence_audio": "..", "translations": {...} }
             sentence_text = s.get("sentence", "")
             sentence_kana = s.get("sentence_kana", "")
             s_audio = s.get("sentence_audio", "")
             translations = s.get("translations", {})
             trans_lang = translations.get(lang_code, "")
+
+            furigana_sentence = self.furigana_generator.generate_furigana_sentence(
+                sentence_text,
+                sentence_kana,
+                word_str,     # target_word: for example "開く"
+                reading_str   # target_reading: for example "ひらく" or "あく"
+            )
+
 
             if sentence_text:
                 sentence_lines.append(sentence_text)
@@ -104,100 +239,83 @@ class NoteFactory:
                 sentence_translation_lines.append(trans_lang)
             if s_audio:
                 sentence_audio_list.append(s_audio)
+            if furigana_sentence:
+                furigana_sentences.append(furigana_sentence)
 
-        # Join them with newline (or any separator)
         joined_sentence = "\n".join(sentence_lines)
         joined_sentence_kana = "\n".join(sentence_kana_lines)
         joined_sentence_translation = "\n".join(sentence_translation_lines)
-
-        # For 'SentenceAudio', we might just pick the FIRST one, if any
+        joined_sentence_furigana  = "\n".join(furigana_sentences)
         final_sentence_audio = sentence_audio_list[0] if sentence_audio_list else ""
-        
-        # Prepare a list of notes to return
+
         notes = []
 
-        # READING NOTE
-        reading_fields = [
-            word_str,                           # 0: Expression
-            meaning_for_lang,                   # 1: Meaning
-            reading_str,                        # 2: Reading
-            joined_sentence,                    # 3: Sentence
-            joined_sentence_kana,              # 4: SentenceKana
-            joined_sentence_translation,        # 5: SentenceTranslation
-            f'[sound:{final_sentence_audio}]' if final_sentence_audio else '',  # 6: SentenceAudio
-            f'[sound:{expression_audio}]' if expression_audio else '',          # 7: ExpressionAudio
-            '',  # 8: ImageURI 
-            explanation_for_lang # 9: Explanation
-        ]
-        reading_guid = genanki.guid_for(word_str + reading_str + lang_code + "reading")
-        reading_note = genanki.Note(
+        # READING NOTE (11 Felder!)
+        notes.append(genanki.Note(
             model=self.reading_model,
-            fields=reading_fields,
-            tags=tags,
-            guid=reading_guid
-        )
-        notes.append(reading_note)
-
-        # LISTENING NOTE (only if expression_audio exists)
-        if expression_audio:
-            listening_fields = [
-                word_str,
-                meaning_for_lang,
-                reading_str,
-                joined_sentence,
-                joined_sentence_kana,
-                joined_sentence_translation,
+            fields=[
+                word_str, furigana_expression, meaning_for_lang, reading_str,
+                joined_sentence, joined_sentence_kana, joined_sentence_furigana, joined_sentence_translation,
                 f'[sound:{final_sentence_audio}]' if final_sentence_audio else '',
-                f'[sound:{expression_audio}]',
-                '',
-                explanation_for_lang
-            ]
-            listening_guid = genanki.guid_for(word_str + reading_str + lang_code + "listening")
-            listening_note = genanki.Note(
-                model=self.listening_model,
-                fields=listening_fields,
-                tags=tags,
-                guid=listening_guid
-            )
-            notes.append(listening_note)
+                f'[sound:{expression_audio}]' if expression_audio else '',
+                '', explanation_for_lang  # <- Stelle sicher, dass das 11 Felder sind
+            ],
+            tags=tags
+        ))
 
-        # TRANSLATION NOTE (only if meaning_for_lang is not empty and we have translations)
+        # LISTENING NOTE (Nur wenn es Audio gibt)
+        if expression_audio:
+            notes.append(genanki.Note(
+                model=self.listening_model,
+                fields=[
+                    word_str, furigana_expression, meaning_for_lang, reading_str,
+                    joined_sentence, joined_sentence_kana, joined_sentence_furigana, joined_sentence_translation,
+                    f'[sound:{final_sentence_audio}]' if final_sentence_audio else '',
+                    f'[sound:{expression_audio}]', '', explanation_for_lang
+                ],
+                tags=tags
+            ))
+
+        # TRANSLATION NOTE (Nur wenn es Übersetzungen gibt)
         if meaning_for_lang and joined_sentence_translation:
-            translation_fields = [
-                meaning_for_lang,                   # 0: Meaning
-                joined_sentence_translation,        # 1: SentenceTranslation
-                word_str,                           # 2: Expression
-                reading_str,                        # 3: Reading
-                joined_sentence,                    # 4: Sentence
-                joined_sentence_kana,              # 5: SentenceKana
-                f'[sound:{final_sentence_audio}]' if final_sentence_audio else '', # 6: SentenceAudio
-                f'[sound:{expression_audio}]' if expression_audio else '', # 7: ExpressionAudio
-                '', # 8: ImageURI 
-                explanation_for_lang # 9: Explanation
-            ]
-            translation_guid = genanki.guid_for(word_str + reading_str + lang_code + "translation")
-            translation_note = genanki.Note(
+            notes.append(genanki.Note(
                 model=self.translation_model,
-                fields=translation_fields,
-                tags=tags,
-                guid=translation_guid
-            )
-            notes.append(translation_note)
+                fields=[
+                    meaning_for_lang, joined_sentence_translation, word_str,
+                    furigana_expression, reading_str, joined_sentence,
+                    joined_sentence_kana, joined_sentence_furigana, f'[sound:{final_sentence_audio}]' if final_sentence_audio else '',
+                    f'[sound:{expression_audio}]' if expression_audio else '',
+                    '', explanation_for_lang
+                ],
+                tags=tags
+            ))
 
         return notes
 
-
 class VocabDeckGenerator:
     """
-    Main class that loads the nested YAML and creates 
-    multiple notes per 'word' (one note per reading).
+    Loads vocabulary from a YAML file and creates an Anki deck.
+
+    Responsibilities:
+    - Reads a YAML file containing vocabulary entries
+    - Uses FuriganaGenerator for reading generation
+    - Generates Anki notes via NoteFactory
+    - Saves the Anki deck as a .apkg file
     """
-    def __init__(self, yaml_path):
+    def __init__(self, yaml_path, jmdict_path="JMdict_e.xml"):
+        """Initializes the generator with a YAML file containing vocabulary data and the JMdict dictionary."""
         self.yaml_path = yaml_path
         loader = VocabYamlLoader(yaml_path)
         self.nested_data = loader.load_data()
+        self.furigana_generator = FuriganaGenerator(jmdict_path)
 
     def create_deck_for_language(self, lang_code, output_dir="output"):
+        """
+        Creates an Anki deck for a specific language (e.g., English or German).
+
+        - lang_code: "en" for English, "de" for German
+        - output_dir: Directory where the .apkg file will be saved
+        """
         # Model IDs
         reading_model_id = 1607392319
         listening_model_id = 1607392321
@@ -214,7 +332,7 @@ class VocabDeckGenerator:
         package = genanki.Package(deck)
 
         # Create NoteFactory
-        note_factory = NoteFactory(reading_model, listening_model, translation_model)
+        note_factory = NoteFactory(reading_model, listening_model, translation_model, self.furigana_generator)
 
         # Build notes
         for item in self.nested_data:
@@ -277,6 +395,7 @@ class VocabDeckGenerator:
 if __name__ == "__main__":
     # Example usage
     yaml_file = "data/vocab.yaml"
+    jmdict_path = "JMdict_e.xml"
     generator = VocabDeckGenerator(yaml_file)
 
     # Create deck in German
