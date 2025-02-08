@@ -21,8 +21,8 @@ jobs:
         python-version: "3.9"
 
     # Step 3: Install dependencies
-    - name: Install dependencies
-      run: pip install genanki sudachipy sudachidict_core
+    - name: Install dependencies 
+      run: pip install genanki sudachipy sudachidict_core jaconv
 
     # Step 4: Create output directory
     - name: Create output directory
@@ -42,3 +42,13 @@ jobs:
         prerelease: false
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+Changed the layout of cards.
+
+- Before I should the entire sentence_kana and reading in the card. This is now replaced by a "Toggle furigana" button which toggles furigana visibility. Default mode is invisible furigana.
+The fields "reading" and "sentence_kana" are still needed in vocab.yaml!
+I use SudachiyPy and JMDict to create the furigana for all the kanjis. Some expressions can be tricky though like 開く which can be　ひらく　or あく.
+I use reading and sentence_kana to match the reading from sudachiy and jmdict against what I expect it to by in those fields.
+- Also I renamed "explanation field to note"
+- Also I removed ovbious marker strings like "Sentence:" "Reading:" etc. since it should be ovious from the layout.
+- Readings and Sentence_Kana disappeared from the card display entirely unless the script is unable to create Furigana for the word/sentence.
