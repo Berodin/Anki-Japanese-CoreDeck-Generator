@@ -22,7 +22,7 @@ jobs:
 
     # Step 3: Install dependencies
     - name: Install dependencies
-      run: pip install genanki
+      run: pip install genanki sudachipy sudachidict_core
 
     # Step 4: Create output directory
     - name: Create output directory
