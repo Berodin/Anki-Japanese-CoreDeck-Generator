@@ -20,7 +20,7 @@
 
   <hr>
 
-  <p><strong>Meaning:</strong> {{Meaning}}</p>
+  <p>{{Meaning}}</p>
 
   {{#Sentence}}
   <hr>
@@ -45,14 +45,14 @@
 {{/Sentence}}
 
   {{#SentenceTranslation}}
-    <p><strong>Sentence Translation:</strong> {{SentenceTranslation}}</p>
+    <p>{{SentenceTranslation}}</p>
   {{/SentenceTranslation}}
 
-  {{#Explanation}}
+  {{#Note}}
     <div style="border-top: 2px solid; margin-top: 15px; padding-top: 10px; text-align: left;">
-      <b>Explanation:</b> {{Explanation}}
+      <b>Note:</b> {{Note}}
     </div>
-  {{/Explanation}}
+  {{/Note}}
 
   {{#ImageURI}}
     <img src="{{ImageURI}}" alt="Image for {{Expression}}">

@@ -1,11 +1,85 @@
 <div class="card">
-  <!-- Title or prompt can go here if desired -->
-  <h2 class="expression">{{Expression}}</h2>
+  {{#Furigana}}
+    <div class="expression-wrapper">
+      <h2 class="expression plain-expression">
+        {{Expression}}
+      </h2>
+      <h2 class="expression furigana-expression" style="display: none;">
+        {{Furigana}}
+      </h2>
+    </div>
+  {{/Furigana}}
+  {{^Furigana}}
+    <h2 class="expression expression-no-furigana">
+      {{Expression}}
+    </h2>
+    <p><strong>Reading:</strong> {{Reading}}</p>
+  {{/Furigana}}
 
   {{#Sentence}}
-  <div class="sentence">
-    <p>{{Sentence}}</p>
+  <hr>
+  <div class="sentence-wrapper">
+    <p class="sentence plain-sentence">
+      {{Sentence}}
+    </p>
+    {{#SentenceFurigana}}
+      <p class="sentence furigana-sentence" style="display: none;">
+        {{SentenceFurigana}}
+      </p>
+    {{/SentenceFurigana}}
+    {{^SentenceFurigana}}
+      {{#SentenceKana}}
+        <p class="sentence kana-sentence" style="display: none;">
+          {{SentenceKana}}
+        </p>
+      {{/SentenceKana}}
+    {{/SentenceFurigana}}
   </div>
   {{/Sentence}}
 
+  <div style="text-align: center; margin-top: 15px;">
+    <button type="button" onclick="toggleFurigana()">Toggle Furigana</button>
+  </div>
 </div>
+
+<script>
+function toggleFurigana() {
+  // Expression toggling
+  const plainExpression = document.querySelector('.plain-expression');
+  const furiganaExpression = document.querySelector('.furigana-expression');
+  if (plainExpression && furiganaExpression) {
+    if (furiganaExpression.style.display === 'none') {
+      furiganaExpression.style.display = 'block';
+      plainExpression.style.display = 'none';
+    } else {
+      furiganaExpression.style.display = 'none';
+      plainExpression.style.display = 'block';
+    }
+  }
+
+  // Sentence toggling (Furigana vs. Kana)
+  const plainSentence = document.querySelector('.plain-sentence');
+  const furiganaSentence = document.querySelector('.furigana-sentence');
+  const kanaSentence = document.querySelector('.kana-sentence');
+  if (plainSentence) {
+    if (furiganaSentence && furiganaSentence.style.display === 'none') {
+      furiganaSentence.style.display = 'block';
+      plainSentence.style.display = 'none';
+      if (kanaSentence) kanaSentence.style.display = 'none';
+    } else if (furiganaSentence && furiganaSentence.style.display === 'block') {
+      furiganaSentence.style.display = 'none';
+      plainSentence.style.display = 'block';
+      if (kanaSentence) kanaSentence.style.display = 'block';
+    } else if (!furiganaSentence && kanaSentence) {
+      // Falls es KEIN Furigana gibt, nur Kana toggeln
+      if (kanaSentence.style.display === 'none') {
+        kanaSentence.style.display = 'block';
+        plainSentence.style.display = 'none';
+      } else {
+        kanaSentence.style.display = 'none';
+        plainSentence.style.display = 'block';
+      }
+    }
+  }
+}
+</script>

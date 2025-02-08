@@ -39,7 +39,7 @@ button:hover {
 
 .tappable {
   cursor: pointer;
-  color: #007BFF;
+  color: #000000;
   text-decoration: underline;
 }
 

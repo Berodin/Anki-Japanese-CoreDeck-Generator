@@ -47,7 +47,7 @@ class AnkiModelFactory:
                 {'name': 'SentenceAudio'},
                 {'name': 'ExpressionAudio'},
                 {'name': 'ImageURI'},
-                {'name': 'Explanation'},
+                {'name': 'Note'},
             ],
             templates=[
                 {
@@ -80,7 +80,7 @@ class AnkiModelFactory:
                 {'name': 'SentenceAudio'},
                 {'name': 'ExpressionAudio'},
                 {'name': 'ImageURI'},
-                {'name': 'Explanation'},
+                {'name': 'Note'},
             ],
             templates=[
                 {
@@ -113,7 +113,7 @@ class AnkiModelFactory:
                 {'name': 'SentenceAudio'},
                 {'name': 'ExpressionAudio'},
                 {'name': 'ImageURI'},
-                {'name': 'Explanation'},
+                {'name': 'Note'},
             ],
             templates=[
                 {

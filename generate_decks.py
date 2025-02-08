@@ -207,8 +207,8 @@ class NoteFactory:
         expression_audio = reading_data.get("expression_audio", "")
         meaning_dict = reading_data.get("meaning", {})
         meaning_for_lang = meaning_dict.get(lang_code, "")
-        explanation_dict = reading_data.get("explanation", {}) 
-        explanation_for_lang = explanation_dict.get(lang_code, "")
+        note_dict = reading_data.get("note", {}) 
+        note_for_lang = note_dict.get(lang_code, "")
 
         # Ofurigana für das Wort generieren
         furigana_expression = self.furigana_generator.generate_furigana_word(word_str, target_reading=reading_str)
@@ -250,7 +250,8 @@ class NoteFactory:
 
         notes = []
 
-        # READING NOTE (11 Felder!)
+        # READING NOTE 
+        reading_guid = genanki.guid_for(word_str + reading_str + lang_code + "reading")
         notes.append(genanki.Note(
             model=self.reading_model,
             fields=[
@@ -258,26 +259,30 @@ class NoteFactory:
                 joined_sentence, joined_sentence_kana, joined_sentence_furigana, joined_sentence_translation,
                 f'[sound:{final_sentence_audio}]' if final_sentence_audio else '',
                 f'[sound:{expression_audio}]' if expression_audio else '',
-                '', explanation_for_lang  # <- Stelle sicher, dass das 11 Felder sind
+                '', note_for_lang
             ],
-            tags=tags
+            tags=tags,
+            guid=reading_guid
         ))
 
-        # LISTENING NOTE (Nur wenn es Audio gibt)
+        # LISTENING NOTE 
         if expression_audio:
+            listening_guid = genanki.guid_for(word_str + reading_str + lang_code + "listening")
             notes.append(genanki.Note(
                 model=self.listening_model,
                 fields=[
                     word_str, furigana_expression, meaning_for_lang, reading_str,
                     joined_sentence, joined_sentence_kana, joined_sentence_furigana, joined_sentence_translation,
                     f'[sound:{final_sentence_audio}]' if final_sentence_audio else '',
-                    f'[sound:{expression_audio}]', '', explanation_for_lang
+                    f'[sound:{expression_audio}]', '', note_for_lang
                 ],
-                tags=tags
+                tags=tags,
+                guid=listening_guid
             ))
 
         # TRANSLATION NOTE (Nur wenn es Übersetzungen gibt)
         if meaning_for_lang and joined_sentence_translation:
+            translation_guid = genanki.guid_for(word_str + reading_str + lang_code + "translation")
             notes.append(genanki.Note(
                 model=self.translation_model,
                 fields=[
@@ -285,9 +290,10 @@ class NoteFactory:
                     furigana_expression, reading_str, joined_sentence,
                     joined_sentence_kana, joined_sentence_furigana, f'[sound:{final_sentence_audio}]' if final_sentence_audio else '',
                     f'[sound:{expression_audio}]' if expression_audio else '',
-                    '', explanation_for_lang
+                    '', note_for_lang
                 ],
-                tags=tags
+                tags=tags,
+                guid=translation_guid
             ))
 
         return notes
