@@ -7,123 +7,46 @@ from sudachipy import dictionary
 import xml.etree.ElementTree as ET
 import jaconv
 import re
+from typing import Tuple, List, Optional
 
 class FuriganaGenerator:
-    """
-    This class generates Furigana (phonetic readings) for Japanese words and sentences.
-    It uses:
-    - SudachiPy for morphological analysis (breaking down words into components)
-    - JMdict for dictionary-based readings
-
-    Responsibilities:
-    - Check if a word contains Kanji
-    - Load JMdict to map Kanji words to readings
-    - Generate Furigana for individual words
-    - Annotate full sentences with Furigana while ensuring accurate readings
-    """
+    def __init__(self, jmdict_path: str = "JMdict_e.xml"):
+        self.tokenizer_obj = dictionary.Dictionary().create()  # SudachiPy-Tokenizer
+        self.mode = tokenizer.Tokenizer.SplitMode.C            
+        self.cache = {}
+        self.word_dict = self.load_jmdict(jmdict_path)
     
-    def __init__(self, jmdict_path="JMdict_e.xml"):
-        """
-        Initializes the Furigana generator.
-
-        - jmdict_path: Path to the JMdict XML file, which contains Japanese words and readings.
-        """
-        self.tokenizer_obj = dictionary.Dictionary().create() # Initialize SudachiPy tokenizer
-        self.mode = tokenizer.Tokenizer.SplitMode.C  # Context-based tokenization
-        self.cache = {} # Initialize cache for storing results
-        self.word_dict = self.load_jmdict(jmdict_path) # Load dictionary data from JMdict
-
-    def contains_kanji(self, text):
-        """
-        Checks if the given text contains any Kanji characters.
-
-        - Returns True if at least one Kanji character is found, otherwise False.
-        """
-        return any("\u4e00" <= char <= "\u9faf" for char in text)
-
-    def load_jmdict(self, file_path):
-        """
-        Loads the JMdict XML file and stores Kanji words with their possible readings.
-
-        - Returns a dictionary where keys are Kanji words, and values are lists of readings.
-        """
+    def contains_kanji(self, text: str) -> bool:
+        return any("\u4e00" <= ch <= "\u9faf" for ch in text)
+    
+    def load_jmdict(self, file_path: str) -> dict:
         if not os.path.exists(file_path):
             print(f"⚠️ JMdict file not found: {file_path}")
             return {}
-        
-        tree = ET.parse(file_path) 
+        tree = ET.parse(file_path)
         root = tree.getroot()
-        word_dict = {} # Initialize dictionary to store words and readings
-
-        for entry in root.findall("entry"): # Iterate over each dictionary entry
-            for kanji in entry.findall("k_ele"): # Find kanji elements
-                kanji_word = kanji.find("keb").text # Extract kanji word
-                readings = [re.find("reb").text for re in entry.findall("r_ele")] # Extract possible readings
-                word_dict[kanji_word] = readings  # Store readings in dictionary
-
-        return word_dict # Return dictionary containing word-readings mapping
-
-    def generate_furigana_word(self, word, target_reading=None):
-        """
-        Returns Furigana annotation for a given word.
-        - If target_reading is provided, it will be used explicitly.
-        - Otherwise, the reading is retrieved from JMdict.
-        """
+        word_dict = {}
+        for entry in root.findall("entry"):
+            for kanji_elem in entry.findall("k_ele"):
+                keb = kanji_elem.find("keb")
+                if keb is None or keb.text is None:
+                    continue
+                kanji_word = keb.text
+                readings = [r_ele.find("reb").text for r_ele in entry.findall("r_ele") if r_ele.find("reb") is not None]
+                word_dict[kanji_word] = readings
+        return word_dict
+    
+    def generate_furigana_word(self, word: str, target_reading: str = None) -> str:
+        if not self.contains_kanji(word):
+            return word
         if target_reading:
-            return f"<ruby>{word}<rt>{target_reading}</rt></ruby>" # Return Ruby HTML tag
-        readings = self.word_dict.get(word, []) # Retrieve readings from JMdict
-        if readings:
-            return f"<ruby>{word}<rt>{'/'.join(readings)}</rt></ruby>" # Format readings as Ruby annotation
-        return word  # If no readings found, return word unchanged
-
-    def generate_furigana_sentence_morph(self, sentence, sentence_kana_clean):
-        """
-        Tokenizes a Japanese sentence and applies Furigana annotations.
-        - Uses SudachiPy for tokenization and phonetic readings.
-        - Matches readings to sentence_kana_clean for accuracy.
-        """
-        tokens = self.tokenizer_obj.tokenize(sentence, self.mode) # Tokenize sentence using SudachiPy
-        annotated_tokens = [] # List to store annotated tokens
-
-        kana_index = 0 # Index in the sentence_kana_clean string
-        for token in tokens: # Iterate over each token from SudachiPy
-            surface = token.surface() # Extract tokenized word (surface form)
-            if self.contains_kanji(surface): # Check if token contains Kanji
-                computed = jaconv.kata2hira(token.reading_form()) if token.reading_form() else "" # Convert reading to Hiragana
-                if kana_index < len(sentence_kana_clean): # Ensure we are within sentence bounds
-                    expected = sentence_kana_clean[kana_index:kana_index+len(computed)] # Extract expected reading
-                else: 
-                    expected = computed   # Fallback to computed reading if index out of range
-                
-                reading_to_use = expected if expected and expected != computed else computed  # Choose correct reading
-
-                # Erzeuge Ruby-Markup für das Token.
-                annotated_token = f"<ruby>{surface}<rt>{reading_to_use}</rt></ruby>"  # Format with Ruby markup
-                annotated_tokens.append(annotated_token) # Append to list
-                kana_index += len(expected) if expected else len(computed) # Update kana index
-            else:
-                annotated_tokens.append(surface) # Append non-Kanji token unchanged
-                kana_index += len(surface) # Update kana index
-        return "".join(annotated_tokens) # Return fully annotated sentence
-
-    def generate_furigana_sentence(self, sentence, sentence_kana, target_word, target_reading):
-        """
-        Annotates an entire sentence with Furigana and ensures that a target word uses a specific reading.
-        """
-        if not sentence or not sentence_kana or not target_word or not target_reading:
-            return sentence # Return original sentence if any argument is missing
-
-        sentence_kana_clean = sentence_kana.replace(" ", "")  # Remove spaces from kana version
-        annotated_sentence = self.generate_furigana_sentence_morph(sentence, sentence_kana_clean) # Annotate sentence
-        ruby_target = f"<ruby>{target_word}<rt>{target_reading}</rt></ruby>" # Format target word with Ruby markup
-
-        pattern = re.compile(r'<ruby>' + re.escape(target_word) + r'<rt>.*?</rt></ruby>') # Regex to check if word is already annotated
-        if pattern.search(annotated_sentence):
-            annotated_sentence = pattern.sub(ruby_target, annotated_sentence, count=1) # Replace first occurrence with correct Ruby markup
-        else:
-            annotated_sentence = annotated_sentence.replace(target_word, ruby_target, 1) # Otherwise, replace first occurrence normally
-        return annotated_sentence # Return fully annotated sentence
-
+            if "/" in target_reading:
+                return word
+            return f"<ruby>{word}<rt>{target_reading}</rt></ruby>"
+        readings = self.word_dict.get(word, [])
+        if len(readings) == 1:
+            return f"<ruby>{word}<rt>{readings[0]}</rt></ruby>"
+        return word
 
 class VocabYamlLoader:
     """
@@ -214,7 +137,7 @@ class NoteFactory:
         furigana_expression = self.furigana_generator.generate_furigana_word(word_str, target_reading=reading_str)
 
         sentences = reading_data.get("sentences", [])
-        sentence_lines, sentence_kana_lines, sentence_translation_lines, sentence_audio_list, furigana_sentences = [], [], [], [], []
+        sentence_lines, sentence_kana_lines, sentence_translation_lines, sentence_audio_list = [], [], [], []
 
         for s in sentences:
             sentence_text = s.get("sentence", "")
@@ -222,14 +145,6 @@ class NoteFactory:
             s_audio = s.get("sentence_audio", "")
             translations = s.get("translations", {})
             trans_lang = translations.get(lang_code, "")
-
-            furigana_sentence = self.furigana_generator.generate_furigana_sentence(
-                sentence_text,
-                sentence_kana,
-                word_str,     # target_word: for example "開く"
-                reading_str   # target_reading: for example "ひらく" or "あく"
-            )
-
 
             if sentence_text:
                 sentence_lines.append(sentence_text)
@@ -239,13 +154,11 @@ class NoteFactory:
                 sentence_translation_lines.append(trans_lang)
             if s_audio:
                 sentence_audio_list.append(s_audio)
-            if furigana_sentence:
-                furigana_sentences.append(furigana_sentence)
 
         joined_sentence = "\n".join(sentence_lines)
         joined_sentence_kana = "\n".join(sentence_kana_lines)
         joined_sentence_translation = "\n".join(sentence_translation_lines)
-        joined_sentence_furigana  = "\n".join(furigana_sentences)
+        joined_sentence_furigana = ""
         final_sentence_audio = sentence_audio_list[0] if sentence_audio_list else ""
 
         notes = []
