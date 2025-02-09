@@ -59444,18 +59444,18 @@
       translations:
         en: Add yogurt to the curry and mix well.
         de: Fügen Sie Joghurt zum Curry hinzu und mischen Sie gut.
-- word: 混む・込む
+- word: 混む
   tags: []
   readings:
   - reading: こむ
-    expression_audio: 混む・込む.mp3
+    expression_audio: 混む.mp3
     meaning:
       en: to be crowded
       de: überfüllt sein
     sentences:
-    - sentence: 電車が込んでいる
+    - sentence: 電車が混んでいる
       sentence_kana: でんしゃ が こん で いる
-      sentence_audio: 混む・込む_sentence.mp3
+      sentence_audio: 混む_sentence.mp3
       translations:
         en: The train is crowded.
         de: Der Zug ist überfüllt.
