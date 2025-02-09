@@ -38103,8 +38103,11 @@
   - reading: うち
     expression_audio: 家.mp3
     meaning:
-      en: house / home (more personal than いえ, personal home)
-      de: Haus / Zuhause (more persönlich als いえ, trautes Heim)
+      en: house / home 
+      de: Haus / Zuhause
+    note:
+      en: more personal than いえ, personal home
+      de: persönlicher als いえ, trautes Heim
     sentences:
     - sentence: 家に遊びにきてください
       sentence_kana: うち に あそび に き て ください
@@ -38117,6 +38120,9 @@
     meaning:
       en: house / home (less personal than うち, house more as a structure)
       de: Haus  (weniger persönlich als うち, Haus eher als Struktur)
+    note:
+      en: less personal than うち, house more as a structure
+      de: weniger persönlich als うち, Haus eher als Struktur
     sentences:
     - sentence: その家に住んでいる
       sentence_kana: その いえ に すん で いる
