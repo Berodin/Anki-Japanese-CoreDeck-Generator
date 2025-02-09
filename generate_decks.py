@@ -229,7 +229,7 @@ class FuriganaGenerator:
         if matching:
             chosen = matching[0]
             # Join each annotated kanji with a space and a <span> for spacing.
-            annotated = " ".join(
+            annotated = "".join(
                 f"<ruby>{ch}<rt>{r}</rt></ruby><span class='kanji-space'></span>"
                 for ch, r in zip(block, chosen)
             )
@@ -270,7 +270,7 @@ class FuriganaGenerator:
                     if tuple(len(s) for s in split) > tuple(len(s) for s in best_split):
                         best_split = split
             if best_split is not None:
-                annotated = " ".join(
+                annotated = "".join(
                     f"<ruby>{ch}<rt>{seg}</rt></ruby><span class='kanji-space'></span>"
                     for ch, seg in zip(block, best_split)
                 )
