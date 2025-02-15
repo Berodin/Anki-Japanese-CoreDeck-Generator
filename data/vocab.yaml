@@ -7681,6 +7681,9 @@
     meaning:
       en: well / often
       de: gut / oft
+    note:
+      en: "よく comes from the adjective 良い (yoi, 'good'). Depending on context, it means 'well' (when describing an action) or 'often' (when describing frequency)."
+      de: "よく stammt vom Adjektiv 良い (yoi, 'gut'). Je nach Kontext bedeutet es entweder 'gut' (bei Handlungen) oder 'oft' (bei Häufigkeit)."
     sentences:
     - sentence: 彼女はよく旅行に行きます
       sentence_kana: かのじょ は よく りょこう に いき ます
@@ -39031,6 +39034,9 @@
     meaning:
       en: small
       de: klein
+    note:
+      en: 小 is the concept of "small" and is used in compound words (like 小さい) and categorizations. 
+      de: 小 ist das Konzept von "klein" und wird in zusammengesetztenwörtern wie 小さい und zur Kategorisierung verwendet.
     sentences:
     - sentence: この箱の小をください
       sentence_kana: この は この しょう を ください
