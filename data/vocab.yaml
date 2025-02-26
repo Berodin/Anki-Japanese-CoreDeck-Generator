@@ -43276,12 +43276,12 @@
       en: after
       de: nach / später
     sentences:
-    - sentence: 後に彼は総理大臣になりました
-      sentence_kana: のち に かれ は そう り だい じん に なり まし た
+    - sentence: 後で電話しますね
+      sentence_kana: あと で でんわ します ね。
       sentence_audio: 後_sentence.mp3
       translations:
-        en: Later, he became the prime minister.
-        de: Später wurde er Premierminister.
+        en: I'll call you later.
+        de: Ich rufe dich später an.
 - word: 後ろ
   tags: []
   readings:
