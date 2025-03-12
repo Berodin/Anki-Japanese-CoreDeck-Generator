@@ -120,6 +120,9 @@ Each entry in `vocab.yaml` is an object with the following structure:
         en: <string>
         de: <string> 
         # More language codes as needed
+      note:
+        en: <string> (note/explanation for the word in English)
+        de: <string> (note/explanation for the word in German)
       sentences:
         - sentence: <string> (example sentence)
           sentence_kana: <string> (kana version of the sentence)
@@ -150,6 +153,7 @@ Each item in the `readings` array provides:
 | `reading`          | String             | Specific reading for the word, e.g. 「ああ」 or 「ひらく」.                                           |
 | `expression_audio` | String (optional)  | Filename of the audio for this reading (e.g., `ああ.mp3`).                                           |
 | `meaning`          | Dict               | Key-value pairs for each language code (e.g., `en`, `de`) to store the reading’s meaning.           |
+| `note`             | Dict               | Key-value pairs for each language code (e.g., `en`, `de`) to store notes about the word.            |
 | `sentences`        | List of Objects    | Zero or more example sentences (see below) illustrating this reading.                               |
 
 ---
