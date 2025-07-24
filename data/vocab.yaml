@@ -79447,17 +79447,33 @@
   - Tonari_no_Totoro
   readings:
   - reading: おきる
-    expression_audio: 起きる.mp3
+    expression_audio: 起きる_happen.mp3
     meaning:
       en: to happen
       de: passieren
     sentences:
     - sentence: 近所で盗難事件が起きました
       sentence_kana: きん じょ で とう なん じけん が おき まし た
-      sentence_audio: 起きる_sentence.mp3
+      sentence_audio: 起きる_happen_sentence.mp3
       translations:
         en: A theft incident occurred in the neighborhood.
         de: Ein Diebstahl ist in der Nachbarschaft passiert.
+- word: 起きる
+  tags:
+  - Tonari_no_Totoro
+  readings:
+  - reading: おきる
+    expression_audio: 起きる.mp
+    meaning:
+      en: to get up
+      de: aufstehen
+    sentences:
+    - sentence: 私は毎朝6時に起きます
+      sentence_kana: わたし は まいあさ ろくじ に おき ます
+      sentence_audio: 起きる_sentence.mp3
+      translations:
+        en: I get up at 6 every morning.
+        de: Ich stehe jeden Morgen um sechs Uhr auf.
 - word: 起き上がる
   tags: []
   readings:
