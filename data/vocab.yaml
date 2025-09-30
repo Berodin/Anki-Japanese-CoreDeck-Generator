@@ -5510,7 +5510,7 @@
     expression_audio: のろのろ.mp3
     meaning:
       en: slowly
-      de: längsam
+      de: langsam
     sentences:
     - sentence: 車は雪道をのろのろと走ったの
       sentence_kana: くるま は ゆき みち を のろのろ と はしっ た の
@@ -6757,15 +6757,18 @@
   - reading: まとめる
     expression_audio: まとめる.mp3
     meaning:
-      en: to gather
-      de: zusammenstellen
+      en: to gather; to put together; to organize; (with 荷物) to pack (up)
+      de: sammeln; zusammenstellen; ordnen; (mit 荷物) zusammenpacken/packen
+    note:
+      en: With objects like 荷物/荷物を～, まとめる commonly means “to pack (up), to get one's things together.”
+      de: Mit Objekten wie 荷物/荷物を～ bedeutet まとめる oft „(Sachen) zusammenpacken/packen“.
     sentences:
     - sentence: 彼女は荷物をまとめて出て行った
       sentence_kana: かのじょ は にもつ を まとめ て で て いっ た
       sentence_audio: まとめる_sentence.mp3
       translations:
-        en: She gathered her things and left.
-        de: Sie hat ihre Sachen gepackt und ist gegangen.
+        en: She packed her things and left.
+        de: Sie hat ihre Sachen zusammengepackt und ist gegangen.
 - word: まな板
   tags: []
   readings:
