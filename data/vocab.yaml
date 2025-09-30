@@ -385,7 +385,7 @@
   tags: []
   readings:
   - reading: いか
-    expression_audio: ''
+    expression_audio: いか.mp3
     meaning:
       en: squid
       de: Tintenfisch
@@ -1695,7 +1695,7 @@
   tags: []
   readings:
   - reading: かえる
-    expression_audio: ''
+    expression_audio: かえる.mp3
     meaning:
       en: frog
       de: Frosch
@@ -2589,7 +2589,7 @@
   tags: []
   readings:
   - reading: こしょう
-    expression_audio: ''
+    expression_audio: こしょう.mp3
     meaning:
       en: pepper
       de: Pfeffer
@@ -5247,6 +5247,7 @@
 - word: なる
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: なる
     expression_audio: なる.mp3
@@ -5502,7 +5503,8 @@
         en: This train is really slow.
         de: Dieser Zug ist wirklich langsam.
 - word: のろのろ
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: のろのろ
     expression_audio: のろのろ.mp3
@@ -6749,7 +6751,8 @@
         en: I am writing the summary of my paper.
         de: Ich schreibe die Zusammenfassung meiner Arbeit.
 - word: まとめる
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: まとめる
     expression_audio: まとめる.mp3
@@ -7912,7 +7915,7 @@
   - Tonari_no_Totoro
   readings:
   - reading: わく
-    expression_audio: ''
+    expression_audio: わく.mp3
     meaning:
       en: to well up
       de: aufkommen
@@ -9578,7 +9581,7 @@
   tags: []
   readings:
   - reading: コンサート
-    expression_audio: ''
+    expression_audio: コンサート.mp3
     meaning:
       en: concert
       de: Konzert
@@ -14398,7 +14401,8 @@
         en: What on earth is going on?
         de: Was ist hier eigentlich los?
 - word: 一切
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: いっさい
     expression_audio: 一切.mp3
@@ -15006,7 +15010,7 @@
   - Tonari_no_Totoro
   readings:
   - reading: なな
-    expression_audio: ''
+    expression_audio: 七.mp3
     meaning:
       en: seven
       de: sieben
@@ -16453,7 +16457,8 @@
         en: This is the beginning of a new century.
         de: Das ist der Beginn eines neuen Jahrhunderts.
 - word: 世話
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: せわ
     expression_audio: 世話.mp3
@@ -18939,6 +18944,7 @@
 - word: 今
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: いま
     expression_audio: 今.mp3
@@ -19078,7 +19084,8 @@
         en: Where would you like to go next time?
         de: Wohin möchtest du das nächste Mal gehen?
 - word: 今後
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: こんご
     expression_audio: 今後.mp3
@@ -19112,7 +19119,7 @@
   tags: []
   readings:
   - reading: きょうはひとりでえいがをみます
-    expression_audio: ''
+    expression_audio: 今日は一人で映画を見ます.mp3
     meaning:
       en: I will watch a movie alone today.
       de: Ich schaue heute alleine einen Film.
@@ -19322,7 +19329,8 @@
         en: She put important documents in the desk.
         de: Sie räumte wichtige Dokumente in den Schreibtisch.
 - word: 他
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ほか
     expression_audio: 他.mp3
@@ -19397,7 +19405,8 @@
         en: I have been dating her for about 4 years.
         de: Ich gehe seit etwa 4 Jahren mit ihr.
 - word: 付く
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: つく
     expression_audio: 付く.mp3
@@ -20199,7 +20208,8 @@
         en: I paid the bill and left the shop.
         de: Ich habe die Rechnung beglichen und das Geschäft verlassen.
 - word: 会話
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: かいわ
     expression_audio: 会話.mp3
@@ -21438,7 +21448,8 @@
         en: Please read the instructions before using this product.
         de: Bitte lesen Sie die Anleitung vor der Verwendung dieses Produkts.
 - word: 使用人
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: しようにん
     expression_audio: 使用人.mp3
@@ -22586,7 +22597,8 @@
         en: Let's nurture a child's healthy mind.
         de: Lassen Sie uns eine gesunde Seele der Kinder fördern.
 - word: 健康
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: けんこう
     expression_audio: 健康.mp3
@@ -22857,7 +22869,8 @@
         en: My subordinate did excellent work.
         de: Mein Mitarbeiter hat eine hervorragende Leistung erbracht.
 - word: 働く
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: はたらく
     expression_audio: 働く.mp3
@@ -24416,7 +24429,7 @@
   tags: []
   readings:
   - reading: えん
-    expression_audio: ''
+    expression_audio: 円.mp3
     meaning:
       en: yen / circle
       de: Yen / Kreis
@@ -25372,6 +25385,7 @@
 - word: 分かる
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: わかる
     expression_audio: 分かる.mp3
@@ -30735,7 +30749,8 @@
         en: The seat across is empty.
         de: Der Sitz gegenüber ist frei.
 - word: 向かう
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: むかう
     expression_audio: 向かう.mp3
@@ -32002,7 +32017,7 @@
   tags: []
   readings:
   - reading: よん / し
-    expression_audio: ''
+    expression_audio: 四.mp3
     meaning:
       en: four
       de: vier
@@ -36142,7 +36157,8 @@
         en: His wife is a beautiful person.
         de: Seine Frau ist eine schöne Person.
 - word: 奥様
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: おくさま
     expression_audio: 奥様.mp3
@@ -41765,7 +41781,8 @@
         en: That system has been abolished.
         de: Dieses System wurde abgeschafft.
 - word: 廊下
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ろうか
     expression_audio: 廊下.mp3
@@ -46302,7 +46319,8 @@
         en: It's hot, so let's turn on the fan.
         de: Es ist heiß, also lass uns den Ventilator einschalten.
 - word: 扉
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: とびら
     expression_audio: 扉.mp3
@@ -55208,7 +55226,8 @@
         en: The doctor is an authority in his field.
         de: Der Doktor ist eine Autorität auf seinem Gebiet.
 - word: 横
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: よこ
     expression_audio: 横.mp3
@@ -56112,7 +56131,8 @@
         en: His family background was that of a samurai.
         de: Sein Familienhintergrund war der eines Samurai.
 - word: 歩く
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: あるく
     expression_audio: 歩く.mp3
@@ -65176,7 +65196,8 @@
         en: I have something to tell everyone.
         de: Ich habe etwas, das ich allen sagen möchte.
 - word: 皆様
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: みなさま
     expression_audio: 皆様.mp3
@@ -67738,7 +67759,8 @@
         en: Our company is closed on national holidays.
         de: Unsere Firma bleibt an Feiertagen geschlossen.
 - word: 禁じる
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: きんじる
     expression_audio: 禁じる.mp3
@@ -68642,7 +68664,8 @@
         en: This outfit has become tight.
         de: Dieses Outfit ist zu eng geworden.
 - word: 立ち上がる
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: たちあがる
     expression_audio: 立ち上がる.mp3
@@ -69761,6 +69784,7 @@
 - word: 終わり
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: おわり
     expression_audio: 終わり.mp3
@@ -72474,6 +72498,7 @@
 - word: 自分
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: じぶん
     expression_audio: 自分.mp3
@@ -73675,7 +73700,8 @@
         en: The mountain and sea are stormy due to the typhoon.
         de: Berge und Meer sind wegen des Taifuns stürmisch.
 - word: 荷物
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: にもつ
     expression_audio: 荷物.mp3
@@ -77403,7 +77429,8 @@
         en: I packed the items in the bag.
         de: Ich habe die Sachen in der Tasche gepackt.
 - word: 話
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: はなし
     expression_audio: 話.mp3
@@ -81595,7 +81622,7 @@
   tags: []
   readings:
   - reading: はやい
-    expression_audio: ''
+    expression_audio: 速い.mp3
     meaning:
       en: fast
       de: schnell
@@ -82938,6 +82965,7 @@
 - word: 部屋
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: へや
     expression_audio: 部屋.mp3
@@ -84244,7 +84272,8 @@
         en: Our eldest daughter is 10 years old.
         de: Unsere älteste Tochter ist 10 Jahre alt.
 - word: 長年
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ながねん
     expression_audio: 長年.mp3
@@ -84425,7 +84454,8 @@
         en: The school gate opens at 8 a.m.
         de: Das Schultor öffnet um 8 Uhr.
 - word: 閉じる
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: とじる
     expression_audio: 閉じる.mp3
@@ -84517,6 +84547,7 @@
 - word: 開く
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ひらく
     expression_audio: 開く.mp3
@@ -88895,14 +88926,17 @@
     expression_audio: 伯爵家.mp3
     meaning:
       en: earl's house / count's family
-      de: Grafenhaus
+      de: Grafenhaus (Familie)
+    note:
+      en: indicates the noble family or household itself, not the building. 伯爵家 refers to the lineage or the social unit of the count.
+      de: bezieht sich auf die Familie oder das Geschlecht, nicht auf das Gebäude. 伯爵家 meint also die Grafenfamilie als Linie oder sozialen Verband.
     sentences:
     - sentence: 伯爵家は古い伝統を持つ
       sentence_kana: はくしゃくけ は ふるい でんとう を もつ
       sentence_audio: 伯爵家_sentence.mp3
       translations:
         en: The earl's family has an old tradition.
-        de: Das Grafenhaus hat eine alte Tradition.
+        de: Das Grafenhaus (die Familie) hat eine alte Tradition.
 - word: 栄えある
   tags:
   - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
@@ -89159,3 +89193,354 @@
       translations:
         en: That is already a settled matter.
         de: Das ist bereits beschlossene Sache.
+- word: 仁王立ちする
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: におうだちする
+    expression_audio: 仁王立ちする.mp3
+    meaning:
+      en: to stand imposing with legs apart (arms akimbo)
+      de: breitbeinig/imposant dastehen (Hände in die Hüften)
+    sentences:
+    - sentence: 彼は玄関で仁王立ちしていた
+      sentence_kana: かれ は げんかん で におうだち して いた
+      sentence_audio: 仁王立ちする_sentence.mp3
+      translations:
+        en: He stood imposingly at the entrance.
+        de: Er stand imposant im Eingangsbereich.
+- word: 執事
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: しつじ
+    expression_audio: 執事.mp3
+    meaning:
+      en: butler
+      de: Butler
+    sentences:
+    - sentence: 執事が来客を応接室へ案内した
+      sentence_kana: しつじ が らいきゃく を おうせつしつ へ あんない した
+      sentence_audio: 執事_sentence.mp3
+      translations:
+        en: The butler guided the guest to the parlor.
+        de: Der Butler brachte den Gast in den Salon.
+- word: バタン
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ばたん
+    expression_audio: バタン.mp3
+    meaning:
+      en: bang (door slamming; onomatopoeia)
+      de: bamm (Türknall; Lautmalerei)
+    sentences:
+    - sentence: 扉がバタンと閉まった
+      sentence_kana: とびら が ばたん と しまった
+      sentence_audio: バタン_sentence.mp3
+      translations:
+        en: The door shut with a bang.
+        de: Die Tür schlug mit einem Knall zu.
+- word: ナーサリー
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: なーさりー
+    expression_audio: ナーサリー.mp3
+    meaning:
+      en: nursery (children's room)
+      de: Kinderzimmer / Kinderbereich
+    sentences:
+    - sentence: ナーサリーは二階の奥にある
+      sentence_kana: なーさりー は にかい の おく に ある
+      sentence_audio: ナーサリー_sentence.mp3
+      translations:
+        en: The nursery is at the back of the second floor.
+        de: Das Kinderzimmer liegt hinten im zweiten Stock.
+- word: ハウスキーパー
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: はうすきーぱー
+    expression_audio: ハウスキーパー.mp3
+    meaning:
+      en: housekeeper (loanword)
+      de: Hausdame / Haushälterin (Lehnwort)
+    sentences:
+    - sentence: ハウスキーパーが全体を取り仕切る
+      sentence_kana: はうすきーぱー が ぜんたい を とりしきる
+      sentence_audio: ハウスキーパー_sentence.mp3
+      translations:
+        en: The housekeeper oversees everything.
+        de: Die Hausdame koordiniert alles.
+- word: スカラリー
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: すからりー
+    expression_audio: スカラリー.mp3
+    meaning:
+      en: scullery (back kitchen)
+      de: Spülküche / Hinterküche
+    sentences:
+    - sentence: スカラリーで皿洗いを手伝った
+      sentence_kana: すからりー で さらあらい を てつだった
+      sentence_audio: スカラリー_sentence.mp3
+      translations:
+        en: I helped wash dishes in the scullery.
+        de: Ich half beim Abwasch in der Spülküche.
+- word: 早々
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: そうそう
+    expression_audio: 早々.mp3
+    meaning:
+      en: promptly / early
+      de: früh / umgehend
+    note:
+      en: Adverb; indicates immediacy right after something else. Not to be confused with 早い.
+      de: Adverb; bedeutet „gleich, sofort nach etwas“. Nicht verwechseln mit 早い (früh).
+    sentences:
+    - sentence: 彼女は早々に支度を終えた
+      sentence_kana: かのじょ は そうそう に したく を おえた
+      sentence_audio: 早々_sentence.mp3
+      translations:
+        en: She finished getting ready promptly.
+        de: Sie war frühzeitig mit den Vorbereitungen fertig.
+- word: 打ちひしがれる
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: うちひしがれる
+    expression_audio: 打ちひしがれる.mp3
+    meaning:
+      en: to be crushed (emotionally)
+      de: niedergeschmettert sein
+    note:
+      en: Stronger nuance than 落ち込む; implies being utterly devastated.
+      de: Stärker als 落ち込む; impliziert ein regelrechtes „Niedergeschmettertsein“.
+    sentences:
+    - sentence: 彼女は知らせに打ちひしがれた
+      sentence_kana: かのじょ は しらせ に うちひしがれた
+      sentence_audio: 打ちひしがれる_sentence.mp3
+      translations:
+        en: She was crushed by the news.
+        de: Die Nachricht hat sie niedergeschmettert.
+- word: 客室
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: きゃくしつ
+    expression_audio: 客室.mp3
+    meaning:
+      en: guest room
+      de: Gästezimmer
+    sentences:
+    - sentence: 客室の準備は整っています
+      sentence_kana: きゃくしつ の じゅんび は ととのって います
+      sentence_audio: 客室_sentence.mp3
+      translations:
+        en: The guest room is ready.
+        de: Das Gästezimmer ist vorbereitet.
+- word: ショック
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: しょっく
+    expression_audio: ショック.mp3
+    meaning:
+      en: shock
+      de: Schock
+    sentences:
+    - sentence: その知らせは大きなショックだった
+      sentence_kana: その しらせ は おおきな しょっく だった
+      sentence_audio: ショック_sentence.mp3
+      translations:
+        en: The news was a big shock.
+        de: Die Nachricht war ein großer Schock.
+- word: 洗い場
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: あらいば
+    expression_audio: 洗い場.mp3
+    meaning:
+      en: washing area; dishwashing station
+      de: Spülbereich; Abwaschstation
+    sentences:
+    - sentence: 洗い場では常に忙しい
+      sentence_kana: あらいば では つねに いそがしい
+      sentence_audio: 洗い場_sentence.mp3
+      translations:
+        en: The washing area is always busy.
+        de: Im Spülbereich ist es ständig hektisch.
+- word: 多幸
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: たこう
+    expression_audio: 多幸.mp3
+    meaning:
+      en: much happiness; great felicity
+      de: viel Glück; großes Glück
+    sentences:
+    - sentence: 皆様のご健康と多幸をお祈りします
+      sentence_kana: みなさま の ごけんこう と たこう を おいのり します
+      sentence_audio: 多幸_sentence.mp3
+      translations:
+        en: I wish you all health and great happiness.
+        de: Ich wünsche Ihnen allen Gesundheit und viel Glück.
+- word: レディーズ
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: れでぃーず
+    expression_audio: レディーズ.mp3
+    meaning:
+      en: ladies (women's)
+      de: Damen-/Frauen-
+    sentences:
+    - sentence: レディーズのサロンは一階にある
+      sentence_kana: れでぃーず の さろん は いっかい に ある
+      sentence_audio: レディーズ_sentence.mp3
+      translations:
+        en: The ladies’ parlor is on the first floor.
+        de: Der Damensalon ist im Erdgeschoss.
+- word: パーラー
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ぱーらー
+    expression_audio: パーラー.mp3
+    meaning:
+      en: parlor / lounge / café
+      de: Salon / Lounge / Café
+    note:
+      en: パーラー is a loanword with flexible meaning, historically a lounge or café, now also used for pachinko halls (パチンコパーラー).
+      de: パーラー ist ein Lehnwort, früher für Salon oder Café, heute auch für Pachinkohallen (パチンコパーラー).
+    sentences:
+    - sentence: 昔のホテルにはパーラーがあった
+      sentence_kana: むかし の ほてる に は ぱーらー が あった
+      sentence_audio: パーラー_sentence.mp3
+      translations:
+        en: Old hotels used to have parlors.
+        de: Früher hatten Hotels einen Salon.
+- word: 足取り
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: あしどり
+    expression_audio: 足取り.mp3
+    meaning:
+      en: gait / manner of walking
+      de: Gangart / Art des Gehens
+    note:
+      en: 足取り can describe physical walking style or metaphorically someone's progress in life/events.
+      de: 足取り beschreibt sowohl die physische Gangart als auch bildlich den Verlauf von Ereignissen.
+    sentences:
+    - sentence: 彼の足取りは重かった
+      sentence_kana: かれ の あしどり は おもかった
+      sentence_audio: 足取り_sentence.mp3
+      translations:
+        en: His steps were heavy.
+        de: Seine Schritte waren schwer.
+- word: 良い
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: よい
+    expression_audio: 良い.mp3
+    meaning:
+      en: good; fine
+      de: gut
+    sentences:
+    - sentence: それは良い考えだ
+      sentence_kana: それ は よい かんがえ だ
+      sentence_audio: 良い_sentence.mp3
+      translations:
+        en: That’s a good idea.
+        de: Das ist eine gute Idee.
+- word: 自室
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: じしつ
+    expression_audio: 自室.mp3
+    meaning:
+      en: one’s own room
+      de: eigenes Zimmer
+    sentences:
+    - sentence: 彼女は自室に戻った
+      sentence_kana: かのじょ は じしつ に もどった
+      sentence_audio: 自室_sentence.mp3
+      translations:
+        en: She returned to her own room.
+        de: Sie kehrte in ihr Zimmer zurück.
+- word: 住み込み
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: すみこみ
+    expression_audio: 住み込み.mp3
+    meaning:
+      en: live-in (employment)
+      de: mit Unterkunft; „in Haus“ angestellt
+    sentences:
+    - sentence: 彼は住み込みで働いている
+      sentence_kana: かれ は すみこみ で はたらいて いる
+      sentence_audio: 住み込み_sentence.mp3
+      translations:
+        en: He works as a live-in employee.
+        de: Er arbeitet als Angestellter mit Wohnmöglichkeit.
+- word: 今日中
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: きょうじゅう
+    expression_audio: 今日中.mp3
+    meaning:
+      en: by the end of today
+      de: bis heute (Tagesende)
+    sentences:
+    - sentence: この仕事は今日中に終わらせてください
+      sentence_kana: この しごと は きょうじゅう に おわらせて ください
+      sentence_audio: 今日中_sentence.mp3
+      translations:
+        en: Please finish this task by the end of today.
+        de: Bitte erledigen Sie diese Aufgabe noch heute.
+- word: 伯爵邸
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: はくしゃくてい
+    expression_audio: 伯爵邸.mp3
+    meaning:
+      en: earl's mansion / count's residence
+      de: Grafenresidenz / Herrenhaus
+    note:
+      en: refers to a physical residence or mansion. 伯爵邸 is the building where the count lives, not the family itself.
+      de: bezeichnet ein Gebäude oder Anwesen. 伯爵邸 ist die physische Residenz des Grafen, nicht die Familie.
+    sentences:
+    - sentence: 伯爵邸は町外れに建っている
+      sentence_kana: はくしゃくてい は まちはずれ に たって いる
+      sentence_audio: 伯爵邸_sentence.mp3
+      translations:
+        en: The earl's mansion stands on the outskirts of town.
+        de: Die Grafenresidenz steht am Stadtrand.
+- word: 別館
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: べっかん
+    expression_audio: 別館.mp3
+    meaning:
+      en: annex; separate building
+      de: Nebengebäude; Anbau
+    sentences:
+    - sentence: 別館は客室として使われている
+      sentence_kana: べっかん は きゃくしつ として つかわれて いる
+      sentence_audio: 別館_sentence.mp3
+      translations:
+        en: The annex is used as guest rooms.
+        de: Das Nebengebäude dient als Gästezimmer.
