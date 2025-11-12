@@ -458,7 +458,8 @@
         en: I was suddenly tapped on the shoulder from behind.
         de: Ich wurde plötzlich von hinten auf die Schulter getippt.
 - word: いけない
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: いけない
     expression_audio: いけない.mp3
@@ -933,6 +934,7 @@
 - word: おかしい
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: おかしい
     expression_audio: おかしい.mp3
@@ -2928,7 +2930,8 @@
         en: The thunder is rumbling.
         de: Der Donner grollt.
 - word: ご主人
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ごしゅじん
     expression_audio: ご主人.mp3
@@ -3627,7 +3630,8 @@
         en: He worked diligently from morning till night.
         de: Er hat von morgens bis abends fleißig gearbeitet.
 - word: せめて
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: せめて
     expression_audio: せめて.mp3
@@ -4233,6 +4237,7 @@
 - word: ちゃんと
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ちゃんと
     expression_audio: ちゃんと.mp3
@@ -4718,6 +4723,7 @@
 - word: ところ
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ところ
     expression_audio: ところ.mp3
@@ -4885,7 +4891,8 @@
         en: What do you think?
         de: Was denkst du?
 - word: どうか
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: どうか
     expression_audio: どうか.mp3
@@ -5268,7 +5275,8 @@
         en: He became a doctor.
         de: Er ist Arzt geworden.
 - word: なるべく
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: なるべく
     expression_audio: なるべく.mp3
@@ -6653,7 +6661,8 @@
         en: I ate tuna sashimi.
         de: Ich habe Thunfisch-Sashimi gegessen.
 - word: まさか
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: まさか
     expression_audio: まさか.mp3
@@ -6743,7 +6752,8 @@
         en: Everyone's opinions were settled.
         de: Alle Meinungen wurden geregelt.
 - word: まとめ
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: まとめ
     expression_audio: まとめ.mp3
@@ -8104,7 +8114,8 @@
         en: She ironed the shirt.
         de: Sie hat das Hemd gebügelt.
 - word: アクセサリー
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: あくせさりー
     expression_audio: アクセサリー.mp3
@@ -9500,20 +9511,21 @@
         en: We played a video game.
         de: Wir haben ein Videospiel gespielt.
 - word: コック
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
-  - reading: コック
+  - reading: こっく
     expression_audio: コック.mp3
     meaning:
-      en: cook
+      en: cook / chef
       de: Koch
     sentences:
-    - sentence: 彼は腕のいいコックです
-      sentence_kana: かれ は うで の いい こっ く です
+    - sentence: コックが朝食の支度をしている。
+      sentence_kana: こっく が ちょうしょく の したく を して いる。
       sentence_audio: コック_sentence.mp3
       translations:
-        en: He is a skilled cook.
-        de: Er ist ein geschickter Koch.
+        en: The cook is preparing breakfast.
+        de: Der Koch bereitet das Frühstück vor.
 - word: コップ
   tags: []
   readings:
@@ -20041,7 +20053,8 @@
         en: Let's take a short break.
         de: Lass uns eine kleine Pause machen.
 - word: 休日
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: きゅうじつ
     expression_audio: 休日.mp3
@@ -20419,7 +20432,8 @@
         en: Let's stretch our muscles.
         de: Lass uns unsere Muskeln dehnen.
 - word: 伸びる
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: のびる
     expression_audio: 伸びる.mp3
@@ -23007,7 +23021,8 @@
         en: He is an outstanding student.
         de: Er ist ein hervorragender Schüler.
 - word: 元
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: もと
     expression_audio: 元.mp3
@@ -29453,6 +29468,7 @@
 - word: 取る
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: とる
     expression_audio: 取る.mp3
@@ -30062,7 +30078,8 @@
         en: The father is scolding his child.
         de: Der Vater schimpft mit seinem Kind.
 - word: 右
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: みぎ
     expression_audio: 右.mp3
@@ -30620,7 +30637,8 @@
         en: We exchanged business cards.
         de: Wir haben Visitenkarten ausgetauscht.
 - word: 名前
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: なまえ
     expression_audio: 名前.mp3
@@ -30831,7 +30849,8 @@
         en: He turned an angry look toward his boss.
         de: Er richtete einen wütenden Blick auf seinen Chef.
 - word: 向こう
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: むこう
     expression_audio: 向こう.mp3
@@ -36377,7 +36396,8 @@
         en: I don't have any particular food preferences.
         de: Ich habe keine besonderen Essensvorlieben.
 - word: 好み
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: このみ
     expression_audio: 好み.mp3
@@ -36955,6 +36975,7 @@
 - word: 子
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: こ
     expression_audio: 子.mp3
@@ -40145,7 +40166,8 @@
         en: That is an industrial city.
         de: Das ist eine Industriestadt.
 - word: 左
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ひだり
     expression_audio: 左.mp3
@@ -42923,7 +42945,8 @@
         en: He was elected in the election.
         de: Er wurde bei der Wahl gewählt.
 - word: 形
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: かたち
     expression_audio: 形.mp3
@@ -43133,7 +43156,8 @@
         en: I completed my role without any issues.
         de: Ich habe meine Aufgabe sicher erfüllt.
 - word: 役立つ
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: やくだつ
     expression_audio: 役立つ.mp3
@@ -43178,7 +43202,8 @@
         en: They are basketball players.
         de: Sie sind Basketballspieler.
 - word: 彼女
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: かのじょ
     expression_audio: 彼女.mp3
@@ -44296,7 +44321,8 @@
         en: I made fun memories during the trip.
         de: Ich habe schöne Erinnerungen während der Reise gemacht.
 - word: 思い出す
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: おもいだす
     expression_audio: 思い出す.mp3
@@ -46255,7 +46281,8 @@
         en: When you marry, a new family register is created.
         de: Bei einer Heirat wird ein neues Familienregister erstellt.
 - word: 戻す
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: もどす
     expression_audio: 戻す.mp3
@@ -47373,7 +47400,8 @@
         en: You can omit the part in parentheses.
         de: Den Teil in Klammern können Sie weglassen.
 - word: 拭く
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ふく
     expression_audio: 拭く.mp3
@@ -49213,7 +49241,8 @@
         en: What could be the cause of the defeat?
         de: Was könnte die Ursache für die Niederlage sein?
 - word: 教え
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: おしえ
     expression_audio: 教え.mp3
@@ -49559,7 +49588,8 @@
         en: The party preparations are ready.
         de: Die Partyvorbereitungen sind fertig.
 - word: 整える
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ととのえる
     expression_audio: 整える.mp3
@@ -52573,7 +52603,8 @@
         en: He is a member of the strongest team.
         de: Er ist Mitglied des stärksten Teams.
 - word: 最後
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: さいご
     expression_audio: 最後.mp3
@@ -53040,7 +53071,8 @@
         en: Do you think the universe is finite?
         de: Glaubst du, das Universum ist begrenzt?
 - word: 服
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ふく
     expression_audio: 服.mp3
@@ -53115,7 +53147,8 @@
         en: My wish is to live abroad.
         de: Mein Wunsch ist es, im Ausland zu leben.
 - word: 望む
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: のぞむ
     expression_audio: 望む.mp3
@@ -58339,7 +58372,8 @@
         en: He doesn't like injections very much.
         de: Er mag Spritzen nicht besonders.
 - word: 注意
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ちゅうい
     expression_audio: 注意.mp3
@@ -59757,7 +59791,8 @@
         en: The population of this country is declining.
         de: Die Bevölkerung dieses Landes nimmt ab.
 - word: 渡す
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: わたす
     expression_audio: 渡す.mp3
@@ -60102,7 +60137,8 @@
         en: I got a perfect score on my Japanese test.
         de: Ich habe die Vollpunktzahl im Japanischtest erreicht.
 - word: 満足
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: まんぞく
     expression_audio: 満足.mp3
@@ -60661,6 +60697,7 @@
 - word: 濡れる
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ぬれる
     expression_audio: 濡れる.mp3
@@ -60916,7 +60953,8 @@
         en: Next, stir-fry the vegetables.
         de: Braten Sie als Nächstes das Gemüse an.
 - word: 点
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: てん
     expression_audio: 点.mp3
@@ -62318,7 +62356,8 @@
         en: The police have identified the suspect.
         de: Die Polizei hat den Verdächtigen identifiziert.
 - word: 特徴
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: とくちょう
     expression_audio: 特徴.mp3
@@ -65606,7 +65645,8 @@
         en: We finally arrived at our destination.
         de: Endlich haben wir unser Ziel erreicht.
 - word: 目立つ
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: めだつ
     expression_audio: 目立つ.mp3
@@ -65712,7 +65752,8 @@
         en: I'll go right away.
         de: Ich gehe sofort.
 - word: 直す
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: なおす
     expression_audio: 直す.mp3
@@ -66557,7 +66598,8 @@
         en: I had my vision checked at the ophthalmologist.
         de: Ich habe beim Augenarzt einen Sehtest gemacht.
 - word: 眼鏡
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: めがね
     expression_audio: 眼鏡.mp3
@@ -66618,7 +66660,8 @@
         en: I dressed my daughter in a cute dress.
         de: Ich habe meiner Tochter ein süßes Kleid angezogen.
 - word: 着る
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: きる
     expression_audio: 着る.mp3
@@ -67446,7 +67489,8 @@
         en: He's showing interest in the new product.
         de: Er zeigt Interesse an dem neuen Produkt.
 - word: 礼
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: れい
     expression_audio: 礼.mp3
@@ -68957,6 +69001,7 @@
 - word: 笑う
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: わらう
     expression_audio: 笑う.mp3
@@ -71232,7 +71277,8 @@
         en: Canned fruits are very sweet.
         de: Konservenfrüchte sind sehr süß.
 - word: 罪
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: つみ
     expression_audio: 罪.mp3
@@ -71760,7 +71806,8 @@
         en: She is listening to the radio.
         de: Sie hört Radio.
 - word: 聞こえる
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: きこえる
     expression_audio: 聞こえる.mp3
@@ -73628,7 +73675,8 @@
         en: I served rice in the teacup.
         de: Ich habe Reis in die Teeschale gefüllt.
 - word: 茶色
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ちゃいろ
     expression_audio: 茶色.mp3
@@ -73782,6 +73830,7 @@
 - word: 落ちる
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: おちる
     expression_audio: 落ちる.mp3
@@ -76033,7 +76082,8 @@
         en: This child has a quick memory.
         de: Dieses Kind lernt schnell.
 - word: 覚える
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: おぼえる
     expression_audio: 覚える.mp3
@@ -76995,7 +77045,8 @@
         en: He visited a friend in New York.
         de: Er hat einen Freund in New York besucht.
 - word: 訪れる
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: おとずれる
     expression_audio: 訪れる.mp3
@@ -79907,7 +79958,8 @@
         en: The goalkeeper kicked the ball.
         de: Der Torwart trat den Ball.
 - word: 身
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: み
     expression_audio: 身.mp3
@@ -82397,7 +82449,8 @@
         en: She takes too long to do her makeup.
         de: Sie braucht zu lange, um sich zu schminken.
 - word: 過ごす
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: すごす
     expression_audio: 過ごす.mp3
@@ -84202,7 +84255,8 @@
         en: The dog was tied with a chain.
         de: Der Hund wurde mit einer Kette angebunden.
 - word: 鏡
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: かがみ
     expression_audio: 鏡.mp3
@@ -84903,7 +84957,8 @@
         en: Doctors have an important job involving human lives.
         de: Ärzte haben einen wichtigen Beruf, der Menschenleben betrifft.
 - word: 関係
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: かんけい
     expression_audio: 関係.mp3
@@ -85234,7 +85289,8 @@
         en: She is very cheerful.
         de: Sie ist sehr fröhlich.
 - word: 隅
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: すみ
     expression_audio: 隅.mp3
@@ -87472,7 +87528,8 @@
         en: I ate two slices of toast for breakfast.
         de: Ich habe zwei Scheiben Toastbrot zum Frühstück gegessen.
 - word: 食事
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: しょくじ
     expression_audio: 食事.mp3
@@ -88524,6 +88581,7 @@
 - word: 髪
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: かみ
     expression_audio: 髪.mp3
@@ -89917,3 +89975,675 @@
       translations:
         en: Even though it was raining, he went for a walk.
         de: Obwohl es regnete, ging er spazieren.
+- word: フットマン
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ふっとまん
+    expression_audio: フットマン.mp3
+    meaning:
+      en: footman / male servant
+      de: Diener / Kammerdiener
+    note:
+      en: Western servant ranking term; in noble households below the butler.
+      de: Bezeichnung für männlichen Diener in westlichen Herrenhäusern, rangt unter dem Butler.
+    sentences:
+    - sentence: フットマンたちは廊下で静かに整列していた。
+      sentence_kana: ふっとまん たち は ろうか で しずか に せいれつ して いた。
+      sentence_audio: フットマン_sentence.mp3
+      translations:
+        en: The footmen were quietly lined up in the hallway.
+        de: Die Diener standen still im Flur aufgereiht.
+- word: あんな
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: あんな
+    expression_audio: あんな.mp3
+    meaning:
+      en: that kind of / such
+      de: so ein / derart
+    note:
+      en: Refers to something distant from both speaker and listener, often with emotion or disapproval.
+      de: Bezieht sich auf etwas, das weder beim Sprecher noch beim Zuhörer ist, oft mit emotionaler Färbung.
+    sentences:
+    - sentence: あんな静かな別館にも噂は届くらしい。
+      sentence_kana: あんな しずか な べっかん に も うわさ は とどく らしい。
+      sentence_audio: あんな_sentence.mp3
+      translations:
+        en: Even such a quiet annex seems to hear rumors.
+        de: Sogar in einem so stillen Nebengebäude scheinen Gerüchte anzukommen.
+- word: 様
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: さま
+    expression_audio: 様.mp3
+    meaning:
+      en: honorific suffix / Mr. / Ms. / Lord
+      de: höfliches Suffix / Herr / Frau / Fürst
+    note:
+      en: Adds respect; used after names or titles like 伯爵様.
+      de: Ausdruck von Respekt, angehängt an Namen oder Titel wie 伯爵様.
+    sentences:
+    - sentence: 伯爵様は今朝早く出かけられました。
+      sentence_kana: はくしゃく さま は けさ はやく でかけられました。
+      sentence_audio: 様_sentence.mp3
+      translations:
+        en: The Count left early this morning.
+        de: Der Graf ist heute früh aufgebrochen.
+- word: さりげない
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: さりげない
+    expression_audio: さりげない.mp3
+    meaning:
+      en: casual / subtle / natural
+      de: unauffällig / dezent / natürlich
+    note:
+      en: Describes understated elegance or behavior without showing off.
+      de: Beschreibt Zurückhaltung oder unaufdringliche Eleganz.
+    sentences:
+    - sentence: 彼女のさりげない仕草に気品があった。
+      sentence_kana: かのじょ の さりげない しぐさ に きひん が あった。
+      sentence_audio: さりげない_sentence.mp3
+      translations:
+        en: There was grace in her subtle gestures.
+        de: In ihren unauffälligen Gesten lag Würde.
+- word: お下げ
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: おさげ
+    expression_audio: お下げ.mp3
+    meaning:
+      en: pigtail / braided hair
+      de: Zopf / geflochtenes Haar
+    sentences:
+    - sentence: ニナはお下げを軽く揺らしながら返事をした。
+      sentence_kana: にな は おさげ を かるく ゆらし ながら へんじ を した。
+      sentence_audio: お下げ_sentence.mp3
+      translations:
+        en: Nina answered while gently swaying her braids.
+        de: Nina antwortete, während ihre Zöpfe leicht schwangen.
+- word: 身だしなみ
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: みだしなみ
+    expression_audio: 身だしなみ.mp3
+    meaning:
+      en: personal appearance / grooming
+      de: gepflegtes Äußeres / Erscheinungsbild
+    note:
+      en: Important for service professions; refers to tidiness and proper dress.
+      de: Besonders in Dienstberufen wichtig, bezeichnet gepflegte Erscheinung und Haltung.
+    sentences:
+    - sentence: メイドにとって身だしなみは礼儀の一部だ。
+      sentence_kana: めいど に とって みだしなみ は れいぎ の いちぶ だ。
+      sentence_audio: 身だしなみ_sentence.mp3
+      translations:
+        en: For a maid, appearance is part of etiquette.
+        de: Für eine Maid ist das gepflegte Äußere Teil der Etikette.
+- word: まつげ
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: まつげ
+    expression_audio: まつげ.mp3
+    meaning:
+      en: eyelash
+      de: Wimper
+    sentences:
+    - sentence: 涙がまつげに光っていた。
+      sentence_kana: なみだ が まつげ に ひかって いた。
+      sentence_audio: まつげ_sentence.mp3
+      translations:
+        en: Tears shimmered on her eyelashes.
+        de: Tränen glänzten auf ihren Wimpern.
+- word: くすんだ
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: くすんだ
+    expression_audio: くすんだ.mp3
+    meaning:
+      en: dull / faded / murky (past form of くすむ)
+      de: matt / verblasst / trüb (Vergangenheitsform von くすむ)
+    note:
+      en: Used for colors or emotions lacking brightness or life.
+      de: Wird für Farben oder Stimmungen ohne Lebendigkeit verwendet.
+    sentences:
+    - sentence: くすんだ茶色の髪が光を受けてやさしく揺れた。
+      sentence_kana: くすんだ ちゃいろ の かみ が ひかり を うけて やさしく ゆれた。
+      sentence_audio: くすんだ_sentence.mp3
+      translations:
+        en: Her dull brown hair swayed softly in the light.
+        de: Ihr mattbraunes Haar schwang sanft im Licht.
+- word: ほど
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ほど
+    expression_audio: ほど.mp3
+    meaning:
+      en: degree / extent / about
+      de: Grad / Ausmaß / ungefähr
+    note:
+      en: Indicates comparison or degree; often used as 〜ほど〜ない or 〜するほど.
+      de: Zeigt Vergleich oder Ausmaß an; häufig in Wendungen wie 〜ほど〜ない oder 〜するほど.
+    sentences:
+    - sentence: 彼ほど几帳面なメイドはいない。
+      sentence_kana: かれ ほど きちょうめん な めいど は いない。
+      sentence_audio: ほど_sentence.mp3
+      translations:
+        en: There is no maid as meticulous as him.
+        de: Es gibt keine Maid, die so gründlich ist wie er.
+- word: 追い出す
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: おいだす
+    expression_audio: 追い出す.mp3
+    meaning:
+      en: to drive out; to expel
+      de: hinauswerfen; vertreiben
+    sentences:
+    - sentence: 濡れ衣を着せられて屋敷を追い出された。
+      sentence_kana: ぬれぎぬ を きせられて やしき を おいだされた。
+      sentence_audio: 追い出す_sentence.mp3
+      translations:
+        en: She was cast out of the mansion under false accusation.
+        de: Sie wurde aufgrund einer falschen Beschuldigung aus dem Anwesen geworfen.
+- word: 業務
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ぎょうむ
+    expression_audio: 業務.mp3
+    meaning:
+      en: duty; business; task
+      de: Dienst; Aufgabe; Geschäft
+    note:
+      en: Formal word often used in workplaces for responsibilities or assigned tasks.
+      de: Formeller Begriff für Pflichten oder zugewiesene Aufgaben, oft im Berufsalltag.
+    sentences:
+    - sentence: メイド長としての業務を淡々とこなしていた。
+      sentence_kana: めいどちょう として の ぎょうむ を たんたん と こなして いた。
+      sentence_audio: 業務_sentence.mp3
+      translations:
+        en: She carried out her duties as head maid calmly and efficiently.
+        de: Sie erledigte ihre Pflichten als Obermaid ruhig und gewissenhaft.
+- word: 滞る
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: とどこおる
+    expression_audio: 滞る.mp3
+    meaning:
+      en: to be delayed / to stagnate / to be left undone
+      de: stocken / sich verzögern / liegen bleiben
+    note:
+      en: Often used for work, payments, or processes that are delayed or not proceeding smoothly.
+      de: Wird häufig für Arbeit, Zahlungen oder Abläufe verwendet, die sich verzögern oder nicht reibungslos laufen.
+    sentences:
+    - sentence: 業務が滞ることはメイドにとって恥だ。
+      sentence_kana: ぎょうむ が とどこおる こと は めいど に とって はじ だ。
+      sentence_audio: 滞る_sentence.mp3
+      translations:
+        en: For a maid, letting her duties stagnate is a disgrace.
+        de: Für eine Maid ist es eine Schande, wenn ihre Arbeit ins Stocken gerät.
+- word: ときめく
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ときめく
+    expression_audio: ときめく.mp3
+    meaning:
+      en: to throb with excitement / to feel one's heart flutter
+      de: aufgeregt sein / Herzklopfen haben
+    note:
+      en: Describes emotional excitement, often romantic or full of anticipation.
+      de: Beschreibt emotionale Aufregung, oft romantisch oder erwartungsvoll.
+    sentences:
+    - sentence: 新しい制服を見て胸がときめいた。
+      sentence_kana: あたらしい せいふく を みて むね が ときめいた。
+      sentence_audio: ときめく_sentence.mp3
+      translations:
+        en: Her heart fluttered when she saw the new uniform.
+        de: Ihr Herz klopfte, als sie die neue Uniform sah.
+- word: お客様
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: おきゃくさま
+    expression_audio: お客様.mp3
+    meaning:
+      en: guest / customer / visitor (honorific)
+      de: Gast / Kunde / Besucher (höflich)
+    note:
+      en: Honorific form of 客, used in polite service contexts; implies deep respect.
+      de: Höfliche Form von 客; wird im Dienstleistungsumfeld mit Respekt verwendet.
+    sentences:
+    - sentence: お客様が玄関にお見えです。
+      sentence_kana: おきゃくさま が げんかん に おみえ です。
+      sentence_audio: お客様_sentence.mp3
+      translations:
+        en: The guest has arrived at the entrance.
+        de: Der Gast ist am Eingang eingetroffen.
+- word: 手早く
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: てばやく
+    expression_audio: 手早く.mp3
+    meaning:
+      en: quickly / efficiently / promptly
+      de: schnell / zügig / effizient
+    note:
+      en: Adverb form of 手早い, implies skill and efficiency, not just speed.
+      de: Adverb von 手早い; betont Geschick und Effizienz, nicht bloß Schnelligkeit.
+    sentences:
+    - sentence: 彼女は手早く部屋を整えた。
+      sentence_kana: かのじょ は てばやく へや を ととのえた。
+      sentence_audio: 手早く_sentence.mp3
+      translations:
+        en: She quickly put the room in order.
+        de: Sie brachte das Zimmer zügig in Ordnung.
+- word: 街
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: まち
+    expression_audio: 街.mp3
+    meaning:
+      en: town / city / district
+      de: Stadt / Ortschaft / Viertel
+    note:
+      en: Commonly refers to a moderately sized town; sometimes evokes a nostalgic or lively atmosphere.
+      de: Bezeichnet meist eine kleinere oder mittlere Stadt; kann nostalgisch oder lebendig klingen.
+    sentences:
+    - sentence: 街は朝から人々でにぎわっていた。
+      sentence_kana: まち は あさ から ひとびと で にぎわって いた。
+      sentence_audio: 街_sentence.mp3
+      translations:
+        en: The town was bustling with people since morning.
+        de: Die Stadt war seit dem Morgen voller Menschen und geschäftig.
+- word: ご主人様
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ごしゅじんさま
+    expression_audio: ご主人様.mp3
+    meaning:
+      en: master / lord / (in modern use) husband
+      de: Herr / Gebieter / (heute auch) Ehemann
+    note:
+      en: Honorific term used by servants or maids to address their employer; modernly also used for one's husband.
+      de: Höfliche Anrede, die Bedienstete für ihren Herrn verwenden; heute teils auch für den Ehemann.
+    sentences:
+    - sentence: ご主人様の命令には逆らえません。
+      sentence_kana: ごしゅじんさま の めいれい に は さからえません。
+      sentence_audio: ご主人様_sentence.mp3
+      translations:
+        en: I cannot go against my master's orders.
+        de: Ich kann mich dem Befehl meines Herrn nicht widersetzen.
+- word: ほつれる
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ほつれる
+    expression_audio: ほつれる.mp3
+    meaning:
+      en: to come undone / to fray / to unravel
+      de: sich lösen / ausfransen / aufgehen
+    note:
+      en: Used for threads, seams, or emotions that come undone. Common in both literal and figurative contexts.
+      de: Wird für Fäden, Nähte oder auch Gefühle verwendet, die sich „lösen“ oder „auftrennen“.
+    sentences:
+    - sentence: 古いドレスの裾がほつれていた。
+      sentence_kana: ふるい どれす の すそ が ほつれて いた。
+      sentence_audio: ほつれる_sentence.mp3
+      translations:
+        en: The hem of the old dress had come undone.
+        de: Der Saum des alten Kleides war ausgefranst.
+- word: ハンカチ
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: はんかち
+    expression_audio: ハンカチ.mp3
+    meaning:
+      en: handkerchief
+      de: Taschentuch
+    note:
+      en: Often symbolizes refinement or sentimentality in fiction; can carry emotional value.
+      de: Symbolisiert in der Literatur oft Feinheit oder Sentimentalität; kann emotional aufgeladen sein.
+    sentences:
+    - sentence: ご主人様のハンカチをそっとたたんで机に置いた。
+      sentence_kana: ごしゅじんさま の はんかち を そっと たたんで つくえ に おいた。
+      sentence_audio: ハンカチ_sentence.mp3
+      translations:
+        en: She quietly folded the master's handkerchief and placed it on the desk.
+        de: Sie faltete das Taschentuch des Herrn leise und legte es auf den Schreibtisch.
+- word: 引き継ぎ
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ひきつぎ
+    expression_audio: 引き継ぎ.mp3
+    meaning:
+      en: succession / handover / transition
+      de: Übergabe / Nachfolge / Amtsübernahme
+    note:
+      en: Derived from 引き継ぐ (“to take over”); often used for passing responsibilities or duties.
+      de: Stammt von 引き継ぐ („übernehmen“) ab; bezeichnet meist die Übergabe von Aufgaben oder Verantwortung.
+    sentences:
+    - sentence: 新しいメイド長への引き継ぎは無事に終わった。
+      sentence_kana: あたらしい めいどちょう への ひきつぎ は ぶじ に おわった。
+      sentence_audio: 引き継ぎ_sentence.mp3
+      translations:
+        en: The handover to the new head maid was completed successfully.
+        de: Die Übergabe an die neue Obermaid verlief erfolgreich.
+- word: クローゼット
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: くろーぜっと
+    expression_audio: クローゼット.mp3
+    meaning:
+      en: closet / wardrobe
+      de: Kleiderschrank / Schrank
+    sentences:
+    - sentence: クローゼットの中には古いメイド服が並んでいた。
+      sentence_kana: くろーぜっと の なか に は ふるい めいどふく が ならんで いた。
+      sentence_audio: クローゼット_sentence.mp3
+      translations:
+        en: Inside the closet were rows of old maid uniforms.
+        de: Im Kleiderschrank hingen Reihen alter Maidsuniformen.
+- word: メイド服
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: めいどふく
+    expression_audio: メイド服.mp3
+    meaning:
+      en: maid uniform
+      de: Maiddienstkleidung / Maiduniform
+    note:
+      en: Iconic symbol of domestic service; can carry connotations of hierarchy or identity in fiction.
+      de: Ikonisches Symbol häuslicher Dienstbarkeit; kann in der Literatur Hierarchie oder Identität ausdrücken.
+    sentences:
+    - sentence: 彼女は初めてメイド服に袖を通した。
+      sentence_kana: かのじょ は はじめて めいどふく に そで を とおした。
+      sentence_audio: メイド服_sentence.mp3
+      translations:
+        en: She put on her maid uniform for the first time.
+        de: Sie trug zum ersten Mal ihre Maiddienstkleidung.
+- word: いきな
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: いきな
+    expression_audio: いきな.mp3
+    meaning:
+      en: stylish / refined / considerate
+      de: geschmackvoll / elegant / aufmerksam
+    note:
+      en: Old-fashioned aesthetic term meaning “refined in spirit and manners.” Often used in period settings.
+      de: Altmodischer Ausdruck für geistige und höfische Eleganz; häufig in historischen Kontexten.
+    sentences:
+    - sentence: 彼女のいきな振る舞いに皆が感心した。
+      sentence_kana: かのじょ の いきな ふるまい に みな が かんしん した。
+      sentence_audio: いきな_sentence.mp3
+      translations:
+        en: Everyone admired her graceful manners.
+        de: Alle bewunderten ihr elegantes Auftreten.
+- word: やってくる
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: やってくる
+    expression_audio: やってくる.mp3
+    meaning:
+      en: to come / to arrive / to show up
+      de: kommen / ankommen / auftauchen
+    note:
+      en: Colloquial compound form of 来る; implies arrival with effort or from afar.
+      de: Umgangssprachliche Form von 来る; deutet auf ein Kommen mit Mühe oder von weitem hin.
+    sentences:
+    - sentence: ご主人様が突然やってきた。
+      sentence_kana: ごしゅじんさま が とつぜん やってきた。
+      sentence_audio: やってくる_sentence.mp3
+      translations:
+        en: The master suddenly showed up.
+        de: Der Herr tauchte plötzlich auf.
+- word: おっきくなる
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: おっきくなる
+    expression_audio: おっきくなる.mp3
+    meaning:
+      en: to grow up / to become big
+      de: groß werden / erwachsen werden
+    note:
+      en: Colloquial form of 大きくなる; often used affectionately when talking to or about children.
+      de: Umgangssprachliche Form von 大きくなる; wird liebevoll verwendet, wenn man über Kinder spricht.
+    sentences:
+    - sentence: ニナももうおっきくなったね。
+      sentence_kana: にな も もう おっきく なった ね。
+      sentence_audio: おっきくなる_sentence.mp3
+      translations:
+        en: Nina has grown up so much already.
+        de: Nina ist schon richtig groß geworden.
+- word: 瞳
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ひとみ
+    expression_audio: 瞳.mp3
+    meaning:
+      en: pupil / eye / gaze
+      de: Pupille / Auge / Blick
+    note:
+      en: Carries a poetic nuance, often used to describe emotion or purity through someone's eyes.
+      de: Hat eine poetische Nuance und wird oft verwendet, um Emotion oder Reinheit im Blick auszudrücken.
+    sentences:
+    - sentence: 彼女の瞳は澄んだ空のように美しかった。
+      sentence_kana: かのじょ の ひとみ は すんだ そら の よう に うつくしかった。
+      sentence_audio: 瞳_sentence.mp3
+      translations:
+        en: Her eyes were as clear and beautiful as the sky.
+        de: Ihre Augen waren so klar und schön wie der Himmel.
+- word: 羽織る
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: はおる
+    expression_audio: 羽織る.mp3
+    meaning:
+      en: to put on (over the shoulders) / to wear loosely
+      de: sich überwerfen / locker anziehen
+    note:
+      en: Refers to wearing an outer garment lightly over the shoulders (e.g., coat, shawl).
+      de: Bedeutet, ein Kleidungsstück (z. B. Mantel, Tuch) locker über die Schultern zu legen.
+    sentences:
+    - sentence: 彼女は外套を羽織って外に出た。
+      sentence_kana: かのじょ は がいとう を はおって そと に でた。
+      sentence_audio: 羽織る_sentence.mp3
+      translations:
+        en: She threw on her coat and stepped outside.
+        de: Sie warf sich den Mantel über und ging hinaus.
+- word: これくらい
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: これくらい
+    expression_audio: これくらい.mp3
+    meaning:
+      en: about this much / to this extent
+      de: ungefähr so viel / in diesem Maße
+    note:
+      en: Often used for modesty or reassurance; can express “it's nothing” when downplaying effort.
+      de: Wird oft verwendet, um Bescheidenheit auszudrücken („Das ist doch nichts Besonderes“).
+    sentences:
+    - sentence: これくらいの仕事なら朝のうちに終わります。
+      sentence_kana: これくらい の しごと なら あさ の うち に おわります。
+      sentence_audio: これくらい_sentence.mp3
+      translations:
+        en: A task like this can be finished by morning.
+        de: So eine Arbeit ist bis zum Morgen erledigt.
+- word: 行き届く
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: いきとどく
+    expression_audio: 行き届く.mp3
+    meaning:
+      en: to be attentive / to be thorough / to be well managed
+      de: aufmerksam sein / gründlich sein / gut gepflegt sein
+    note:
+      en: Describes care or service that is meticulous and considerate; often used to praise maids or hosts.
+      de: Beschreibt sorgfältige, rücksichtsvolle Pflege oder Aufmerksamkeit; häufig als Lob für Dienstpersonal.
+    sentences:
+    - sentence: 彼女の行き届いた気配りに、誰もが感嘆した。
+      sentence_kana: かのじょ の いきとどいた きくばり に、だれ も が かんたん した。
+      sentence_audio: 行き届く_sentence.mp3
+      translations:
+        en: Everyone was impressed by her thoughtful attention to detail.
+        de: Alle waren von ihrer aufmerksamen und sorgfältigen Art beeindruckt.
+- word: 空色
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: そらいろ
+    expression_audio: 空色.mp3
+    meaning:
+      en: sky blue
+      de: himmelblau
+    note:
+      en: Refers to a gentle, light blue reminiscent of a clear sky; carries a poetic nuance in literature.
+      de: Bezeichnet ein sanftes, helles Blau, das an einen klaren Himmel erinnert; poetischer Ausdruck.
+    sentences:
+    - sentence: 空色のリボンが風に揺れていた。
+      sentence_kana: そらいろ の りぼん が かぜ に ゆれて いた。
+      sentence_audio: 空色_sentence.mp3
+      translations:
+        en: A sky-blue ribbon swayed in the wind.
+        de: Ein himmelblaues Band wehte im Wind.
+- word: 外套
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: がいとう
+    expression_audio: 外套.mp3
+    meaning:
+      en: coat / cloak / overcoat
+      de: Mantel / Überwurf
+    note:
+      en: Refers to a formal or old-fashioned outer garment, often used in historical or noble settings.
+      de: Bezeichnet einen formellen, altmodischen Mantel; oft in historischen oder adligen Kontexten verwendet.
+    sentences:
+    - sentence: 外套を羽織ると、冷たい風が少し和らいだ。
+      sentence_kana: がいとう を はおる と、つめたい かぜ が すこし やわらいだ。
+      sentence_audio: 外套_sentence.mp3
+      translations:
+        en: When she put on her coat, the cold wind felt a little softer.
+        de: Als sie den Mantel überwarf, fühlte sich der kalte Wind etwas milder an.
+- word: 文机
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ふづくえ
+    expression_audio: 文机.mp3
+    meaning:
+      en: writing desk / small desk
+      de: Schreibpult / kleiner Schreibtisch
+    note:
+      en: Traditional low Japanese writing desk, often used in older or aristocratic households.
+      de: Traditioneller niedriger japanischer Schreibtisch, oft in alten oder adligen Haushalten zu finden.
+    sentences:
+    - sentence: 文机の上には古い手紙が並んでいた。
+      sentence_kana: ふづくえ の うえ に は ふるい てがみ が ならんで いた。
+      sentence_audio: 文机_sentence.mp3
+      translations:
+        en: Old letters were neatly arranged on the writing desk.
+        de: Auf dem Schreibpult lagen ordentlich alte Briefe ausgebreitet.
+- word: まだまだ
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: まだまだ
+    expression_audio: まだまだ.mp3
+    meaning:
+      en: still / far from / not yet enough
+      de: noch / bei Weitem nicht / unvollständig
+    note:
+      en: Emphasizes that something is ongoing or insufficient; can be modest or hopeful in tone.
+      de: Betont, dass etwas noch andauert oder unvollständig ist; kann bescheiden oder hoffnungsvoll klingen.
+    sentences:
+    - sentence: 彼女の修行はまだまだ終わらない。
+      sentence_kana: かのじょ の しゅぎょう は まだまだ おわらない。
+      sentence_audio: まだまだ_sentence.mp3
+      translations:
+        en: Her training is far from over.
+        de: Ihre Ausbildung ist noch lange nicht vorbei.
+- word: 引き継ぐ
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ひきつぐ
+    expression_audio: 引き継ぐ.mp3
+    meaning:
+      en: to take over / to inherit / to succeed
+      de: übernehmen / fortführen / nachfolgen
+    note:
+      en: Verb form of 引き継ぎ; used when taking over duties, traditions, or positions.
+      de: Verbform von 引き継ぎ; wird verwendet, wenn Aufgaben, Traditionen oder Ämter übernommen werden.
+    sentences:
+    - sentence: 彼女は先代メイド長の意志を引き継いだ。
+      sentence_kana: かのじょ は せんだい めいどちょう の いし を ひきついだ。
+      sentence_audio: 引き継ぐ_sentence.mp3
+      translations:
+        en: She carried on the will of the former head maid.
+        de: Sie führte den Willen der früheren Obermaid fort.
+- word: いつだって
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: いつだって
+    expression_audio: いつだって.mp3
+    meaning:
+      en: always / at any time
+      de: immer / jederzeit
+    note:
+      en: Colloquial and emphatic version of いつも; expresses constancy or emotional attachment.
+      de: Umgangssprachlich und betont gegenüber いつも; drückt Beständigkeit oder emotionale Bindung aus.
+    sentences:
+    - sentence: ご主人様のことは、いつだって忘れません。
+      sentence_kana: ごしゅじんさま の こと は、いつだって わすれません。
+      sentence_audio: いつだって_sentence.mp3
+      translations:
+        en: I will never forget my master, no matter what.
+        de: Ich werde meinen Herrn niemals vergessen, komme was wolle.
+- word: 歳
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: さい
+    expression_audio: 歳.mp3
+    meaning:
+      en: age / years (of age)
+      de: Alter / Lebensjahre
+    note:
+      en: Used as a counter for age (e.g., 五歳 = five years old). Commonly written as 才 in everyday use, but 歳 is the formal or written variant, often seen in official or refined contexts.
+      de: Wird als Zähleinheit für das Alter verwendet (z. B. 五歳 = fünf Jahre alt). 才 ist die alltägliche, vereinfachte Form; 歳 gilt als formeller und wird in schriftlicher oder höflicher Sprache verwendet.
+    sentences:
+    - sentence: 十歳のとき、初めてご主人様にお仕えしました。
+      sentence_kana: じゅっさい の とき、はじめて ごしゅじんさま に おつかえ しました。
+      sentence_audio: 歳_sentence.mp3
+      translations:
+        en: I first served the master when I was ten years old.
+        de: Mit zehn Jahren diente ich zum ersten Mal meinem Herrn.
