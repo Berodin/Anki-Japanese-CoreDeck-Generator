@@ -90647,3 +90647,245 @@
       translations:
         en: I first served the master when I was ten years old.
         de: Mit zehn Jahren diente ich zum ersten Mal meinem Herrn.
+- word: 隙
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: すき
+    expression_audio: 隙.mp3
+    meaning:
+      en: opening; gap; moment of carelessness
+      de: Lücke; Schwachstelle; unaufmerksamer Moment
+    note:
+      en: 隙 refers not only to a physical gap, but very often to a moment of inattention or vulnerability that can be exploited.
+      de: 隙 bezeichnet nicht nur eine physische Lücke, sondern sehr häufig einen Moment der Unachtsamkeit oder Verwundbarkeit.
+    sentences:
+    - sentence: 部屋の隙を見せないよう、完璧に整えられていた。
+      sentence_kana: へや の すき を みせない よう、かんぺき に ととのえられて いた。
+      sentence_audio: 隙_sentence.mp3
+      translations:
+        en: The room was arranged perfectly so as to leave no openings.
+        de: Das Zimmer war perfekt hergerichtet, ohne eine einzige Schwachstelle zu zeigen.
+- word: 入念
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: にゅうねん
+    expression_audio: 入念.mp3
+    meaning:
+      en: careful; thorough; meticulous
+      de: sorgfältig; gründlich; gewissenhaft
+    note:
+      en: 入念 emphasizes careful preparation and attention to detail, often used for professional work or formal tasks.
+      de: 入念 betont sorgfältige Vorbereitung und Detailgenauigkeit, häufig im beruflichen oder formellen Kontext.
+    sentences:
+    - sentence: 入念に手入れされた身だしなみは、長年の経験を物語っていた。
+      sentence_kana: にゅうねん に ていれ された みだしなみ は、ながねん の けいけん を ものがたって いた。
+      sentence_audio: 入念_sentence.mp3
+      translations:
+        en: Her meticulously maintained appearance spoke of many years of experience.
+        de: Ihr sorgfältig gepflegtes Erscheinungsbild zeugte von jahrelanger Erfahrung.
+- word: 貴族
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: きぞく
+    expression_audio: 貴族.mp3
+    meaning:
+      en: nobility; aristocracy
+      de: Adel; Aristokratie
+    sentences:
+    - sentence: 貴族の屋敷では厳しい礼儀が求められる
+      sentence_kana: きぞく の おやしき では きびしい れいぎ が もとめられる
+      sentence_audio: 貴族_sentence.mp3
+      translations:
+        en: Strict etiquette is required in noble estates.
+        de: In adeligen Anwesen wird strenge Etikette verlangt.
+- word: 愛妾
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: あいしょう
+    expression_audio: 愛妾.mp3
+    meaning:
+      en: beloved concubine; mistress
+      de: Geliebte; Konkubine
+    note:
+      en: A classical term often used in historical or aristocratic settings.
+      de: Klassischer Begriff, häufig in historischen oder adligen Kontexten.
+    sentences:
+    - sentence: 伯爵には公にはできない愛妾がいた
+      sentence_kana: はくしゃく には おおやけ に できない あいしょう が いた
+      sentence_audio: 愛妾_sentence.mp3
+      translations:
+        en: The count had a mistress he could not acknowledge publicly.
+        de: Der Graf hatte eine Geliebte, die er nicht öffentlich machen konnte.
+- word: 贅沢
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ぜいたく
+    expression_audio: 贅沢.mp3
+    meaning:
+      en: luxury; extravagance
+      de: Luxus; Verschwendung
+    sentences:
+    - sentence: この屋敷での生活は贅沢そのものだった
+      sentence_kana: この おやしき での せいかつ は ぜいたく そのもの だった
+      sentence_audio: 贅沢_sentence.mp3
+      translations:
+        en: Life in this mansion was luxury itself.
+        de: Das Leben in diesem Anwesen war purer Luxus.
+- word: お察し
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: おさっし
+    expression_audio: お察し.mp3
+    meaning:
+      en: consideration; understanding (polite)
+      de: Rücksichtnahme; Verständnis
+    note:
+      en: Polite expression implying understanding without explicit explanation.
+      de: Höfliche Wendung für „etwas verstehen, ohne dass es ausgesprochen wird“.
+    sentences:
+    - sentence: 事情はお察しします
+      sentence_kana: じじょう は おさっし します
+      sentence_audio: お察し_sentence.mp3
+      translations:
+        en: I understand your situation.
+        de: Ich verstehe Ihre Lage.
+- word: 近づく
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ちかづく
+    expression_audio: 近づく.mp3
+    meaning:
+      en: to approach; to come closer
+      de: sich nähern; näher kommen
+    sentences:
+    - sentence: ニナは静かに主人に近づいた
+      sentence_kana: にな は しずか に しゅじん に ちかづいた
+      sentence_audio: 近づく_sentence.mp3
+      translations:
+        en: Nina quietly approached her master.
+        de: Nina näherte sich leise ihrem Herrn.
+- word: メモ帳
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: めもちょう
+    expression_audio: メモ帳.mp3
+    meaning:
+      en: memo pad; notebook
+      de: Notizbuch
+    sentences:
+    - sentence: メモ帳にお客様の情報を書き留めた
+      sentence_kana: めもちょう に おきゃくさま の じょうほう を かきとめた
+      sentence_audio: メモ帳_sentence.mp3
+      translations:
+        en: She wrote down the guest's information in her notebook.
+        de: Sie notierte die Informationen des Gastes im Notizbuch.
+- word: 足元
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: あしもと
+    expression_audio: 足元.mp3
+    meaning:
+      en: at one's feet; footing
+      de: Füße; Stand
+    note:
+      en: Can be literal (feet) or figurative (one's position or situation).
+      de: Kann wörtlich oder bildlich für die eigene Lage stehen.
+    sentences:
+    - sentence: 足元に気をつけて歩く
+      sentence_kana: あしもと に き を つけて あるく
+      sentence_audio: 足元_sentence.mp3
+      translations:
+        en: She walks carefully, watching her step.
+        de: Sie geht vorsichtig und achtet auf ihren Schritt.
+- word: 奥様付きメイド
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: おくさまづきめいど
+    expression_audio: 奥様付きメイド.mp3
+    meaning:
+      en: personal maid to a lady
+      de: Zofe; persönliche Zofe der Herrin
+    note:
+      en: A maid assigned exclusively to serve a noble lady.
+      de: Eine Magd, die ausschließlich einer Herrin zugeteilt ist.
+    sentences:
+    - sentence: 奥様付きメイドとして厳しい教育を受けた
+      sentence_kana: おくさまづき めいど として きびしい きょういく を うけた
+      sentence_audio: 奥様付きメイド_sentence.mp3
+      translations:
+        en: She received strict training as a personal maid.
+        de: Sie erhielt eine strenge Ausbildung als Zofe.
+- word: 礼儀作法
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: れいぎさほう
+    expression_audio: 礼儀作法.mp3
+    meaning:
+      en: manners; etiquette
+      de: Benehmen; Etikette
+    sentences:
+    - sentence: 礼儀作法を身につけることが求められる
+      sentence_kana: れいぎさほう を み に つける こと が もとめられる
+      sentence_audio: 礼儀作法_sentence.mp3
+      translations:
+        en: Proper etiquette is required.
+        de: Gutes Benehmen wird verlangt.
+- word: 気にする
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: きにする
+    expression_audio: 気にする.mp3
+    meaning:
+      en: to worry about; to mind
+      de: sich kümmern um; sich Gedanken machen
+    sentences:
+    - sentence: 小さな失敗を気にしすぎる必要はない
+      sentence_kana: ちいさな しっぱい を き に しすぎる ひつよう は ない
+      sentence_audio: 気にする_sentence.mp3
+      translations:
+        en: There's no need to worry too much about small mistakes.
+        de: Man muss sich wegen kleiner Fehler nicht zu sehr sorgen.
+- word: 出し方
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: だしかた
+    expression_audio: 出し方.mp3
+    meaning:
+      en: way of serving; way of presenting
+      de: Art des Servierens; Darreichungsweise
+    sentences:
+    - sentence: 食事の出し方にも厳しい決まりがある
+      sentence_kana: しょくじ の だしかた にも きびしい きまり が ある
+      sentence_audio: 出し方_sentence.mp3
+      translations:
+        en: There are strict rules even for how meals are served.
+        de: Selbst für das Servieren der Mahlzeiten gibt es strenge Regeln.
+- word: 見た目
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: みため
+    expression_audio: 見た目.mp3
+    meaning:
+      en: appearance; looks
+      de: Aussehen; äußeres Erscheinungsbild
+    sentences:
+    - sentence: 見た目だけで人を判断してはいけない
+      sentence_kana: みため だけ で ひと を はんだん して は いけない
+      sentence_audio: 見た目_sentence.mp3
+      translations:
+        en: You shouldn't judge people by appearance alone.
+        de: Man sollte Menschen nicht nur nach dem Aussehen beurteilen.
