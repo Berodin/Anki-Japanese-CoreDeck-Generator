@@ -7223,6 +7223,7 @@
 - word: もちろん
   tags:
   - Tonari_no_Totoro
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: もちろん
     expression_audio: もちろん.mp3
@@ -29622,7 +29623,8 @@
         en: Please stamp your seal for the receipt.
         de: Bitte stempeln Sie für den Empfang.
 - word: 受け取る
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: うけとる
     expression_audio: 受け取る.mp3
@@ -40288,7 +40290,8 @@
         en: I will give this to you.
         de: Ich werde Ihnen das überreichen.
 - word: 差し出す
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: さしだす
     expression_audio: 差し出す.mp3
@@ -43081,7 +43084,8 @@
         en: She's playing the role of a lawyer.
         de: Sie spielt die Rolle einer Anwältin.
 - word: 役に立つ
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: やくにたつ
     expression_audio: 役に立つ.mp3
@@ -48024,7 +48028,8 @@
         en: The teacher seems to have finished grading the tests.
         de: Der Lehrer scheint die Prüfungen fertig bewertet zu haben.
 - word: 採用
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: さいよう
     expression_audio: 採用.mp3
@@ -49378,7 +49383,8 @@
         en: I forgot my Japanese textbook.
         de: Ich habe mein Japanisch-Lehrbuch vergessen.
 - word: 教育
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: きょういく
     expression_audio: 教育.mp3
@@ -57675,7 +57681,8 @@
         en: I removed the dirt from my shoes.
         de: Ich habe den Schmutz von meinen Schuhen entfernt.
 - word: 汚れる
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: よごれる
     expression_audio: 汚れる.mp3
@@ -62567,7 +62574,8 @@
         en: I aim to win the championship next year.
         de: Ich ziele darauf ab, nächstes Jahr Meister zu werden.
 - word: 独り言
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ひとりごと
     expression_audio: 独り言.mp3
@@ -65979,7 +65987,8 @@
         en: Please come dressed suitably for the occasion.
         de: Bitte kommen Sie in geeigneter Kleidung.
 - word: 相手
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: あいて
     expression_audio: 相手.mp3
@@ -77786,7 +77795,8 @@
         en: Let's talk a lot tonight.
         de: Lass uns heute Abend viel erzählen.
 - word: 語学
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: ごがく
     expression_audio: 語学.mp3
@@ -83609,7 +83619,8 @@
         en: This is an important document.
         de: Das ist ein wichtiges Dokument.
 - word: 重視
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: じゅうし
     expression_audio: 重視.mp3
@@ -87120,7 +87131,8 @@
         en: My jaw hurts.
         de: Mein Kiefer tut weh.
 - word: 顔
-  tags: []
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
   readings:
   - reading: かお
     expression_audio: 顔.mp3
@@ -90889,3 +90901,155 @@
       translations:
         en: You shouldn't judge people by appearance alone.
         de: Man sollte Menschen nicht nur nach dem Aussehen beurteilen.
+- word: 彼女たち
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: かのじょたち
+    expression_audio: 彼女たち.mp3
+    meaning:
+      en: they (female) / those girls; the women (plural of 彼女)
+      de: sie (weiblich) / die Mädchen; die Frauen (Plural von 彼女)
+    note:
+      en: 〜たち is a pluralizing suffix for people (彼女 → 彼女たち “they/the girls”). It can also mean “she and her group.”
+      de: 〜たち ist ein Pluralsuffix für Personen (彼女 → 彼女たち „sie/die Mädchen“). Kann auch „sie und ihre Gruppe“ bedeuten.
+    sentences:
+    - sentence: 彼女たちはこの屋敷で働いていた。
+      sentence_kana: かのじょたち は この やしき で はたらいて いた。
+      sentence_audio: 彼女たち_sentence.mp3
+      translations:
+        en: The girls were working in this mansion.
+        de: Die Mädchen arbeiteten in diesem Anwesen.
+- word: さばく
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: さばく
+    expression_audio: さばく.mp3
+    meaning:
+      en: to handle / to deal with / to process (tasks, work, people)
+      de: bewältigen / abarbeiten / handhaben (Aufgaben, Arbeit, Leute)
+    note:
+      en: In this context (仕事をさばく), it means “to process/handle efficiently,” not “to judge” or “to sell off.”
+      de: Im Kontext (仕事をさばく) bedeutet es „effizient abarbeiten/bewältigen“, nicht „richten“ oder „absetzen/verkaufen“.
+    sentences:
+    - sentence: 彼女は仕事を次々とさばいていった。
+      sentence_kana: かのじょ は しごと を つぎつぎ と さばいて いった。
+      sentence_audio: さばく_sentence.mp3
+      translations:
+        en: She handled one task after another.
+        de: Sie arbeitete eine Aufgabe nach der anderen ab.
+- word: 技能
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ぎのう
+    expression_audio: 技能.mp3
+    meaning:
+      en: skill / technical ability
+      de: Fertigkeit / Können / (fachliche) Fähigkeit
+    note:
+      en: More formal than 技(わざ); often used for learned/professional skills.
+      de: Formeller als 技(わざ); oft für erlernte/berufliche Fähigkeiten.
+    sentences:
+    - sentence: 彼女は礼儀作法だけでなく技能も高い。
+      sentence_kana: かのじょ は れいぎさほう だけ でなく ぎのう も たかい。
+      sentence_audio: 技能_sentence.mp3
+      translations:
+        en: She is skilled not only in manners but also in practical abilities.
+        de: Sie ist nicht nur in Etikette, sondern auch in ihren Fähigkeiten sehr gut.
+- word: 雑
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: ざつ
+    expression_audio: 雑.mp3
+    meaning:
+      en: sloppy / rough / careless
+      de: schlampig / grob / nachlässig
+    note:
+      en: Often appears as 雑な + noun (雑な仕事 “sloppy work”).
+      de: Häufig als 雑な + Nomen (雑な仕事 „schlampige Arbeit“).
+    sentences:
+    - sentence: 雑な出し方をするとすぐに気づかれる。
+      sentence_kana: ざつ な だしかた を する と すぐ に きづかれる。
+      sentence_audio: 雑_sentence.mp3
+      translations:
+        en: If you do it sloppily, it will be noticed immediately.
+        de: Wenn man es schlampig macht, fällt es sofort auf.
+- word: 推奨
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: すいしょう
+    expression_audio: 推奨.mp3
+    meaning:
+      en: recommendation (formal) / endorsement
+      de: Empfehlung (formal) / Befürwortung
+    note:
+      en: Formal; often used in writing (〜を推奨する “recommend/advise”).
+      de: Formell; häufig schriftlich (〜を推奨する „empfehlen/anraten“).
+    sentences:
+    - sentence: 師匠の推奨でこの屋敷に来た。
+      sentence_kana: ししょう の すいしょう で この やしき に きた。
+      sentence_audio: 推奨_sentence.mp3
+      translations:
+        en: I came to this mansion on my master's recommendation.
+        de: Ich kam auf Empfehlung meines Meisters in dieses Anwesen.
+- word: 背を向ける
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: せをむける
+    expression_audio: 背を向ける.mp3
+    meaning:
+      en: to turn one's back (on) / to face away
+      de: den Rücken zuwenden / sich abwenden
+    note:
+      en: Can be literal (turning around) or figurative (turning one's back on someone/something).
+      de: Kann wörtlich (sich umdrehen) oder übertragen (sich von etwas abwenden) sein.
+    sentences:
+    - sentence: ニナは黙って背を向けた。
+      sentence_kana: にな は だまって せ を むけた。
+      sentence_audio: 背を向ける_sentence.mp3
+      translations:
+        en: Nina turned away without a word.
+        de: Nina wandte sich schweigend ab.
+- word: 気になる
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: きになる
+    expression_audio: 気になる.mp3
+    meaning:
+      en: to be bothered by / to be curious about / to be on one's mind
+      de: einen beschäftigen / einen stören / neugierig machen
+    note:
+      en: Covers both “I care/worry about it” and “I'm curious about it,” depending on context.
+      de: Je nach Kontext sowohl „es beschäftigt/stört mich“ als auch „es interessiert mich“.
+    sentences:
+    - sentence: それ以外のことまで気になってしまった。
+      sentence_kana: それいがい の こと まで き に なって しまった。
+      sentence_audio: 気になる_sentence.mp3
+      translations:
+        en: I ended up worrying about things beyond that.
+        de: Am Ende hat mich sogar noch anderes beschäftigt.
+- word: 以外
+  tags:
+  - メイドなら当然です_万能メイド_濡れ衣かぶって旅に出る
+  readings:
+  - reading: いがい
+    expression_audio: 以外.mp3
+    meaning:
+      en: except; other than; outside of
+      de: außer; abgesehen von; außerhalb von
+    note:
+      en: Used after nouns or phrases to mean “everything except X”. Can be used without これ／それ／あれ.
+      de: Wird nach Nomen oder Phrasen verwendet und bedeutet „alles außer X“. Kann ohne これ／それ／あれ stehen.
+    sentences:
+    - sentence: 使用人以外は立ち入り禁止だ。
+      sentence_kana: しようにん いがい は たちいり きんし だ。
+      sentence_audio: 以外_sentence.mp3
+      translations:
+        en: Entry is forbidden to anyone except the servants.
+        de: Der Zutritt ist für alle außer die Bediensteten verboten.
