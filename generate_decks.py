@@ -1,12 +1,12 @@
 import os
+import hashlib
+import json
 import yaml
 import genanki
 from anki_model import AnkiModelFactory
 from sudachipy import tokenizer
 from sudachipy import dictionary
 import xml.etree.ElementTree as ET
-import jaconv
-import re
 from typing import Tuple, List, Optional, Dict, Set
 import itertools
 
@@ -468,28 +468,81 @@ class VocabYamlLoader:
 
     def load_data(self):
         """
-        Reads the YAML file and returns a list of vocabulary entries.
-        Each entry is expected to be a dictionary with fields like:
-          - expression
-          - reading
-          - sentence
-          - sentence_kana
-          - sentence_audio
-          - expression_audio
-          - image_uri
-          - tags (list)
-          - translations (dict with language codes)
+        Reads a vocab index (YAML/JSON) or a vocab list (YAML/JSON/JSONL) and
+        returns a list of vocabulary entries.
         """
         if not os.path.exists(self.yaml_path):
             raise FileNotFoundError(f"YAML file not found: {self.yaml_path}")
 
-        with open(self.yaml_path, "r", encoding="utf-8") as f:
-            data = yaml.safe_load(f)
+        data = self._load_any(self.yaml_path)
+        if isinstance(data, list):
+            return data
+        if isinstance(data, dict) and "vocab_files" in data:
+            merged = []
+            base_dir = os.path.dirname(self.yaml_path)
+            for rel_path in data["vocab_files"]:
+                vocab_path = os.path.join(base_dir, rel_path)
+                if not os.path.exists(vocab_path):
+                    raise FileNotFoundError(f"Vocab file not found: {vocab_path}")
+                chunk = self._load_any(vocab_path)
+                if not isinstance(chunk, list):
+                    raise ValueError(f"Vocab file must be a list: {vocab_path}")
+                merged.extend(chunk)
+            return merged
+        raise ValueError("Vocab file must be a list or an index with 'vocab_files'.")
 
-        if not isinstance(data, list):
-            raise ValueError("YAML must be a list of items.")
+    def _load_any(self, path: str):
+        ext = os.path.splitext(path)[1].lower()
+        if ext in {".json"}:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        if ext in {".jsonl"}:
+            items = []
+            with open(path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    items.append(json.loads(line))
+            return items
+        with open(path, "r", encoding="utf-8") as f:
+            return yaml.safe_load(f)
 
-        return data
+class TranslationStore:
+    """
+    Loads translations from data/translations/<lang>.yaml.
+    Expected keys:
+      - reading: {<reading_id>: {meaning: str, note: str}}
+      - sentence: {<sentence_id>: {translation: str}}
+    """
+    def __init__(self, data: Optional[Dict] = None):
+        data = data or {}
+        self.reading = data.get("reading", {}) if isinstance(data, dict) else {}
+        self.sentence = data.get("sentence", {}) if isinstance(data, dict) else {}
+
+    @classmethod
+    def from_path(cls, path: str) -> "TranslationStore":
+        if not os.path.exists(path):
+            return cls({})
+        ext = os.path.splitext(path)[1].lower()
+        with open(path, "r", encoding="utf-8") as f:
+            if ext == ".json":
+                data = json.load(f)
+            else:
+                data = yaml.safe_load(f)
+        return cls(data)
+
+    def get_reading_fields(self, reading_id: Optional[str]) -> Tuple[str, str]:
+        if not reading_id:
+            return "", ""
+        entry = self.reading.get(reading_id, {}) if isinstance(self.reading, dict) else {}
+        return entry.get("meaning", "") or "", entry.get("note", "") or ""
+
+    def get_sentence_translation(self, sentence_id: Optional[str]) -> str:
+        if not sentence_id:
+            return ""
+        entry = self.sentence.get(sentence_id, {}) if isinstance(self.sentence, dict) else {}
+        return entry.get("translation", "") or ""
 
 class NoteFactory:
     """
@@ -501,7 +554,7 @@ class NoteFactory:
     It uses specific Anki models (templates) for each note type and leverages the
     FuriganaGenerator to generate annotated (ruby) versions of the word.
     """
-    def __init__(self, reading_model, listening_model, translation_model, furigana_generator):
+    def __init__(self, reading_model, listening_model, translation_model, furigana_generator, translation_store):
         """
         Initializes the NoteFactory with specific Anki models and a FuriganaGenerator.
         
@@ -514,7 +567,8 @@ class NoteFactory:
         self.reading_model = reading_model
         self.listening_model = listening_model
         self.translation_model = translation_model
-        self.furigana_generator = furigana_generator  
+        self.furigana_generator = furigana_generator
+        self.translation_store = translation_store
 
     def create_notes_for_reading(self, word_str, reading_data, tags, lang_code):
         """
@@ -545,12 +599,14 @@ class NoteFactory:
         reading_str = reading_data.get("reading", "")
         # Get the audio file name for the expression.
         expression_audio = reading_data.get("expression_audio", "")
-        # Extract the meaning dictionary and get the meaning in the specified language.
-        meaning_dict = reading_data.get("meaning", {})
-        meaning_for_lang = meaning_dict.get(lang_code, "")
-        # Retrieve any additional note content, if available.
-        note_dict = reading_data.get("note", {}) 
-        note_for_lang = note_dict.get(lang_code, "")
+        reading_id = reading_data.get("reading_id")
+        meaning_for_lang, note_for_lang = self.translation_store.get_reading_fields(reading_id)
+        if not meaning_for_lang:
+            meaning_dict = reading_data.get("meaning", {})
+            meaning_for_lang = meaning_dict.get(lang_code, "")
+        if not note_for_lang:
+            note_dict = reading_data.get("note", {})
+            note_for_lang = note_dict.get(lang_code, "")
 
         # Generate the furigana annotated version of the word using the provided reading.
         furigana_expression = self.furigana_generator.generate_furigana_word(word_str, target_reading=reading_str)
@@ -565,18 +621,16 @@ class NoteFactory:
             sentence_text = s.get("sentence", "")
             sentence_kana = s.get("sentence_kana", "")
             s_audio = s.get("sentence_audio", "")
-            translations = s.get("translations", {})
-            trans_lang = translations.get(lang_code, "")
+            sentence_id = s.get("sentence_id")
+            trans_lang = self.translation_store.get_sentence_translation(sentence_id)
+            if not trans_lang:
+                translations = s.get("translations", {})
+                trans_lang = translations.get(lang_code, "")
 
-            # Append the sentence text if available.
-            if sentence_text:
-                sentence_lines.append(sentence_text)
-            # Append the kana reading if available.
-            if sentence_kana:
-                sentence_kana_lines.append(sentence_kana)
-            # Append the translation if available.
-            if trans_lang:
-                sentence_translation_lines.append(trans_lang)
+            # Keep line alignment across sentence fields.
+            sentence_lines.append(sentence_text or "")
+            sentence_kana_lines.append(sentence_kana or "")
+            sentence_translation_lines.append(trans_lang or "")
             # Append the audio filename if available.
             if s_audio:
                 sentence_audio_list.append(s_audio)
@@ -585,6 +639,7 @@ class NoteFactory:
         joined_sentence = "\n".join(sentence_lines)
         joined_sentence_kana = "\n".join(sentence_kana_lines)
         joined_sentence_translation = "\n".join(sentence_translation_lines)
+        has_translation = any(line.strip() for line in sentence_translation_lines)
         joined_sentence_furigana = "" # Placeholder for any furigana annotations on sentences (if needed).
         # Use the first sentence audio if available.
         final_sentence_audio = sentence_audio_list[0] if sentence_audio_list else ""
@@ -653,7 +708,7 @@ class NoteFactory:
         # -----------------------------------------------------------------------------
         # Create the TRANSLATION NOTE (only if both meaning and sentence translation exist)
         # -----------------------------------------------------------------------------
-        if meaning_for_lang and joined_sentence_translation:
+        if meaning_for_lang and has_translation:
             # Generate a unique GUID for the translation note.
             translation_guid = genanki.guid_for(word_str + reading_str + lang_code + "translation")
             # Create the translation note using the translation model.
@@ -689,7 +744,7 @@ class VocabDeckGenerator:
       - Adds any media files (e.g., audio) required for the notes.
       - Writes out the complete Anki deck as a .apkg file.
     """
-    def __init__(self, yaml_path, jmdict_path="JMdict_e.xml"):
+    def __init__(self, yaml_path, jmdict_path="JMdict_e.xml", translation_dir="data/translations"):
         """
         Initializes the deck generator with paths to the YAML vocabulary data and the JMdict file.
         
@@ -701,6 +756,7 @@ class VocabDeckGenerator:
         loader = VocabYamlLoader(yaml_path)
         self.nested_data = loader.load_data()
         self.furigana_generator = FuriganaGenerator(jmdict_path, global_debug=False, debug_words=None)
+        self.translation_dir = translation_dir
 
     def create_deck_for_language(self, lang_code, output_dir="output"):
         """
@@ -718,10 +774,14 @@ class VocabDeckGenerator:
             - Incorporates media files (e.g., audio files) into the deck.
             - Writes the complete deck to a file.
         """
-        # Define unique model IDs for each note type (these should match your Anki template IDs).
-        reading_model_id = 1607392319
-        listening_model_id = 1607392321
-        translation_model_id = 1607392320
+        def stable_model_id(base_id: int, suffix: str) -> int:
+            digest = hashlib.sha1(f"{base_id}:{lang_code}:{suffix}".encode("utf-8")).hexdigest()
+            return int(digest[:8], 16)
+
+        # Define unique model IDs per language to avoid collisions between decks.
+        reading_model_id = stable_model_id(1607392319, "reading")
+        listening_model_id = stable_model_id(1607392321, "listening")
+        translation_model_id = stable_model_id(1607392320, "translation")
 
         # Create Anki models using the AnkiModelFactory, passing in the language code and template directory.
         model_factory = AnkiModelFactory(lang_code, template_dir='templates')
@@ -730,12 +790,22 @@ class VocabDeckGenerator:
         translation_model = model_factory.get_translation_model(translation_model_id)
 
         # Create a new Anki deck with the reading model ID as the deck ID and a descriptive name.
-        deck = genanki.Deck(reading_model_id, f"Japanese Vocab Deck ({lang_code})")
+        deck_id = stable_model_id(1607392319, "deck")
+        deck = genanki.Deck(deck_id, f"Japanese Vocab Deck ({lang_code})")
         # Initialize an Anki package to hold the deck and its media files.
         package = genanki.Package(deck)
 
+        translations_path = os.path.join(self.translation_dir, f"{lang_code}.json")
+        translation_store = TranslationStore.from_path(translations_path)
+
         # Create an instance of NoteFactory with the generated models and the furigana generator.
-        note_factory = NoteFactory(reading_model, listening_model, translation_model, self.furigana_generator)
+        note_factory = NoteFactory(
+            reading_model,
+            listening_model,
+            translation_model,
+            self.furigana_generator,
+            translation_store,
+        )
 
         # Iterate over each vocabulary entry in the loaded YAML data.
         for item in self.nested_data:
@@ -783,12 +853,14 @@ class VocabDeckGenerator:
             - Checks if each file exists before adding it to the media_files list.
             - Prints a warning if any referenced audio file is not found.
         """
-        # Determine the base directory relative to the YAML file.
+        # Determine the data directory relative to the vocab index.
         base_dir = os.path.dirname(self.yaml_path)
+        if os.path.basename(base_dir).lower() == "vocab":
+            base_dir = os.path.dirname(base_dir)
         # Assume audio files are stored in a subdirectory named 'audio'.
         audio_dir = os.path.join(base_dir, "audio")
         # Assume image files are stored in a subdirectory named 'images'
-        image_dir = os.path.join(base_dir, "images")  
+        image_dir = os.path.join(base_dir, "images")
 
         # -----------------------------------------------------------------------------
         # Add expression audio (if available)
@@ -819,11 +891,11 @@ class VocabDeckGenerator:
 # =============================================================================
 if __name__ == "__main__":
     # Define the path to the YAML file containing vocabulary data.
-    yaml_file = "data/vocab.yaml"
+    yaml_file = "data/vocab/index.json"
     # Define the path to the JMdict XML file for Japanese dictionary lookup.
     jmdict_path = "JMdict_e.xml"
     # Create an instance of VocabDeckGenerator with the given YAML file.
-    generator = VocabDeckGenerator(yaml_file)
+    generator = VocabDeckGenerator(yaml_file, jmdict_path=jmdict_path)
 
     # Create an Anki deck for German ('de') translations.
     generator.create_deck_for_language("de")
