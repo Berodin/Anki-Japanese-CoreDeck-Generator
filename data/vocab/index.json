@@ -1,0 +1,7 @@
+{
+  "vocab_files": [
+    "freq-high.jsonl",
+    "freq-mid.jsonl",
+    "freq-low.jsonl"
+  ]
+}

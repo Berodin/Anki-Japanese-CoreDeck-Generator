@@ -66,31 +66,38 @@ I don't have a way for ankidroid only so this involves using anki on a desktop p
 
 ```plaintext
 .
-├── data/
-│   ├── vocab.yaml           # Japanese vocabulary data (nested YAML format)
-│   ├── audio/               # Audio files for expressions & sentences
-│   ├── images/              # Image files for vocabulary (optional)
-├── output/                  # Generated Anki decks (.apkg)
-├── templates/
-│   ├── front_reading.html
-│   ├── back_reading.html
-│   ├── front_listening.html
-│   ├── back_listening.html
-│   ├── front_translation.html
-│   ├── back_translation.html
-│   └── style.css
-├── generate_decks.py        # Script to generate Anki decks (multiple notes per reading)
-├── anki_model.py            # Defines Anki card models and loads templates
-└── .github/
-    └── workflows/
-        └── release.yml      # CI/CD workflow for automated deck generation
+- data/
+  - vocab/
+    - index.json          # List of vocab files to load (new format)
+    - freq-high.jsonl     # High-frequency entries (JSONL)
+    - freq-mid.jsonl      # Mid-frequency entries (JSONL)
+    - freq-low.jsonl      # Low-frequency entries (JSONL)
+  - translations/
+    - en.json             # English meanings/sentence translations
+    - de.json             # German meanings/sentence translations
+  - audio/               # Audio files for expressions & sentences
+  - images/              # Image files for vocabulary (optional)
+- output/                # Generated Anki decks (.apkg)
+- templates/
+  - front_reading.html
+  - back_reading.html
+  - front_listening.html
+  - back_listening.html
+  - front_translation.html
+  - back_translation.html
+  - style.css
+- generate_decks.py      # Script to generate Anki decks (multiple notes per reading)
+- anki_model.py          # Defines Anki card models and loads templates
+- .github/
+  - workflows/
+    - release.yml        # CI/CD workflow for automated deck generation
 ```
 
 ---
 
 ## How to Use
 
-1. Prepare your vocab.yaml in data/ (nested format specifying word, readings, sentences, etc.).
+1. Prepare your vocab files in data/vocab/ (see Data Format below).
 2. Run the `generate_decks.py` script to create the decks:
    ```bash
    python generate_decks.py
@@ -100,47 +107,40 @@ I don't have a way for ankidroid only so this involves using anki on a desktop p
 
 ---
 
-## Data Format 
+## Data Format
 
-Instead of multiple CSV files (e.g., `vocab_jp.csv`, `translations_{language}.csv`), we now use a **single YAML file** that captures multiple readings and sentences for each word. Below is an overview:
+- **Vocab files** in `data/vocab/` (JSONL, Japanese data + tags + IDs)
+- **Translation files** in `data/translations/` (JSON, per-language meanings/notes/sentence translations)
+- A `data/vocab/index.json` file that lists which vocab files to load
 
-### `vocab.yaml` (Nested Format)
+### `data/vocab/index.json`
 
-Each entry in `vocab.yaml` is an object with the following structure:
-
-```yaml
-- word: <string>
-  tags:
-    - <string>
-    - <string>
-  readings:
-    - reading: <string>
-      expression_audio: <string> (optional)
-      meaning:
-        en: <string>
-        de: <string> 
-        # More language codes as needed
-      note:
-        en: <string> (note/explanation for the word in English)
-        de: <string> (note/explanation for the word in German)
-      sentences:
-        - sentence: <string> (example sentence)
-          sentence_kana: <string> (kana version of the sentence)
-          sentence_audio: <string> (optional audio for the sentence)
-          translations:
-            en: <string> (translation of the sentence in English)
-            de: <string> (translation of the sentence in German)
-            # More language codes as needed
-    - ... # More readings
-- ... # More word objects
+```json
+{
+  "vocab_files": [
+    "freq-high.jsonl",
+    "freq-mid.jsonl",
+    "freq-low.jsonl"
+  ]
+}
 ```
+
+### Vocab files (JSONL format)
+
+Each line in a vocab file is a JSON object with the following structure:
+
+```json
+{"word_id":"???","word":"???","tags":["noun","freq-high"],"readings":[{"reading_id":"???__???","reading":"???","expression_audio":"taberu.mp3","sentences":[{"sentence_id":"???__???__s1","sentence":"?????????","sentence_kana":"???????????","sentence_audio":"taberu_sentence_1.mp3"}]}]}
+```
+
 ### Top-Level Fields
 
 | Field | Type               | Description                                                                  |
 |------ |--------------------|------------------------------------------------------------------------------|
-| `word` | String            | The headword or dictionary form, e.g. 「ああ」 or 「開く」.                   |
-| `tags` | List of Strings   | (Optional) Tags for categorizing or filtering in Anki (e.g., `JLPT_N5`).      |
-| `readings` | List of Objects | One or more readings for this word (see below).                            |
+| `word_id` | String          | Stable identifier for the word (used by translations).                     |
+| `word` | String            | The headword or dictionary form.                                           |
+| `tags` | List of Strings   | (Optional) Tags for categorizing or filtering in Anki.                      |
+| `readings` | List of Objects | One or more readings for this word (see below).                           |
 
 ---
 
@@ -150,11 +150,10 @@ Each item in the `readings` array provides:
 
 | Field              | Type               | Description                                                                                          |
 |--------------------|--------------------|------------------------------------------------------------------------------------------------------|
-| `reading`          | String             | Specific reading for the word, e.g. 「ああ」 or 「ひらく」.                                           |
-| `expression_audio` | String (optional)  | Filename of the audio for this reading (e.g., `ああ.mp3`).                                           |
-| `meaning`          | Dict               | Key-value pairs for each language code (e.g., `en`, `de`) to store the reading’s meaning.           |
-| `note`             | Dict               | Key-value pairs for each language code (e.g., `en`, `de`) to store notes about the word.            |
-| `sentences`        | List of Objects    | Zero or more example sentences (see below) illustrating this reading.                               |
+| `reading_id`       | String             | Stable identifier for this reading.                                                                  |
+| `reading`          | String             | Specific reading for the word.                                                                       |
+| `expression_audio` | String (optional)  | Filename of the audio for this reading.                                                              |
+| `sentences`        | List of Objects    | Zero or more example sentences (see below) illustrating this reading.                                |
 
 ---
 
@@ -164,11 +163,27 @@ Each sentence object may include:
 
 | Field            | Type               | Description                                                                                          |
 |------------------|--------------------|------------------------------------------------------------------------------------------------------|
+| `sentence_id`    | String             | Stable identifier for the sentence.                                                                  |
 | `sentence`       | String             | Example sentence in Japanese.                                                                        |
 | `sentence_kana`  | String             | Kana version of the above sentence.                                                                  |
-| `sentence_audio` | String (optional)  | Filename of the audio for this sentence (e.g., `ああ_sentence.mp3`).                                 |
-| `translations`   | Dict               | Key-value pairs for each language code (e.g., `en`, `de`), storing the sentence’s translation.       |
+| `sentence_audio` | String (optional)  | Filename of the audio for this sentence.                                                             |
 
+---
+
+### Translation files
+
+Translations are stored per language in `data/translations/<lang>.json`:
+
+```json
+{
+  "reading": {
+    "???__???": {"meaning": "essen", "note": "transitiv"}
+  },
+  "sentence": {
+    "???__???__s1": {"translation": "Ich esse Brot."}
+  }
+}
+```
 
 ---
 
