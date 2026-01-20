@@ -4,7 +4,7 @@
       <h2 class="expression plain-expression">
         {{Expression}}
       </h2>
-      <h2 class="expression furigana-expression" style="display: none;">
+      <h2 class="expression furigana-expression is-hidden">
         {{Furigana}}
       </h2>
     </div>
@@ -19,17 +19,17 @@
   {{#Sentence}}
   <hr>
   <div class="sentence-wrapper">
-    <p class="sentence plain-sentence">
+    <p class="sentence plain-sentence preline">
       {{Sentence}}
     </p>
     {{#SentenceFurigana}}
-      <p class="sentence furigana-sentence" style="display: none;">
+      <p class="sentence furigana-sentence preline is-hidden">
         {{SentenceFurigana}}
       </p>
     {{/SentenceFurigana}}
     {{^SentenceFurigana}}
       {{#SentenceKana}}
-        <p class="sentence kana-sentence" style="display: none;">
+        <p class="sentence kana-sentence preline is-hidden">
           {{SentenceKana}}
         </p>
       {{/SentenceKana}}
@@ -37,9 +37,18 @@
   </div>
   {{/Sentence}}
 
-  <div style="text-align: center; margin-top: 15px;">
-    <button type="button" onclick="toggleFurigana()">Toggle Furigana</button>
-  </div>
+  {{#Furigana}}
+    <div style="text-align: center; margin-top: 15px;">
+      <button type="button" onclick="toggleFurigana()" title="Toggle furigana">Toggle Furigana</button>
+    </div>
+  {{/Furigana}}
+  {{^Furigana}}
+    {{#SentenceKana}}
+      <div style="text-align: center; margin-top: 15px;">
+        <button type="button" onclick="toggleFurigana()" title="Toggle kana">Toggle Kana</button>
+      </div>
+    {{/SentenceKana}}
+  {{/Furigana}}
 </div>
 
 <script>
@@ -48,12 +57,12 @@ function toggleFurigana() {
   const plainExpression = document.querySelector('.plain-expression');
   const furiganaExpression = document.querySelector('.furigana-expression');
   if (plainExpression && furiganaExpression) {
-    if (furiganaExpression.style.display === 'none') {
-      furiganaExpression.style.display = 'block';
-      plainExpression.style.display = 'none';
+    if (furiganaExpression.classList.contains('is-hidden')) {
+      furiganaExpression.classList.remove('is-hidden');
+      plainExpression.classList.add('is-hidden');
     } else {
-      furiganaExpression.style.display = 'none';
-      plainExpression.style.display = 'block';
+      furiganaExpression.classList.add('is-hidden');
+      plainExpression.classList.remove('is-hidden');
     }
   }
 
@@ -62,22 +71,22 @@ function toggleFurigana() {
   const furiganaSentence = document.querySelector('.furigana-sentence');
   const kanaSentence = document.querySelector('.kana-sentence');
   if (plainSentence) {
-    if (furiganaSentence && furiganaSentence.style.display === 'none') {
-      furiganaSentence.style.display = 'block';
-      plainSentence.style.display = 'none';
-      if (kanaSentence) kanaSentence.style.display = 'none';
-    } else if (furiganaSentence && furiganaSentence.style.display === 'block') {
-      furiganaSentence.style.display = 'none';
-      plainSentence.style.display = 'block';
-      if (kanaSentence) kanaSentence.style.display = 'block';
+    if (furiganaSentence && furiganaSentence.classList.contains('is-hidden')) {
+      furiganaSentence.classList.remove('is-hidden');
+      plainSentence.classList.add('is-hidden');
+      if (kanaSentence) kanaSentence.classList.add('is-hidden');
+    } else if (furiganaSentence && !furiganaSentence.classList.contains('is-hidden')) {
+      furiganaSentence.classList.add('is-hidden');
+      plainSentence.classList.remove('is-hidden');
+      if (kanaSentence) kanaSentence.classList.remove('is-hidden');
     } else if (!furiganaSentence && kanaSentence) {
       // Falls es KEIN Furigana gibt, nur Kana toggeln
-      if (kanaSentence.style.display === 'none') {
-        kanaSentence.style.display = 'block';
-        plainSentence.style.display = 'none';
+      if (kanaSentence.classList.contains('is-hidden')) {
+        kanaSentence.classList.remove('is-hidden');
+        plainSentence.classList.add('is-hidden');
       } else {
-        kanaSentence.style.display = 'none';
-        plainSentence.style.display = 'block';
+        kanaSentence.classList.add('is-hidden');
+        plainSentence.classList.remove('is-hidden');
       }
     }
   }

@@ -1,59 +1,117 @@
+:root {
+  --ink: #1b1b1b;
+  --muted: #5b5f6b;
+  --accent: #1e6a7a;
+  --accent-strong: #144652;
+  --paper: #f8f6f1;
+  --paper-edge: #efe8da;
+  --rule: #d9d1c3;
+  --shadow: rgba(12, 12, 12, 0.12);
+}
+
 .card {
-  font-family: Arial, sans-serif;
-  font-size: 20px;
-  text-align: center;
-  background-color: #ffffff;
-  color: #000000;
+  font-family: "Source Serif 4", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-size: 19px;
+  color: var(--ink);
+  text-align: left;
   margin: 0 auto;
-  max-width: 400px; /* optional: limit width for better readability */
-  padding: 10px;
+  max-width: 520px;
+  padding: 16px 20px 18px;
+  background:
+    radial-gradient(120% 100% at 10% 0%, #ffffff 0%, var(--paper) 52%, var(--paper-edge) 100%),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02) 1px, transparent 1px, transparent 6px);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: 0 10px 24px var(--shadow);
+}
+
+.expression-wrapper {
+  text-align: center;
 }
 
 .expression {
-  font-size: 28px;
-  margin-bottom: 10px;
+  font-size: 30px;
+  letter-spacing: 0.02em;
+  margin: 6px 0 8px;
+}
+
+.expression-no-furigana {
+  text-align: center;
+}
+
+.sentence-wrapper {
+  padding: 6px 0 2px;
 }
 
 .sentence {
-  font-size: 24px;
+  font-size: 22px;
+  line-height: 1.45;
   margin: 10px 0;
+  color: var(--ink);
+}
+
+p {
+  margin: 8px 0;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--rule), transparent);
+  margin: 14px 0;
 }
 
 .play-button,
 button {
-  display: inline-block;
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #007BFF;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 6px 4px;
+  padding: 9px 16px;
+  background-color: var(--accent);
   color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 14px;
+  letter-spacing: 0.02em;
   cursor: pointer;
+  box-shadow: 0 6px 12px rgba(30, 106, 122, 0.18);
+  transition: background-color 120ms ease, transform 120ms ease;
 }
 
 .play-button:hover,
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--accent-strong);
+  transform: translateY(-1px);
 }
 
 .tappable {
   cursor: pointer;
-  color: #000000;
+  color: var(--ink);
   text-decoration: none;
 }
 
 .tappable:hover {
-  color: #0056b3;
+  color: var(--accent-strong);
+}
+
+.is-hidden {
+  display: none;
+}
+
+.preline {
+  white-space: pre-line;
 }
 
 img {
   margin-top: 10px;
   max-width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
   padding: 2px;
+  background: #fff;
 }
+
 ruby {
   display: ruby;
 }
@@ -61,6 +119,7 @@ ruby {
 rt {
   font-size: 0.6em;
   line-height: 1.5;
-  padding-bottom: 0px; 
+  padding-bottom: 0;
   padding-top: 8px;
+  color: var(--muted);
 }

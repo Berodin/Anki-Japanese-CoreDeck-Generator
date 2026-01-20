@@ -1,13 +1,15 @@
 <div class="card">
   <h2>Listen</h2>
 
-  <button class="play-button" onclick="playAudio('audio_expression')">
-    ▶ Play Expression
-  </button>
-  <div id="audio_expression" hidden>{{ExpressionAudio}}</div>
+  {{#ExpressionAudio}}
+    <button class="play-button" onclick="playAudio('audio_expression')" title="Play expression audio">
+      Play Expression
+    </button>
+    <div id="audio_expression" hidden>{{ExpressionAudio}}</div>
+  {{/ExpressionAudio}}
 
   {{#SentenceAudio}}
-    <button class="play-button" style="margin-left: .5rem;" onclick="playAudio('audio_sentence')">
+    <button class="play-button" style="margin-left: .5rem;" onclick="playAudio('audio_sentence')" title="Play sentence audio">
       ▶ Play Sentence
     </button>
     <div id="audio_sentence" hidden>{{SentenceAudio}}</div>
